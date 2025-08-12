@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import GlobalSearch from '../components/GlobalSearch';
-import { mockDatabase } from '../lib/mockData';
+import { massiveMockDatabase } from '../lib/massiveMockData';
 
 export default function VBMSAnalytics() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -13,13 +13,13 @@ export default function VBMSAnalytics() {
     setIsLoaded(true);
   }, []);
 
-  // Calculate real analytics based on actual mock data
-  const totalClaims = mockDatabase.claims.length;
-  const totalVeterans = mockDatabase.veterans.length;
-  const totalDocuments = mockDatabase.documents.length;
-  const examsEliminated = mockDatabase.claims.filter(c => !c.examRequired).length;
-  const highPriorityClaims = mockDatabase.claims.filter(c => c.priority === 'High').length;
-  const averageConfidence = mockDatabase.claims.reduce((acc, claim) => 
+  // Calculate real analytics based on massive mock data
+  const totalClaims = massiveMockDatabase.claims.length;
+  const totalVeterans = massiveMockDatabase.veterans.length;
+  const totalDocuments = massiveMockDatabase.documents.length;
+  const examsEliminated = massiveMockDatabase.claims.filter(c => !c.examRequired).length;
+  const highPriorityClaims = massiveMockDatabase.claims.filter(c => c.priority === 'High').length;
+  const averageConfidence = massiveMockDatabase.claims.reduce((acc, claim) => 
     acc + (claim.rumevAnalysis?.confidence || 0), 0) / totalClaims;
 
   // System performance metrics based on mock data
@@ -95,7 +95,7 @@ export default function VBMSAnalytics() {
   ];
 
   // Condition-specific analytics
-  const conditionStats = mockDatabase.claims.reduce((acc, claim) => {
+  const conditionStats = massiveMockDatabase.claims.reduce((acc, claim) => {
     claim.conditions.forEach(condition => {
       const category = condition.category;
       if (!acc[category]) {
