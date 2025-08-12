@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import { searchVeterans, searchClaims, searchDocuments } from '../lib/mockData';
+import { massiveMockDatabase } from '../lib/massiveMockData';
 import NotificationCenter from './NotificationCenter';
 import { useAuth } from './AuthProvider';
 
@@ -94,7 +94,10 @@ export default function GlobalSearch() {
     const searchResults: SearchResult[] = [];
 
     // Search veterans
-    const veterans = searchVeterans(term);
+    const veterans = massiveMockDatabase.veterans.filter(veteran => 
+      veteran.name.toLowerCase().includes(term.toLowerCase()) ||
+      veteran.fileNumber.toLowerCase().includes(term.toLowerCase())
+    ).slice(0, 5);
     veterans.forEach(veteran => {
       searchResults.push({
         type: 'veteran',
@@ -108,7 +111,11 @@ export default function GlobalSearch() {
     });
 
     // Search claims
-    const claims = searchClaims(term);
+    const claims = massiveMockDatabase.claims.filter(claim => 
+      claim.id.toLowerCase().includes(term.toLowerCase()) ||
+      claim.veteranName.toLowerCase().includes(term.toLowerCase()) ||
+      claim.conditions.some(condition => condition.name.toLowerCase().includes(term.toLowerCase()))
+    ).slice(0, 5);
     claims.forEach(claim => {
       searchResults.push({
         type: 'claim',
@@ -122,7 +129,11 @@ export default function GlobalSearch() {
     });
 
     // Search documents
-    const documents = searchDocuments(term);
+    const documents = massiveMockDatabase.documents.filter(doc => 
+      doc.title.toLowerCase().includes(term.toLowerCase()) ||
+      doc.veteranName.toLowerCase().includes(term.toLowerCase()) ||
+      doc.type.toLowerCase().includes(term.toLowerCase())
+    ).slice(0, 5);
     documents.forEach(doc => {
       searchResults.push({
         type: 'document',
