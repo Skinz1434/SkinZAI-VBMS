@@ -81,6 +81,22 @@ data/*.gz
 *.tfstate
 *.tfstate.*
 
+# Legacy directories - exclude from builds
+"Full PR/"
+"Decision Builder Pack/"
+"Auth RBAC Pack/"
+"Cloud Deployment Pack/"
+"MS ML Pack/"
+"UI Polish Demo Pack/"
+"StarterKit/"
+"Mock eFolder/"
+"CI QA Security Pack/"
+"Correspondence Builder/"
+"Observability Ops/"
+"Search OCR/"
+"Unstructured scans/"
+"Seeds/"
+
 # Secrets
 *.key
 *.pem
