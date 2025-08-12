@@ -1,0 +1,14 @@
+services:
+  queueworker:
+    build:
+      context: .
+      dockerfile: ./workers/ocr_indexer_worker/Dockerfile
+    environment:
+      - BROKER_URL=amqp://guest:guest@rabbitmq:5672//
+      - RESULT_BACKEND=rpc://
+      - DATABASE_URL=postgresql://skinzai:skinzai@db:5432/skinzai
+      - OCR_URL=http://ocr:8082
+      - INDEXER_URL=http://indexer:8083
+      - OS_HOST=http://opensearch:9200
+      - OS_INDEX=documents
+    depends_on: [ rabbitmq, db, api, ocr, indexer ]
