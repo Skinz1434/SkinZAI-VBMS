@@ -1,0 +1,18 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: VA Form 21-4138 - Statement in Support of Claim
+Doc Date: 2025-06-29
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Coffee stain]
+
+== Assessment ==
+The Veteran reports persistent symptoms since deployment with periodic flare-ups. Imaging study impression correlates with clinical tenderness and limited ROM. Objective exam findings align with the historical complaints and imaging results. All names/IDs are synthetic; use for workflow testing only.
+
+== Plan ==
+Provider recommended physical therapy and activity modification. Objective exam findings align with the historical complaints and imaging results. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Provider recommended physical therapy and activity modification.
+
+== Evidence ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. Provider recommended physical therapy and activity modification. Mental health screening positive for trauma-related symptoms; safety plan discussed. Objective exam findings align with the historical complaints and imaging results. Imaging study impression correlates with clinical tenderness and limited ROM.

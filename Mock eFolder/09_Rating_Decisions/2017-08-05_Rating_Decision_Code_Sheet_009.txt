@@ -1,0 +1,14 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Rating Decision Code Sheet
+Doc Date: 2017-08-05
+--- Synthetic content for testing; contains no real PII ---
+
+== Issues Adjudicated ==
+- PTSD (DC 9411) -> 70% effective 2017-08-05
+- Tinnitus (DC 6260) -> 70% effective 2017-08-05
+- Migraine headaches (DC 8100) -> 40% effective 2017-08-05
+
+== Reasons and Bases ==
+All names/IDs are synthetic; use for workflow testing only. All names/IDs are synthetic; use for workflow testing only. Treatment plan includes conservative therapy and scheduled re-evaluation. Clinical note imported via CAPRI; formatting differs from original CPRS. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Mental health screening positive for trauma-related symptoms; safety plan discussed. Objective exam findings align with the historical complaints and imaging results.

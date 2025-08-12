@@ -1,0 +1,105 @@
+ep_id,contention,diagnostic_code,date_added,status
+EP1001,Lumbar strain,5237,2016-04-01,Denied
+EP1001,Hearing loss,6100,2016-04-01,Granted
+EP1001,Right shoulder strain,5201,2016-04-01,Continued
+EP1001,Tinnitus,6260,2016-04-01,Increased
+EP1001,Migraine headaches,8100,2016-04-01,Increased
+EP1002,Lumbar strain,5237,2016-07-30,Increased
+EP1002,Migraine headaches,8100,2016-07-30,Deferred
+EP1003,Tinnitus,6260,2016-11-27,Deferred
+EP1003,Migraine headaches,8100,2016-11-27,Continued
+EP1003,Left knee meniscal tear,5258,2016-11-27,Deferred
+EP1004,Tinnitus,6260,2017-03-27,Denied
+EP1004,Left knee meniscal tear,5258,2017-03-27,Granted
+EP1004,Migraine headaches,8100,2017-03-27,Denied
+EP1005,Lumbar strain,5237,2017-07-25,Added
+EP1005,PTSD,9411,2017-07-25,Deferred
+EP1005,Left knee meniscal tear,5258,2017-07-25,Denied
+EP1005,Migraine headaches,8100,2017-07-25,Continued
+EP1006,Left knee meniscal tear,5258,2017-11-22,Added
+EP1006,Migraine headaches,8100,2017-11-22,Denied
+EP1007,PTSD,9411,2018-03-22,Granted
+EP1007,Migraine headaches,8100,2018-03-22,Added
+EP1007,Tinnitus,6260,2018-03-22,Added
+EP1007,Lumbar strain,5237,2018-03-22,Granted
+EP1008,Left knee meniscal tear,5258,2018-07-20,Denied
+EP1008,Tinnitus,6260,2018-07-20,Added
+EP1009,Lumbar strain,5237,2018-11-17,Added
+EP1009,PTSD,9411,2018-11-17,Deferred
+EP1009,Hearing loss,6100,2018-11-17,Increased
+EP1009,Migraine headaches,8100,2018-11-17,Added
+EP1010,Hearing loss,6100,2019-03-17,Increased
+EP1010,Lumbar strain,5237,2019-03-17,Continued
+EP1010,Migraine headaches,8100,2019-03-17,Increased
+EP1010,Right shoulder strain,5201,2019-03-17,Granted
+EP1011,Right shoulder strain,5201,2019-07-15,Increased
+EP1011,Left knee meniscal tear,5258,2019-07-15,Increased
+EP1011,Migraine headaches,8100,2019-07-15,Increased
+EP1011,Lumbar strain,5237,2019-07-15,Deferred
+EP1012,Tinnitus,6260,2019-11-12,Added
+EP1012,Right shoulder strain,5201,2019-11-12,Granted
+EP1013,Tinnitus,6260,2020-03-11,Increased
+EP1013,PTSD,9411,2020-03-11,Continued
+EP1013,Left knee meniscal tear,5258,2020-03-11,Added
+EP1013,Hearing loss,6100,2020-03-11,Deferred
+EP1014,Tinnitus,6260,2020-07-09,Deferred
+EP1014,PTSD,9411,2020-07-09,Continued
+EP1014,Hearing loss,6100,2020-07-09,Increased
+EP1014,Migraine headaches,8100,2020-07-09,Increased
+EP1015,Migraine headaches,8100,2020-11-06,Added
+EP1015,Hearing loss,6100,2020-11-06,Denied
+EP1015,Tinnitus,6260,2020-11-06,Continued
+EP1015,Left knee meniscal tear,5258,2020-11-06,Continued
+EP1015,Lumbar strain,5237,2020-11-06,Denied
+EP1016,Right shoulder strain,5201,2021-03-06,Increased
+EP1016,Left knee meniscal tear,5258,2021-03-06,Increased
+EP1016,Migraine headaches,8100,2021-03-06,Added
+EP1016,Tinnitus,6260,2021-03-06,Deferred
+EP1017,Tinnitus,6260,2021-07-04,Increased
+EP1017,Right shoulder strain,5201,2021-07-04,Deferred
+EP1017,Lumbar strain,5237,2021-07-04,Deferred
+EP1017,Left knee meniscal tear,5258,2021-07-04,Increased
+EP1017,Hearing loss,6100,2021-07-04,Granted
+EP1018,PTSD,9411,2021-11-01,Granted
+EP1018,Right shoulder strain,5201,2021-11-01,Continued
+EP1018,Migraine headaches,8100,2021-11-01,Granted
+EP1018,Hearing loss,6100,2021-11-01,Deferred
+EP1018,Lumbar strain,5237,2021-11-01,Added
+EP1019,Right shoulder strain,5201,2022-03-01,Deferred
+EP1019,PTSD,9411,2022-03-01,Added
+EP1019,Left knee meniscal tear,5258,2022-03-01,Continued
+EP1019,Migraine headaches,8100,2022-03-01,Denied
+EP1019,Hearing loss,6100,2022-03-01,Denied
+EP1020,Migraine headaches,8100,2022-06-29,Denied
+EP1020,PTSD,9411,2022-06-29,Deferred
+EP1020,Lumbar strain,5237,2022-06-29,Continued
+EP1021,Lumbar strain,5237,2022-10-27,Granted
+EP1021,Tinnitus,6260,2022-10-27,Denied
+EP1021,Migraine headaches,8100,2022-10-27,Continued
+EP1021,Hearing loss,6100,2022-10-27,Continued
+EP1021,Right shoulder strain,5201,2022-10-27,Deferred
+EP1022,Right shoulder strain,5201,2023-02-24,Added
+EP1022,Lumbar strain,5237,2023-02-24,Continued
+EP1022,Tinnitus,6260,2023-02-24,Granted
+EP1023,Migraine headaches,8100,2023-06-24,Continued
+EP1023,Lumbar strain,5237,2023-06-24,Deferred
+EP1023,Right shoulder strain,5201,2023-06-24,Added
+EP1024,Hearing loss,6100,2023-10-22,Deferred
+EP1024,PTSD,9411,2023-10-22,Increased
+EP1024,Lumbar strain,5237,2023-10-22,Denied
+EP1024,Migraine headaches,8100,2023-10-22,Increased
+EP1024,Left knee meniscal tear,5258,2023-10-22,Added
+EP1025,Right shoulder strain,5201,2024-02-19,Granted
+EP1025,PTSD,9411,2024-02-19,Added
+EP1025,Left knee meniscal tear,5258,2024-02-19,Added
+EP1026,Hearing loss,6100,2024-06-18,Granted
+EP1026,Tinnitus,6260,2024-06-18,Granted
+EP1027,Left knee meniscal tear,5258,2024-10-16,Added
+EP1027,Migraine headaches,8100,2024-10-16,Granted
+EP1028,Hearing loss,6100,2025-02-13,Denied
+EP1028,PTSD,9411,2025-02-13,Deferred
+EP1028,Migraine headaches,8100,2025-02-13,Deferred
+EP1028,Right shoulder strain,5201,2025-02-13,Deferred
+EP1029,Lumbar strain,5237,2025-06-13,Added
+EP1029,Right shoulder strain,5201,2025-06-13,Denied
+EP1029,PTSD,9411,2025-06-13,Added

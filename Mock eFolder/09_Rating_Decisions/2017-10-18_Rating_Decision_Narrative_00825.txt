@@ -1,0 +1,23 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Rating Decision Narrative
+Doc Date: 2017-10-18
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Ink bleed-through]
+
+== History ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. Treatment plan includes conservative therapy and scheduled re-evaluation. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== Plan ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. Mental health screening positive for trauma-related symptoms; safety plan discussed. All names/IDs are synthetic; use for workflow testing only. The Veteran reports persistent symptoms since deployment with periodic flare-ups. The Veteran reports persistent symptoms since deployment with periodic flare-ups. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== Rating Analysis ==
+
+Evidence reviewed includes STRs, CAPRI notes, DBQs, imaging, and lay statements.
+
+Decision: Service connection granted
+
+Diagnostic Code: 5260 | Effective Date: 2017-12-26

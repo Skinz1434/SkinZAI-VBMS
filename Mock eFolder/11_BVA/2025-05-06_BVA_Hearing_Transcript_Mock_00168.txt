@@ -1,0 +1,28 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: BVA Hearing Transcript (Mock)
+Doc Date: 2025-05-06
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Low-contrast text]
+
+== History ==
+Treatment plan includes conservative therapy and scheduled re-evaluation. All names/IDs are synthetic; use for workflow testing only. All names/IDs are synthetic; use for workflow testing only. Provider recommended physical therapy and activity modification. Provider recommended physical therapy and activity modification.
+
+== Findings ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Provider recommended physical therapy and activity modification. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== Assessment ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Mental health screening positive for trauma-related symptoms; safety plan discussed. Treatment plan includes conservative therapy and scheduled re-evaluation. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Provider recommended physical therapy and activity modification. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== Plan ==
+All names/IDs are synthetic; use for workflow testing only. Provider recommended physical therapy and activity modification. Imaging study impression correlates with clinical tenderness and limited ROM. Clinical note imported via CAPRI; formatting differs from original CPRS. Provider recommended physical therapy and activity modification. Provider recommended physical therapy and activity modification.
+
+== Evidence ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. The Veteran reports persistent symptoms since deployment with periodic flare-ups. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Imaging study impression correlates with clinical tenderness and limited ROM.
+
+== BVA Findings ==
+
+The case is remanded for additional development, including new medical opinion.

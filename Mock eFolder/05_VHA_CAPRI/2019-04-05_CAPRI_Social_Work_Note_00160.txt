@@ -1,0 +1,25 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: CAPRI Social Work Note
+Doc Date: 2019-04-05
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+All names/IDs are synthetic; use for workflow testing only. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Mental health screening positive for trauma-related symptoms; safety plan discussed. Provider recommended physical therapy and activity modification. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== Findings ==
+All names/IDs are synthetic; use for workflow testing only. Clinical note imported via CAPRI; formatting differs from original CPRS. Imaging study impression correlates with clinical tenderness and limited ROM.
+
+== Assessment ==
+Imaging study impression correlates with clinical tenderness and limited ROM. All names/IDs are synthetic; use for workflow testing only. Mental health screening positive for trauma-related symptoms; safety plan discussed. All names/IDs are synthetic; use for workflow testing only. Imaging study impression correlates with clinical tenderness and limited ROM.
+
+== Evidence ==
+All names/IDs are synthetic; use for workflow testing only. Clinical note imported via CAPRI; formatting differs from original CPRS. Mental health screening positive for trauma-related symptoms; safety plan discussed. Clinical note imported via CAPRI; formatting differs from original CPRS.
+
+== VA CPRS (CAPRI) Extract ==
+
+Clinic: MH | Provider: Dr. X | Signed: 2019-04-19
+
+ICD-10: H93.19; CPT: 97110

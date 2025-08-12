@@ -1,0 +1,24 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: DBQ - PTSD Review
+Doc Date: 2021-01-08
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Low-contrast text]
+
+== History ==
+All names/IDs are synthetic; use for workflow testing only. Provider recommended physical therapy and activity modification. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Objective exam findings align with the historical complaints and imaging results. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Imaging study impression correlates with clinical tenderness and limited ROM.
+
+== Findings ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Clinical note imported via CAPRI; formatting differs from original CPRS. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Mental health screening positive for trauma-related symptoms; safety plan discussed. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== Assessment ==
+Provider recommended physical therapy and activity modification. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Objective exam findings align with the historical complaints and imaging results. All names/IDs are synthetic; use for workflow testing only. Objective exam findings align with the historical complaints and imaging results. Mental health screening positive for trauma-related symptoms; safety plan discussed.
+
+== Plan ==
+Provider recommended physical therapy and activity modification. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Imaging study impression correlates with clinical tenderness and limited ROM. Provider recommended physical therapy and activity modification. Objective exam findings align with the historical complaints and imaging results.
+
+== Evidence ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. Clinical note imported via CAPRI; formatting differs from original CPRS. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Clinical note imported via CAPRI; formatting differs from original CPRS.

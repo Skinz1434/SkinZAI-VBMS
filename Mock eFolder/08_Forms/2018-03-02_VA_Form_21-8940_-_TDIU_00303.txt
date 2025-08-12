@@ -1,0 +1,21 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: VA Form 21-8940 - TDIU
+Doc Date: 2018-03-02
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Fold crease]
+
+== History ==
+Imaging study impression correlates with clinical tenderness and limited ROM. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist.
+
+== Findings ==
+Objective exam findings align with the historical complaints and imaging results. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Objective exam findings align with the historical complaints and imaging results. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== Assessment ==
+All names/IDs are synthetic; use for workflow testing only. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist.
+
+== Plan ==
+The Veteran reports persistent symptoms since deployment with periodic flare-ups. Treatment plan includes conservative therapy and scheduled re-evaluation. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Mental health screening positive for trauma-related symptoms; safety plan discussed. Provider recommended physical therapy and activity modification. All names/IDs are synthetic; use for workflow testing only.

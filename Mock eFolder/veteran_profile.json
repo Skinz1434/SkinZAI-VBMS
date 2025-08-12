@@ -1,0 +1,71 @@
+{
+  "veteran_name": "Jordan R. Sampleton",
+  "file_number": "F31605305",
+  "edipi": "0400481269",
+  "ssn_last4": "5390",
+  "branch": "Navy",
+  "mos": "25B Information Tech",
+  "service_start": "2002-05-20",
+  "service_end": "2014-08-15",
+  "deployments": [
+    {
+      "location": "Iraq",
+      "start": "2004-03-05",
+      "end": "2005-03-28"
+    },
+    {
+      "location": "Iraq",
+      "start": "2007-09-01",
+      "end": "2008-10-12"
+    },
+    {
+      "location": "Afghanistan",
+      "start": "2012-05-10",
+      "end": "2013-02-28"
+    }
+  ],
+  "addresses_history": [
+    {
+      "from": "2014-11-01",
+      "to": "2017-07-01",
+      "address": "125 Mock Ave, Baton Rouge, LA 70802"
+    },
+    {
+      "from": "2017-07-02",
+      "to": "2021-03-11",
+      "address": "44 Cypress Bend Rd, Shreveport, LA 71105"
+    },
+    {
+      "from": "2021-03-12",
+      "to": "present",
+      "address": "1000 Mockingbird Ln, Sample City, LA 71027"
+    }
+  ],
+  "marital_status": "Married",
+  "dependents": [
+    {
+      "name": "A.S.",
+      "relation": "Spouse",
+      "dob": "1987-01-31"
+    },
+    {
+      "name": "C.S.",
+      "relation": "Child",
+      "dob": "2010-09-15"
+    },
+    {
+      "name": "Jr.S.",
+      "relation": "Child",
+      "dob": "2015-02-08"
+    }
+  ],
+  "emails": [
+    "jordan.sampleton@example.test",
+    "jsampleton@va-mock.gov"
+  ],
+  "phones": [
+    "(555) 014-2098",
+    "(555) 014-9931"
+  ],
+  "disclaimer": "Synthetic data for testing only. No real PII."
+}

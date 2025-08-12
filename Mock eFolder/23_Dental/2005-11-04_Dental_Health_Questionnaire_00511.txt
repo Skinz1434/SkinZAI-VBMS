@@ -1,0 +1,16 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Dental Health Questionnaire
+Doc Date: 2005-11-04
+--- Synthetic content for testing; contains no real PII ---
+
+
+== Findings ==
+All names/IDs are synthetic; use for workflow testing only. Imaging study impression correlates with clinical tenderness and limited ROM. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== Assessment ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. This file simulates OCR text from scanned paper; line breaks may be inconsistent. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Imaging study impression correlates with clinical tenderness and limited ROM. Clinical note imported via CAPRI; formatting differs from original CPRS. Mental health screening positive for trauma-related symptoms; safety plan discussed.
+
+== Evidence ==
+Objective exam findings align with the historical complaints and imaging results. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Objective exam findings align with the historical complaints and imaging results. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Provider recommended physical therapy and activity modification.

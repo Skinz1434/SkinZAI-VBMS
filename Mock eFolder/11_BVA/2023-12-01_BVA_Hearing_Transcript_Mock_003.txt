@@ -1,0 +1,13 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: BVA Hearing Transcript (Mock)
+Doc Date: 2023-12-01
+--- Synthetic content for testing; contains no real PII ---
+
+== ORDER/REMAND ==
+Provider recommended physical therapy and activity modification. Treatment plan includes conservative therapy and scheduled re-evaluation. Provider recommended physical therapy and activity modification. Clinical note imported via CAPRI; formatting differs from original CPRS. Provider recommended physical therapy and activity modification. Imaging study impression correlates with clinical tenderness and limited ROM. Treatment plan includes conservative therapy and scheduled re-evaluation. Objective exam findings align with the historical complaints and imaging results.
+== INSTRUCTIONS ==
+- Obtain addendum medical opinion
+- Request outstanding VA treatment records
+- Readjudicate and issue SSOC

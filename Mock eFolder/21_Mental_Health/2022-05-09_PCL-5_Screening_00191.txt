@@ -1,0 +1,28 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: PCL-5 Screening
+Doc Date: 2022-05-09
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+Objective exam findings align with the historical complaints and imaging results. Clinical note imported via CAPRI; formatting differs from original CPRS. Treatment plan includes conservative therapy and scheduled re-evaluation. Clinical note imported via CAPRI; formatting differs from original CPRS.
+
+== Findings ==
+All names/IDs are synthetic; use for workflow testing only. Clinical note imported via CAPRI; formatting differs from original CPRS. All names/IDs are synthetic; use for workflow testing only. Imaging study impression correlates with clinical tenderness and limited ROM. Imaging study impression correlates with clinical tenderness and limited ROM. The Veteran reports persistent symptoms since deployment with periodic flare-ups.
+
+== Assessment ==
+The Veteran reports persistent symptoms since deployment with periodic flare-ups. Treatment plan includes conservative therapy and scheduled re-evaluation. Imaging study impression correlates with clinical tenderness and limited ROM. Objective exam findings align with the historical complaints and imaging results.
+
+== Plan ==
+The Veteran reports persistent symptoms since deployment with periodic flare-ups. Imaging study impression correlates with clinical tenderness and limited ROM. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist.
+
+== Evidence ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Clinical note imported via CAPRI; formatting differs from original CPRS. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== VA CPRS (CAPRI) Extract ==
+
+Clinic: Primary Care | Provider: Dr. X | Signed: 2022-06-18
+
+ICD-10: G47.00; CPT: 73610

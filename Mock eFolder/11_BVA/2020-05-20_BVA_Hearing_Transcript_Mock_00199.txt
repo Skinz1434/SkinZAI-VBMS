@@ -1,0 +1,26 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: BVA Hearing Transcript (Mock)
+Doc Date: 2020-05-20
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+Treatment plan includes conservative therapy and scheduled re-evaluation. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Provider recommended physical therapy and activity modification. Treatment plan includes conservative therapy and scheduled re-evaluation. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== Findings ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. Mental health screening positive for trauma-related symptoms; safety plan discussed. Imaging study impression correlates with clinical tenderness and limited ROM. Mental health screening positive for trauma-related symptoms; safety plan discussed. Mental health screening positive for trauma-related symptoms; safety plan discussed. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== Assessment ==
+Provider recommended physical therapy and activity modification. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. The Veteran reports persistent symptoms since deployment with periodic flare-ups. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== Plan ==
+All names/IDs are synthetic; use for workflow testing only. Clinical note imported via CAPRI; formatting differs from original CPRS. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Imaging study impression correlates with clinical tenderness and limited ROM. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist.
+
+== Evidence ==
+Objective exam findings align with the historical complaints and imaging results. Clinical note imported via CAPRI; formatting differs from original CPRS. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== BVA Findings ==
+
+The case is remanded for additional development, including new medical opinion.

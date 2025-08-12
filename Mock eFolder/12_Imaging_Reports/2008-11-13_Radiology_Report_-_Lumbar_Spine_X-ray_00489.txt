@@ -1,0 +1,22 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Radiology Report - Lumbar Spine X-ray
+Doc Date: 2008-11-13
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+Treatment plan includes conservative therapy and scheduled re-evaluation. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Mental health screening positive for trauma-related symptoms; safety plan discussed. Clinical note imported via CAPRI; formatting differs from original CPRS.
+
+== Plan ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Provider recommended physical therapy and activity modification. Objective exam findings align with the historical complaints and imaging results. Treatment plan includes conservative therapy and scheduled re-evaluation. All names/IDs are synthetic; use for workflow testing only.
+
+== Evidence ==
+The Veteran reports persistent symptoms since deployment with periodic flare-ups. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Clinical note imported via CAPRI; formatting differs from original CPRS. Objective exam findings align with the historical complaints and imaging results. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Mental health screening positive for trauma-related symptoms; safety plan discussed.
+
+== Imaging Metrics ==
+
+Modality: CT; Laterality: Left
+
+Impression: No acute osseous abnormality

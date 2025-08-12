@@ -1,0 +1,30 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: PCL-5 Screening
+Doc Date: 2020-07-14
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Coffee stain]
+
+== History ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. All names/IDs are synthetic; use for workflow testing only. Imaging study impression correlates with clinical tenderness and limited ROM.
+
+== Findings ==
+Objective exam findings align with the historical complaints and imaging results. Provider recommended physical therapy and activity modification. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Clinical note imported via CAPRI; formatting differs from original CPRS. Imaging study impression correlates with clinical tenderness and limited ROM. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== Assessment ==
+Clinical note imported via CAPRI; formatting differs from original CPRS. Objective exam findings align with the historical complaints and imaging results. Objective exam findings align with the historical complaints and imaging results. Treatment plan includes conservative therapy and scheduled re-evaluation. Mental health screening positive for trauma-related symptoms; safety plan discussed. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist.
+
+== Plan ==
+All names/IDs are synthetic; use for workflow testing only. Mental health screening positive for trauma-related symptoms; safety plan discussed. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Treatment plan includes conservative therapy and scheduled re-evaluation. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Mental health screening positive for trauma-related symptoms; safety plan discussed.
+
+== Evidence ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. Treatment plan includes conservative therapy and scheduled re-evaluation. Clinical note imported via CAPRI; formatting differs from original CPRS. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist.
+
+== VA CPRS (CAPRI) Extract ==
+
+Clinic: MH | Provider: Dr. X | Signed: 2020-09-06
+
+ICD-10: G47.00; CPT: 97110

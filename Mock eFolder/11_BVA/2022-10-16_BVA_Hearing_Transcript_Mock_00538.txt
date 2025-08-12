@@ -1,0 +1,28 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: BVA Hearing Transcript (Mock)
+Doc Date: 2022-10-16
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Low-contrast text]
+
+== History ==
+Treatment plan includes conservative therapy and scheduled re-evaluation. Clinical note imported via CAPRI; formatting differs from original CPRS. Clinical note imported via CAPRI; formatting differs from original CPRS.
+
+== Findings ==
+Clinical note imported via CAPRI; formatting differs from original CPRS. Objective exam findings align with the historical complaints and imaging results. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== Assessment ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. This file simulates OCR text from scanned paper; line breaks may be inconsistent. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Clinical note imported via CAPRI; formatting differs from original CPRS.
+
+== Plan ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Clinical note imported via CAPRI; formatting differs from original CPRS. Treatment plan includes conservative therapy and scheduled re-evaluation. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist.
+
+== Evidence ==
+Clinical note imported via CAPRI; formatting differs from original CPRS. Imaging study impression correlates with clinical tenderness and limited ROM. All names/IDs are synthetic; use for workflow testing only. Imaging study impression correlates with clinical tenderness and limited ROM. Mental health screening positive for trauma-related symptoms; safety plan discussed. Imaging study impression correlates with clinical tenderness and limited ROM.
+
+== BVA Findings ==
+
+The case is remanded for additional development, including new medical opinion.

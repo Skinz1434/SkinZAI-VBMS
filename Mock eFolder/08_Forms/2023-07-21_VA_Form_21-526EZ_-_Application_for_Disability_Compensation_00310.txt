@@ -1,0 +1,21 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: VA Form 21-526EZ - Application for Disability Compensation
+Doc Date: 2023-07-21
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Coffee stain]
+
+== Findings ==
+Objective exam findings align with the historical complaints and imaging results. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Mental health screening positive for trauma-related symptoms; safety plan discussed. Objective exam findings align with the historical complaints and imaging results. Mental health screening positive for trauma-related symptoms; safety plan discussed.
+
+== Assessment ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Imaging study impression correlates with clinical tenderness and limited ROM. Imaging study impression correlates with clinical tenderness and limited ROM. Objective exam findings align with the historical complaints and imaging results. Mental health screening positive for trauma-related symptoms; safety plan discussed.
+
+== Plan ==
+All names/IDs are synthetic; use for workflow testing only. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Clinical note imported via CAPRI; formatting differs from original CPRS.
+
+== Evidence ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Objective exam findings align with the historical complaints and imaging results. Clinical note imported via CAPRI; formatting differs from original CPRS.

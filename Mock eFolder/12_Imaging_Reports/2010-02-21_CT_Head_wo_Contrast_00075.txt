@@ -1,0 +1,28 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: CT Head w/o Contrast
+Doc Date: 2010-02-21
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. Clinical note imported via CAPRI; formatting differs from original CPRS. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Imaging study impression correlates with clinical tenderness and limited ROM. Provider recommended physical therapy and activity modification. Clinical note imported via CAPRI; formatting differs from original CPRS.
+
+== Findings ==
+Treatment plan includes conservative therapy and scheduled re-evaluation. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Mental health screening positive for trauma-related symptoms; safety plan discussed. Imaging study impression correlates with clinical tenderness and limited ROM. Mental health screening positive for trauma-related symptoms; safety plan discussed. All names/IDs are synthetic; use for workflow testing only.
+
+== Assessment ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. Provider recommended physical therapy and activity modification. Clinical note imported via CAPRI; formatting differs from original CPRS. Treatment plan includes conservative therapy and scheduled re-evaluation. Objective exam findings align with the historical complaints and imaging results. Provider recommended physical therapy and activity modification.
+
+== Plan ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Mental health screening positive for trauma-related symptoms; safety plan discussed. Treatment plan includes conservative therapy and scheduled re-evaluation. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== Evidence ==
+Treatment plan includes conservative therapy and scheduled re-evaluation. Clinical note imported via CAPRI; formatting differs from original CPRS. All names/IDs are synthetic; use for workflow testing only.
+
+== Imaging Metrics ==
+
+Modality: MRI; Laterality: Bilateral
+
+Impression: Degenerative changes

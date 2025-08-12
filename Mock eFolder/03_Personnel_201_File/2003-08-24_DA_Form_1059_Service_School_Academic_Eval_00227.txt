@@ -1,0 +1,18 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: DA Form 1059 Service School Academic Eval
+Doc Date: 2003-08-24
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Partially illegible]
+
+== History ==
+Objective exam findings align with the historical complaints and imaging results. Mental health screening positive for trauma-related symptoms; safety plan discussed. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Imaging study impression correlates with clinical tenderness and limited ROM.
+
+== Assessment ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Imaging study impression correlates with clinical tenderness and limited ROM. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== Evidence ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. Provider recommended physical therapy and activity modification. Treatment plan includes conservative therapy and scheduled re-evaluation.

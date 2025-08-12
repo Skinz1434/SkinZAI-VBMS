@@ -1,0 +1,14 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Rating Decision Code Sheet
+Doc Date: 2025-04-15
+--- Synthetic content for testing; contains no real PII ---
+
+== Issues Adjudicated ==
+- Hearing loss (DC 6100) -> 10% effective 2025-04-15
+- Migraine headaches (DC 8100) -> 40% effective 2025-04-15
+- Right shoulder strain (DC 5201) -> 30% effective 2025-04-15
+
+== Reasons and Bases ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Mental health screening positive for trauma-related symptoms; safety plan discussed. Mental health screening positive for trauma-related symptoms; safety plan discussed. All names/IDs are synthetic; use for workflow testing only. Mental health screening positive for trauma-related symptoms; safety plan discussed. Mental health screening positive for trauma-related symptoms; safety plan discussed. Provider recommended physical therapy and activity modification. Imaging study impression correlates with clinical tenderness and limited ROM.

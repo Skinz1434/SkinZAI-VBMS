@@ -1,0 +1,29 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Rating Decision Narrative
+Doc Date: 2025-01-06
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Partially illegible]
+
+== History ==
+Objective exam findings align with the historical complaints and imaging results. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Clinical note imported via CAPRI; formatting differs from original CPRS. Provider recommended physical therapy and activity modification.
+
+== Findings ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Objective exam findings align with the historical complaints and imaging results. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Imaging study impression correlates with clinical tenderness and limited ROM. Mental health screening positive for trauma-related symptoms; safety plan discussed.
+
+== Assessment ==
+Provider recommended physical therapy and activity modification. This file simulates OCR text from scanned paper; line breaks may be inconsistent. All names/IDs are synthetic; use for workflow testing only.
+
+== Evidence ==
+Imaging study impression correlates with clinical tenderness and limited ROM. Clinical note imported via CAPRI; formatting differs from original CPRS. All names/IDs are synthetic; use for workflow testing only. Provider recommended physical therapy and activity modification.
+
+== Rating Analysis ==
+
+Evidence reviewed includes STRs, CAPRI notes, DBQs, imaging, and lay statements.
+
+Decision: Service connection granted
+
+Diagnostic Code: 5260 | Effective Date: 2025-02-15

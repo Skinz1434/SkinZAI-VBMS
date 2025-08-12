@@ -1,0 +1,14 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Statement of the Case (SOC)
+Doc Date: 2021-03-07
+--- Synthetic content for testing; contains no real PII ---
+
+== Adjudicative Discussion ==
+All names/IDs are synthetic; use for workflow testing only. Treatment plan includes conservative therapy and scheduled re-evaluation. Mental health screening positive for trauma-related symptoms; safety plan discussed. The Veteran reports persistent symptoms since deployment with periodic flare-ups. The Veteran reports persistent symptoms since deployment with periodic flare-ups. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Objective exam findings align with the historical complaints and imaging results. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Mental health screening positive for trauma-related symptoms; safety plan discussed. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist.
+== Evidence List ==
+- STRs 2002-2014
+- CAPRI notes 2015-2024
+- DBQs 2017-2024
+- Lay statements

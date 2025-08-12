@@ -1,0 +1,24 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Radiology Report - Lumbar Spine X-ray
+Doc Date: 2016-04-20
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Low-contrast text]
+
+== Findings ==
+Clinical note imported via CAPRI; formatting differs from original CPRS. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Provider recommended physical therapy and activity modification. Mental health screening positive for trauma-related symptoms; safety plan discussed. Provider recommended physical therapy and activity modification.
+
+== Assessment ==
+Provider recommended physical therapy and activity modification. Imaging study impression correlates with clinical tenderness and limited ROM. Objective exam findings align with the historical complaints and imaging results.
+
+== Plan ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Mental health screening positive for trauma-related symptoms; safety plan discussed. Provider recommended physical therapy and activity modification. All names/IDs are synthetic; use for workflow testing only.
+
+== Imaging Metrics ==
+
+Modality: Ultrasound; Laterality: Bilateral
+
+Impression: Degenerative changes

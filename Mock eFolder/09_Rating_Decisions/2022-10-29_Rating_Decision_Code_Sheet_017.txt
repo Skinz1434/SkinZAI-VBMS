@@ -1,0 +1,16 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Rating Decision Code Sheet
+Doc Date: 2022-10-29
+--- Synthetic content for testing; contains no real PII ---
+
+== Issues Adjudicated ==
+- Hearing loss (DC 6100) -> 50% effective 2022-10-29
+- PTSD (DC 9411) -> 50% effective 2022-10-29
+- Migraine headaches (DC 8100) -> 70% effective 2022-10-29
+- Lumbar strain (DC 5237) -> 10% effective 2022-10-29
+- Tinnitus (DC 6260) -> 30% effective 2022-10-29
+
+== Reasons and Bases ==
+All names/IDs are synthetic; use for workflow testing only. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Mental health screening positive for trauma-related symptoms; safety plan discussed. The Veteran reports persistent symptoms since deployment with periodic flare-ups. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Provider recommended physical therapy and activity modification. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Imaging study impression correlates with clinical tenderness and limited ROM.

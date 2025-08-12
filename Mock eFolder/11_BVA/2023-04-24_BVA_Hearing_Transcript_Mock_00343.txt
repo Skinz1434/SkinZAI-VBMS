@@ -1,0 +1,28 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: BVA Hearing Transcript (Mock)
+Doc Date: 2023-04-24
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Staple shadow]
+
+== History ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. Clinical note imported via CAPRI; formatting differs from original CPRS. Objective exam findings align with the historical complaints and imaging results. Mental health screening positive for trauma-related symptoms; safety plan discussed.
+
+== Findings ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Mental health screening positive for trauma-related symptoms; safety plan discussed. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist.
+
+== Assessment ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Clinical note imported via CAPRI; formatting differs from original CPRS. Clinical note imported via CAPRI; formatting differs from original CPRS. Treatment plan includes conservative therapy and scheduled re-evaluation. Imaging study impression correlates with clinical tenderness and limited ROM. Imaging study impression correlates with clinical tenderness and limited ROM.
+
+== Plan ==
+Imaging study impression correlates with clinical tenderness and limited ROM. Objective exam findings align with the historical complaints and imaging results. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== Evidence ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. Objective exam findings align with the historical complaints and imaging results. Mental health screening positive for trauma-related symptoms; safety plan discussed. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. All names/IDs are synthetic; use for workflow testing only.
+
+== BVA Findings ==
+
+The case is remanded for additional development, including new medical opinion.

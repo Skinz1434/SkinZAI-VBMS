@@ -1,0 +1,14 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Rating Decision Narrative
+Doc Date: 2023-11-02
+--- Synthetic content for testing; contains no real PII ---
+
+== Issues Adjudicated ==
+- Hearing loss (DC 6100) -> 40% effective 2023-11-02
+- Tinnitus (DC 6260) -> 50% effective 2023-11-02
+- PTSD (DC 9411) -> 0% effective 2023-11-02
+
+== Reasons and Bases ==
+All names/IDs are synthetic; use for workflow testing only. Provider recommended physical therapy and activity modification. This file simulates OCR text from scanned paper; line breaks may be inconsistent. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Imaging study impression correlates with clinical tenderness and limited ROM. Treatment plan includes conservative therapy and scheduled re-evaluation. Treatment plan includes conservative therapy and scheduled re-evaluation. Imaging study impression correlates with clinical tenderness and limited ROM.

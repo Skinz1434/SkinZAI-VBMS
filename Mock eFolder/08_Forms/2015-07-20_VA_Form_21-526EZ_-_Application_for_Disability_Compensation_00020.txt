@@ -1,0 +1,22 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: VA Form 21-526EZ - Application for Disability Compensation
+Doc Date: 2015-07-20
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. All names/IDs are synthetic; use for workflow testing only. This file simulates OCR text from scanned paper; line breaks may be inconsistent. This file simulates OCR text from scanned paper; line breaks may be inconsistent. This file simulates OCR text from scanned paper; line breaks may be inconsistent. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== Findings ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. Imaging study impression correlates with clinical tenderness and limited ROM. Provider recommended physical therapy and activity modification. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist.
+
+== Assessment ==
+Objective exam findings align with the historical complaints and imaging results. Clinical note imported via CAPRI; formatting differs from original CPRS. Provider recommended physical therapy and activity modification. Imaging study impression correlates with clinical tenderness and limited ROM.
+
+== Plan ==
+All names/IDs are synthetic; use for workflow testing only. Imaging study impression correlates with clinical tenderness and limited ROM. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Treatment plan includes conservative therapy and scheduled re-evaluation. Provider recommended physical therapy and activity modification. Clinical note imported via CAPRI; formatting differs from original CPRS.
+
+== Evidence ==
+All names/IDs are synthetic; use for workflow testing only. Provider recommended physical therapy and activity modification. Objective exam findings align with the historical complaints and imaging results. All names/IDs are synthetic; use for workflow testing only.

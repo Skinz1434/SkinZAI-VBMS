@@ -1,0 +1,19 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: DBQ - PTSD Review
+Doc Date: 2020-09-24
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== Assessment ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. Provider recommended physical therapy and activity modification. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Mental health screening positive for trauma-related symptoms; safety plan discussed.
+
+== Plan ==
+Clinical note imported via CAPRI; formatting differs from original CPRS. Objective exam findings align with the historical complaints and imaging results. Objective exam findings align with the historical complaints and imaging results. Mental health screening positive for trauma-related symptoms; safety plan discussed.
+
+== Evidence ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Provider recommended physical therapy and activity modification. All names/IDs are synthetic; use for workflow testing only.

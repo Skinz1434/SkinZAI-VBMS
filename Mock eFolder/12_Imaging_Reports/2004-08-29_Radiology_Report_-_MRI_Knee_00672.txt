@@ -1,0 +1,24 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Radiology Report - MRI Knee
+Doc Date: 2004-08-29
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Staple shadow]
+
+== History ==
+All names/IDs are synthetic; use for workflow testing only. All names/IDs are synthetic; use for workflow testing only. Objective exam findings align with the historical complaints and imaging results.
+
+== Plan ==
+Objective exam findings align with the historical complaints and imaging results. All names/IDs are synthetic; use for workflow testing only. Treatment plan includes conservative therapy and scheduled re-evaluation. Treatment plan includes conservative therapy and scheduled re-evaluation. Treatment plan includes conservative therapy and scheduled re-evaluation. Provider recommended physical therapy and activity modification.
+
+== Evidence ==
+Objective exam findings align with the historical complaints and imaging results. Provider recommended physical therapy and activity modification. Provider recommended physical therapy and activity modification. Provider recommended physical therapy and activity modification. Treatment plan includes conservative therapy and scheduled re-evaluation. Provider recommended physical therapy and activity modification.
+
+== Imaging Metrics ==
+
+Modality: X-ray; Laterality: Bilateral
+
+Impression: Degenerative changes

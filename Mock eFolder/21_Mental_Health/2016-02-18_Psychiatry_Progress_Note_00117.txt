@@ -1,0 +1,22 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Psychiatry Progress Note
+Doc Date: 2016-02-18
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+All names/IDs are synthetic; use for workflow testing only. Mental health screening positive for trauma-related symptoms; safety plan discussed. All names/IDs are synthetic; use for workflow testing only. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Clinical note imported via CAPRI; formatting differs from original CPRS.
+
+== Plan ==
+Objective exam findings align with the historical complaints and imaging results. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Treatment plan includes conservative therapy and scheduled re-evaluation. Treatment plan includes conservative therapy and scheduled re-evaluation. Objective exam findings align with the historical complaints and imaging results. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist.
+
+== Evidence ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Imaging study impression correlates with clinical tenderness and limited ROM. All names/IDs are synthetic; use for workflow testing only. All names/IDs are synthetic; use for workflow testing only.
+
+== VA CPRS (CAPRI) Extract ==
+
+Clinic: Ortho | Provider: Dr. X | Signed: 2016-02-23
+
+ICD-10: F43.1; CPT: 73610

@@ -1,0 +1,26 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Supplemental Statement of the Case (SSOC)
+Doc Date: 2020-08-17
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Mental health screening positive for trauma-related symptoms; safety plan discussed. The Veteran reports persistent symptoms since deployment with periodic flare-ups.
+
+== Findings ==
+Treatment plan includes conservative therapy and scheduled re-evaluation. Provider recommended physical therapy and activity modification. All names/IDs are synthetic; use for workflow testing only. Objective exam findings align with the historical complaints and imaging results.
+
+== Assessment ==
+Clinical note imported via CAPRI; formatting differs from original CPRS. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Clinical note imported via CAPRI; formatting differs from original CPRS. All names/IDs are synthetic; use for workflow testing only. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Mental health screening positive for trauma-related symptoms; safety plan discussed.
+
+== Plan ==
+Provider recommended physical therapy and activity modification. Treatment plan includes conservative therapy and scheduled re-evaluation. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist.
+
+== Evidence ==
+Clinical note imported via CAPRI; formatting differs from original CPRS. Treatment plan includes conservative therapy and scheduled re-evaluation. Treatment plan includes conservative therapy and scheduled re-evaluation. The Veteran reports persistent symptoms since deployment with periodic flare-ups. The Veteran reports persistent symptoms since deployment with periodic flare-ups.
+
+== SOC Discussion ==
+
+All applicable statutes and regulations considered. Benefit of the doubt discussed.

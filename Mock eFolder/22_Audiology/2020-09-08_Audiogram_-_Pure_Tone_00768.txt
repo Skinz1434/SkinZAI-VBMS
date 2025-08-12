@@ -1,0 +1,16 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Audiogram - Pure Tone
+Doc Date: 2020-09-08
+--- Synthetic content for testing; contains no real PII ---
+
+
+== Findings ==
+All names/IDs are synthetic; use for workflow testing only. Objective exam findings align with the historical complaints and imaging results. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== Assessment ==
+All names/IDs are synthetic; use for workflow testing only. Imaging study impression correlates with clinical tenderness and limited ROM. All names/IDs are synthetic; use for workflow testing only. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== Plan ==
+Imaging study impression correlates with clinical tenderness and limited ROM. Clinical note imported via CAPRI; formatting differs from original CPRS. Clinical note imported via CAPRI; formatting differs from original CPRS. Treatment plan includes conservative therapy and scheduled re-evaluation. Mental health screening positive for trauma-related symptoms; safety plan discussed.

@@ -1,0 +1,13 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Private PT Evaluation
+Doc Date: 2017-05-31
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. Treatment plan includes conservative therapy and scheduled re-evaluation. All names/IDs are synthetic; use for workflow testing only. Provider recommended physical therapy and activity modification. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== Findings ==
+Clinical note imported via CAPRI; formatting differs from original CPRS. Imaging study impression correlates with clinical tenderness and limited ROM. Treatment plan includes conservative therapy and scheduled re-evaluation. Treatment plan includes conservative therapy and scheduled re-evaluation. Provider recommended physical therapy and activity modification.

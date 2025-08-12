@@ -1,0 +1,27 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: CAPRI Progress Note - Orthopedics
+Doc Date: 2025-01-14
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Staple shadow]
+
+== History ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. All names/IDs are synthetic; use for workflow testing only. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Imaging study impression correlates with clinical tenderness and limited ROM. The Veteran reports persistent symptoms since deployment with periodic flare-ups.
+
+== Assessment ==
+The Veteran reports persistent symptoms since deployment with periodic flare-ups. Provider recommended physical therapy and activity modification. This file simulates OCR text from scanned paper; line breaks may be inconsistent. All names/IDs are synthetic; use for workflow testing only.
+
+== Plan ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Provider recommended physical therapy and activity modification. All names/IDs are synthetic; use for workflow testing only. Imaging study impression correlates with clinical tenderness and limited ROM. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== Evidence ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. Objective exam findings align with the historical complaints and imaging results. Clinical note imported via CAPRI; formatting differs from original CPRS.
+
+== VA CPRS (CAPRI) Extract ==
+
+Clinic: MH | Provider: Dr. X | Signed: 2025-04-16
+
+ICD-10: H93.19; CPT: 99213

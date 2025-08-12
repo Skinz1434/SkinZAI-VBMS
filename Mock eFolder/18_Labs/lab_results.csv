@@ -1,0 +1,259 @@
+date,test,value,unit,ref_low,ref_high,flag,ordering_clinic
+2015-01-01,Glucose,114.68,mg/dL,70.0,110.0,H,Orthopedics
+2015-01-01,A1c,5.9,%,4.8,6.4,,ER
+2015-01-01,Na,156.91,mmol/L,134.0,145.0,H,ER
+2015-04-01,HGB,20.23,g/dL,11.5,17.5,H,Orthopedics
+2015-04-01,WBC,12.86,10^3/uL,4.0,11.0,H,Orthopedics
+2015-04-01,K,4.93,mmol/L,3.5,5.2,,Orthopedics
+2015-04-01,Na,107.93,mmol/L,134.0,145.0,L,Primary Care
+2015-06-30,PLT,134.14,10^3/uL,150.0,400.0,L,Endocrinology
+2015-06-30,HCT,30.07,%,35.0,52.0,L,Endocrinology
+2015-06-30,Glucose,68.0,mg/dL,70.0,110.0,L,Orthopedics
+2015-06-30,K,5.07,mmol/L,3.5,5.2,,Primary Care
+2015-06-30,Creatinine,1.48,mg/dL,0.6,1.4,H,Orthopedics
+2015-06-30,Na,141.31,mmol/L,134.0,145.0,,Primary Care
+2015-06-30,HGB,15.4,g/dL,11.5,17.5,,ER
+2015-06-30,A1c,5.8,%,4.8,6.4,,Primary Care
+2015-06-30,WBC,4.22,10^3/uL,4.0,11.0,,Endocrinology
+2015-09-28,Creatinine,1.2,mg/dL,0.6,1.4,,Primary Care
+2015-09-28,HCT,28.23,%,35.0,52.0,L,Endocrinology
+2015-09-28,A1c,7.62,%,4.8,6.4,H,ER
+2015-09-28,PLT,281.36,10^3/uL,150.0,400.0,,Orthopedics
+2015-09-28,K,3.8,mmol/L,3.5,5.2,,Endocrinology
+2015-12-27,HGB,20.43,g/dL,11.5,17.5,H,Orthopedics
+2015-12-27,Creatinine,0.85,mg/dL,0.6,1.4,,Orthopedics
+2015-12-27,Na,113.67,mmol/L,134.0,145.0,L,Orthopedics
+2015-12-27,HCT,55.68,%,35.0,52.0,H,ER
+2015-12-27,Glucose,122.49,mg/dL,70.0,110.0,H,ER
+2015-12-27,A1c,6.03,%,4.8,6.4,,Orthopedics
+2015-12-27,PLT,196.88,10^3/uL,150.0,400.0,,Orthopedics
+2015-12-27,WBC,12.87,10^3/uL,4.0,11.0,H,ER
+2015-12-27,K,5.24,mmol/L,3.5,5.2,H,ER
+2016-03-26,K,3.17,mmol/L,3.5,5.2,L,ER
+2016-03-26,Creatinine,0.67,mg/dL,0.6,1.4,,Orthopedics
+2016-03-26,A1c,4.26,%,4.8,6.4,L,Endocrinology
+2016-03-26,Na,164.65,mmol/L,134.0,145.0,H,ER
+2016-06-24,WBC,13.08,10^3/uL,4.0,11.0,H,Endocrinology
+2016-06-24,Creatinine,0.83,mg/dL,0.6,1.4,,ER
+2016-06-24,K,4.12,mmol/L,3.5,5.2,,ER
+2016-06-24,Na,118.03,mmol/L,134.0,145.0,L,ER
+2016-06-24,PLT,124.2,10^3/uL,150.0,400.0,L,Endocrinology
+2016-06-24,HGB,12.26,g/dL,11.5,17.5,,Orthopedics
+2016-06-24,Glucose,57.25,mg/dL,70.0,110.0,L,ER
+2016-09-22,WBC,3.51,10^3/uL,4.0,11.0,L,Orthopedics
+2016-09-22,Creatinine,0.73,mg/dL,0.6,1.4,,Primary Care
+2016-09-22,HGB,19.98,g/dL,11.5,17.5,H,Primary Care
+2016-09-22,PLT,459.59,10^3/uL,150.0,400.0,H,Primary Care
+2016-09-22,K,3.33,mmol/L,3.5,5.2,L,Orthopedics
+2016-09-22,A1c,6.7,%,4.8,6.4,H,Endocrinology
+2016-09-22,Glucose,64.92,mg/dL,70.0,110.0,L,Endocrinology
+2016-09-22,HCT,59.47,%,35.0,52.0,H,ER
+2016-09-22,Na,135.48,mmol/L,134.0,145.0,,Primary Care
+2016-12-21,K,5.07,mmol/L,3.5,5.2,,Primary Care
+2016-12-21,Na,167.21,mmol/L,134.0,145.0,H,Primary Care
+2016-12-21,HCT,52.96,%,35.0,52.0,H,Orthopedics
+2016-12-21,WBC,8.62,10^3/uL,4.0,11.0,,ER
+2016-12-21,Creatinine,0.57,mg/dL,0.6,1.4,L,Orthopedics
+2016-12-21,A1c,7.38,%,4.8,6.4,H,Endocrinology
+2016-12-21,Glucose,65.62,mg/dL,70.0,110.0,L,Endocrinology
+2017-03-21,A1c,4.99,%,4.8,6.4,,Orthopedics
+2017-03-21,HCT,44.45,%,35.0,52.0,,Primary Care
+2017-03-21,Glucose,83.19,mg/dL,70.0,110.0,,Endocrinology
+2017-03-21,Creatinine,0.82,mg/dL,0.6,1.4,,Primary Care
+2017-03-21,WBC,4.38,10^3/uL,4.0,11.0,,Endocrinology
+2017-03-21,HGB,15.7,g/dL,11.5,17.5,,ER
+2017-03-21,K,4.03,mmol/L,3.5,5.2,,Orthopedics
+2017-06-19,A1c,5.42,%,4.8,6.4,,ER
+2017-06-19,PLT,413.07,10^3/uL,150.0,400.0,H,Endocrinology
+2017-06-19,Na,151.28,mmol/L,134.0,145.0,H,Orthopedics
+2017-06-19,Glucose,102.99,mg/dL,70.0,110.0,,Endocrinology
+2017-06-19,K,4.39,mmol/L,3.5,5.2,,ER
+2017-09-17,A1c,5.11,%,4.8,6.4,,Orthopedics
+2017-09-17,HCT,31.55,%,35.0,52.0,L,Orthopedics
+2017-09-17,WBC,5.7,10^3/uL,4.0,11.0,,Endocrinology
+2017-09-17,HGB,15.29,g/dL,11.5,17.5,,Orthopedics
+2017-09-17,PLT,270.41,10^3/uL,150.0,400.0,,Endocrinology
+2017-09-17,K,3.78,mmol/L,3.5,5.2,,Endocrinology
+2017-09-17,Creatinine,0.64,mg/dL,0.6,1.4,,ER
+2017-09-17,Na,112.04,mmol/L,134.0,145.0,L,Primary Care
+2017-09-17,Glucose,83.73,mg/dL,70.0,110.0,,Primary Care
+2017-12-16,Glucose,121.91,mg/dL,70.0,110.0,H,Orthopedics
+2017-12-16,Na,146.32,mmol/L,134.0,145.0,H,Endocrinology
+2017-12-16,A1c,5.05,%,4.8,6.4,,Orthopedics
+2017-12-16,HCT,55.6,%,35.0,52.0,H,Primary Care
+2018-03-16,K,3.25,mmol/L,3.5,5.2,L,Primary Care
+2018-03-16,Glucose,75.68,mg/dL,70.0,110.0,,Orthopedics
+2018-03-16,Creatinine,0.87,mg/dL,0.6,1.4,,Orthopedics
+2018-06-14,PLT,320.96,10^3/uL,150.0,400.0,,Primary Care
+2018-06-14,A1c,5.33,%,4.8,6.4,,Endocrinology
+2018-06-14,Na,149.15,mmol/L,134.0,145.0,H,Endocrinology
+2018-06-14,Creatinine,0.57,mg/dL,0.6,1.4,L,Primary Care
+2018-06-14,K,4.47,mmol/L,3.5,5.2,,Primary Care
+2018-06-14,HCT,31.02,%,35.0,52.0,L,Endocrinology
+2018-06-14,Glucose,121.14,mg/dL,70.0,110.0,H,ER
+2018-09-12,HCT,28.66,%,35.0,52.0,L,Endocrinology
+2018-09-12,WBC,5.77,10^3/uL,4.0,11.0,,Primary Care
+2018-09-12,Creatinine,0.62,mg/dL,0.6,1.4,,Primary Care
+2018-09-12,PLT,465.41,10^3/uL,150.0,400.0,H,Endocrinology
+2018-09-12,A1c,5.49,%,4.8,6.4,,ER
+2018-12-11,WBC,4.99,10^3/uL,4.0,11.0,,Orthopedics
+2018-12-11,K,5.3,mmol/L,3.5,5.2,H,Primary Care
+2018-12-11,PLT,408.58,10^3/uL,150.0,400.0,H,ER
+2018-12-11,A1c,5.08,%,4.8,6.4,,Orthopedics
+2018-12-11,Creatinine,0.53,mg/dL,0.6,1.4,L,ER
+2019-03-11,Na,162.12,mmol/L,134.0,145.0,H,Orthopedics
+2019-03-11,A1c,7.12,%,4.8,6.4,H,ER
+2019-03-11,Creatinine,0.5,mg/dL,0.6,1.4,L,Endocrinology
+2019-03-11,WBC,12.77,10^3/uL,4.0,11.0,H,Orthopedics
+2019-03-11,PLT,230.26,10^3/uL,150.0,400.0,,Primary Care
+2019-06-09,HGB,19.45,g/dL,11.5,17.5,H,Orthopedics
+2019-06-09,PLT,204.29,10^3/uL,150.0,400.0,,ER
+2019-06-09,Glucose,74.25,mg/dL,70.0,110.0,,Primary Care
+2019-06-09,Creatinine,1.26,mg/dL,0.6,1.4,,Orthopedics
+2019-06-09,HCT,54.85,%,35.0,52.0,H,Orthopedics
+2019-06-09,A1c,4.31,%,4.8,6.4,L,ER
+2019-06-09,Na,144.5,mmol/L,134.0,145.0,,ER
+2019-09-07,K,4.87,mmol/L,3.5,5.2,,Primary Care
+2019-09-07,Na,145.45,mmol/L,134.0,145.0,H,Primary Care
+2019-09-07,A1c,5.36,%,4.8,6.4,,Primary Care
+2019-12-06,K,5.61,mmol/L,3.5,5.2,H,Primary Care
+2019-12-06,Creatinine,0.56,mg/dL,0.6,1.4,L,ER
+2019-12-06,WBC,6.0,10^3/uL,4.0,11.0,,Primary Care
+2019-12-06,Na,172.66,mmol/L,134.0,145.0,H,ER
+2019-12-06,HCT,30.84,%,35.0,52.0,L,ER
+2019-12-06,HGB,20.73,g/dL,11.5,17.5,H,Endocrinology
+2019-12-06,A1c,4.05,%,4.8,6.4,L,Primary Care
+2020-03-05,Glucose,128.64,mg/dL,70.0,110.0,H,Primary Care
+2020-03-05,Na,161.22,mmol/L,134.0,145.0,H,Orthopedics
+2020-03-05,Creatinine,1.46,mg/dL,0.6,1.4,H,Primary Care
+2020-03-05,HGB,19.89,g/dL,11.5,17.5,H,Orthopedics
+2020-03-05,WBC,12.83,10^3/uL,4.0,11.0,H,Primary Care
+2020-03-05,PLT,380.98,10^3/uL,150.0,400.0,,Primary Care
+2020-03-05,K,5.8,mmol/L,3.5,5.2,H,ER
+2020-03-05,HCT,36.11,%,35.0,52.0,,ER
+2020-03-05,A1c,6.76,%,4.8,6.4,H,Primary Care
+2020-06-03,A1c,6.31,%,4.8,6.4,,Orthopedics
+2020-06-03,K,2.84,mmol/L,3.5,5.2,L,Primary Care
+2020-06-03,HCT,37.85,%,35.0,52.0,,ER
+2020-09-01,K,4.15,mmol/L,3.5,5.2,,Orthopedics
+2020-09-01,HCT,35.76,%,35.0,52.0,,Primary Care
+2020-09-01,WBC,7.82,10^3/uL,4.0,11.0,,Primary Care
+2020-09-01,Creatinine,1.4,mg/dL,0.6,1.4,,Orthopedics
+2020-09-01,HGB,14.82,g/dL,11.5,17.5,,Endocrinology
+2020-11-30,HGB,11.52,g/dL,11.5,17.5,,Orthopedics
+2020-11-30,K,2.97,mmol/L,3.5,5.2,L,Endocrinology
+2020-11-30,HCT,50.07,%,35.0,52.0,,ER
+2020-11-30,A1c,6.77,%,4.8,6.4,H,Orthopedics
+2020-11-30,PLT,401.92,10^3/uL,150.0,400.0,H,ER
+2020-11-30,Na,163.36,mmol/L,134.0,145.0,H,Endocrinology
+2021-02-28,K,2.96,mmol/L,3.5,5.2,L,ER
+2021-02-28,WBC,7.34,10^3/uL,4.0,11.0,,Primary Care
+2021-02-28,Glucose,88.4,mg/dL,70.0,110.0,,Orthopedics
+2021-02-28,HCT,55.96,%,35.0,52.0,H,ER
+2021-05-29,HCT,39.56,%,35.0,52.0,,Orthopedics
+2021-05-29,Glucose,58.64,mg/dL,70.0,110.0,L,Orthopedics
+2021-05-29,K,3.76,mmol/L,3.5,5.2,,Orthopedics
+2021-08-27,A1c,5.41,%,4.8,6.4,,Endocrinology
+2021-08-27,HCT,31.44,%,35.0,52.0,L,Endocrinology
+2021-08-27,PLT,214.31,10^3/uL,150.0,400.0,,ER
+2021-08-27,K,5.82,mmol/L,3.5,5.2,H,ER
+2021-08-27,Na,148.76,mmol/L,134.0,145.0,H,ER
+2021-08-27,HGB,19.86,g/dL,11.5,17.5,H,Endocrinology
+2021-11-25,HCT,62.15,%,35.0,52.0,H,Endocrinology
+2021-11-25,PLT,373.07,10^3/uL,150.0,400.0,,Orthopedics
+2021-11-25,Na,160.86,mmol/L,134.0,145.0,H,Primary Care
+2021-11-25,Creatinine,1.12,mg/dL,0.6,1.4,,Orthopedics
+2021-11-25,K,4.37,mmol/L,3.5,5.2,,Primary Care
+2021-11-25,WBC,3.25,10^3/uL,4.0,11.0,L,Orthopedics
+2022-02-23,HCT,45.5,%,35.0,52.0,,Primary Care
+2022-02-23,Glucose,73.47,mg/dL,70.0,110.0,,Endocrinology
+2022-02-23,HGB,12.61,g/dL,11.5,17.5,,Orthopedics
+2022-02-23,Na,129.61,mmol/L,134.0,145.0,L,Endocrinology
+2022-02-23,WBC,5.18,10^3/uL,4.0,11.0,,ER
+2022-02-23,Creatinine,0.88,mg/dL,0.6,1.4,,Orthopedics
+2022-02-23,K,4.74,mmol/L,3.5,5.2,,ER
+2022-05-24,Glucose,84.64,mg/dL,70.0,110.0,,Endocrinology
+2022-05-24,Na,136.83,mmol/L,134.0,145.0,,Orthopedics
+2022-05-24,PLT,462.1,10^3/uL,150.0,400.0,H,Primary Care
+2022-05-24,A1c,5.24,%,4.8,6.4,,Endocrinology
+2022-05-24,HCT,58.99,%,35.0,52.0,H,Endocrinology
+2022-05-24,WBC,8.42,10^3/uL,4.0,11.0,,Orthopedics
+2022-05-24,K,4.43,mmol/L,3.5,5.2,,Primary Care
+2022-05-24,Creatinine,1.38,mg/dL,0.6,1.4,,Endocrinology
+2022-05-24,HGB,18.59,g/dL,11.5,17.5,H,ER
+2022-08-22,Glucose,118.54,mg/dL,70.0,110.0,H,ER
+2022-08-22,HGB,18.71,g/dL,11.5,17.5,H,Endocrinology
+2022-08-22,PLT,452.4,10^3/uL,150.0,400.0,H,ER
+2022-11-20,K,5.26,mmol/L,3.5,5.2,H,Primary Care
+2022-11-20,Na,158.13,mmol/L,134.0,145.0,H,Orthopedics
+2022-11-20,Glucose,67.83,mg/dL,70.0,110.0,L,Primary Care
+2022-11-20,HCT,59.18,%,35.0,52.0,H,ER
+2022-11-20,Creatinine,0.91,mg/dL,0.6,1.4,,ER
+2022-11-20,PLT,236.61,10^3/uL,150.0,400.0,,Endocrinology
+2022-11-20,A1c,3.94,%,4.8,6.4,L,Primary Care
+2023-02-18,PLT,298.98,10^3/uL,150.0,400.0,,Primary Care
+2023-02-18,Na,158.44,mmol/L,134.0,145.0,H,Orthopedics
+2023-02-18,HGB,18.2,g/dL,11.5,17.5,H,Orthopedics
+2023-02-18,WBC,9.76,10^3/uL,4.0,11.0,,ER
+2023-02-18,K,3.34,mmol/L,3.5,5.2,L,Orthopedics
+2023-02-18,Glucose,110.62,mg/dL,70.0,110.0,H,Endocrinology
+2023-02-18,A1c,5.85,%,4.8,6.4,,ER
+2023-02-18,Creatinine,1.49,mg/dL,0.6,1.4,H,ER
+2023-02-18,HCT,31.61,%,35.0,52.0,L,ER
+2023-05-19,Na,145.87,mmol/L,134.0,145.0,H,Endocrinology
+2023-05-19,PLT,161.7,10^3/uL,150.0,400.0,,Primary Care
+2023-05-19,K,5.7,mmol/L,3.5,5.2,H,Endocrinology
+2023-05-19,HGB,18.04,g/dL,11.5,17.5,H,ER
+2023-08-17,WBC,8.23,10^3/uL,4.0,11.0,,Primary Care
+2023-08-17,K,6.09,mmol/L,3.5,5.2,H,Orthopedics
+2023-08-17,PLT,287.8,10^3/uL,150.0,400.0,,Orthopedics
+2023-08-17,A1c,5.14,%,4.8,6.4,,Endocrinology
+2023-08-17,HGB,20.3,g/dL,11.5,17.5,H,ER
+2023-08-17,Na,123.83,mmol/L,134.0,145.0,L,ER
+2023-08-17,Glucose,70.59,mg/dL,70.0,110.0,,Orthopedics
+2023-08-17,Creatinine,1.2,mg/dL,0.6,1.4,,ER
+2023-08-17,HCT,31.24,%,35.0,52.0,L,Primary Care
+2023-11-15,HCT,30.18,%,35.0,52.0,L,Endocrinology
+2023-11-15,A1c,6.81,%,4.8,6.4,H,Primary Care
+2023-11-15,Creatinine,1.26,mg/dL,0.6,1.4,,Orthopedics
+2023-11-15,HGB,11.22,g/dL,11.5,17.5,L,Primary Care
+2023-11-15,K,4.49,mmol/L,3.5,5.2,,Orthopedics
+2023-11-15,PLT,297.71,10^3/uL,150.0,400.0,,Orthopedics
+2023-11-15,Na,121.77,mmol/L,134.0,145.0,L,Orthopedics
+2023-11-15,Glucose,99.2,mg/dL,70.0,110.0,,Endocrinology
+2023-11-15,WBC,8.02,10^3/uL,4.0,11.0,,Orthopedics
+2024-02-13,Creatinine,1.42,mg/dL,0.6,1.4,H,Primary Care
+2024-02-13,PLT,238.05,10^3/uL,150.0,400.0,,Primary Care
+2024-02-13,Na,164.4,mmol/L,134.0,145.0,H,Orthopedics
+2024-02-13,A1c,7.35,%,4.8,6.4,H,Orthopedics
+2024-02-13,WBC,12.12,10^3/uL,4.0,11.0,H,Primary Care
+2024-02-13,Glucose,120.22,mg/dL,70.0,110.0,H,Endocrinology
+2024-02-13,HGB,20.31,g/dL,11.5,17.5,H,Orthopedics
+2024-05-13,HCT,57.77,%,35.0,52.0,H,Primary Care
+2024-05-13,Na,164.45,mmol/L,134.0,145.0,H,Endocrinology
+2024-05-13,Creatinine,1.24,mg/dL,0.6,1.4,,Endocrinology
+2024-05-13,WBC,12.64,10^3/uL,4.0,11.0,H,Endocrinology
+2024-08-11,Glucose,78.19,mg/dL,70.0,110.0,,ER
+2024-08-11,K,4.56,mmol/L,3.5,5.2,,Primary Care
+2024-08-11,PLT,422.37,10^3/uL,150.0,400.0,H,Primary Care
+2024-08-11,HGB,11.39,g/dL,11.5,17.5,L,Primary Care
+2024-08-11,A1c,6.53,%,4.8,6.4,H,Primary Care
+2024-08-11,WBC,12.62,10^3/uL,4.0,11.0,H,Endocrinology
+2024-08-11,Na,116.5,mmol/L,134.0,145.0,L,ER
+2024-11-09,HCT,42.38,%,35.0,52.0,,ER
+2024-11-09,HGB,16.32,g/dL,11.5,17.5,,ER
+2024-11-09,K,5.97,mmol/L,3.5,5.2,H,Endocrinology
+2024-11-09,WBC,12.79,10^3/uL,4.0,11.0,H,Primary Care
+2024-11-09,PLT,140.09,10^3/uL,150.0,400.0,L,Primary Care
+2025-02-07,PLT,396.47,10^3/uL,150.0,400.0,,Orthopedics
+2025-02-07,HCT,32.4,%,35.0,52.0,L,ER
+2025-02-07,WBC,5.18,10^3/uL,4.0,11.0,,ER
+2025-05-08,K,3.05,mmol/L,3.5,5.2,L,Endocrinology
+2025-05-08,PLT,266.98,10^3/uL,150.0,400.0,,Primary Care
+2025-05-08,Creatinine,1.34,mg/dL,0.6,1.4,,ER
+2025-05-08,HCT,38.62,%,35.0,52.0,,Orthopedics
+2025-08-06,A1c,7.55,%,4.8,6.4,H,Endocrinology
+2025-08-06,Na,141.85,mmol/L,134.0,145.0,,ER
+2025-08-06,Creatinine,1.36,mg/dL,0.6,1.4,,Endocrinology
+2025-08-06,HGB,20.76,g/dL,11.5,17.5,H,Endocrinology
+2025-08-06,Glucose,120.07,mg/dL,70.0,110.0,H,ER

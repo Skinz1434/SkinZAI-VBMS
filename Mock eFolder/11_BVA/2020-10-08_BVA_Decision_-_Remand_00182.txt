@@ -1,0 +1,28 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: BVA Decision - Remand
+Doc Date: 2020-10-08
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Partially illegible]
+
+== History ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Clinical note imported via CAPRI; formatting differs from original CPRS. Treatment plan includes conservative therapy and scheduled re-evaluation. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. The Veteran reports persistent symptoms since deployment with periodic flare-ups.
+
+== Findings ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Imaging study impression correlates with clinical tenderness and limited ROM. All names/IDs are synthetic; use for workflow testing only.
+
+== Assessment ==
+All names/IDs are synthetic; use for workflow testing only. Objective exam findings align with the historical complaints and imaging results. Treatment plan includes conservative therapy and scheduled re-evaluation. The Veteran reports persistent symptoms since deployment with periodic flare-ups.
+
+== Plan ==
+The Veteran reports persistent symptoms since deployment with periodic flare-ups. This file simulates OCR text from scanned paper; line breaks may be inconsistent. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Provider recommended physical therapy and activity modification. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== Evidence ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. The Veteran reports persistent symptoms since deployment with periodic flare-ups. All names/IDs are synthetic; use for workflow testing only.
+
+== BVA Findings ==
+
+The case is remanded for additional development, including new medical opinion.

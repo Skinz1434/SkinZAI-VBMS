@@ -1,0 +1,22 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: DA Form 2166-8 NCOER
+Doc Date: 2014-03-02
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== Findings ==
+All names/IDs are synthetic; use for workflow testing only. Clinical note imported via CAPRI; formatting differs from original CPRS. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== Assessment ==
+Provider recommended physical therapy and activity modification. Imaging study impression correlates with clinical tenderness and limited ROM. The Veteran reports persistent symptoms since deployment with periodic flare-ups.
+
+== Plan ==
+The Veteran reports persistent symptoms since deployment with periodic flare-ups. Treatment plan includes conservative therapy and scheduled re-evaluation. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist.
+
+== Evidence ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Provider recommended physical therapy and activity modification. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Imaging study impression correlates with clinical tenderness and limited ROM.

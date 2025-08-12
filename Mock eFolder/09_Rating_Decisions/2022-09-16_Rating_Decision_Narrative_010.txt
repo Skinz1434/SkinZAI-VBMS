@@ -1,0 +1,17 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Rating Decision Narrative
+Doc Date: 2022-09-16
+--- Synthetic content for testing; contains no real PII ---
+
+== Issues Adjudicated ==
+- Right shoulder strain (DC 5201) -> 10% effective 2022-09-16
+- PTSD (DC 9411) -> 50% effective 2022-09-16
+- Migraine headaches (DC 8100) -> 10% effective 2022-09-16
+- Lumbar strain (DC 5237) -> 70% effective 2022-09-16
+- Hearing loss (DC 6100) -> 70% effective 2022-09-16
+- Tinnitus (DC 6260) -> 20% effective 2022-09-16
+
+== Reasons and Bases ==
+Objective exam findings align with the historical complaints and imaging results. All names/IDs are synthetic; use for workflow testing only. Mental health screening positive for trauma-related symptoms; safety plan discussed. Provider recommended physical therapy and activity modification. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Imaging study impression correlates with clinical tenderness and limited ROM. Objective exam findings align with the historical complaints and imaging results. This file simulates OCR text from scanned paper; line breaks may be inconsistent.

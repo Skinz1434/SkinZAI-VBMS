@@ -1,0 +1,27 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: CAPRI Progress Note - Primary Care
+Doc Date: 2017-08-01
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Coffee stain]
+
+== History ==
+Clinical note imported via CAPRI; formatting differs from original CPRS. The Veteran reports persistent symptoms since deployment with periodic flare-ups. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Objective exam findings align with the historical complaints and imaging results. Mental health screening positive for trauma-related symptoms; safety plan discussed.
+
+== Findings ==
+The Veteran reports persistent symptoms since deployment with periodic flare-ups. Clinical note imported via CAPRI; formatting differs from original CPRS. Imaging study impression correlates with clinical tenderness and limited ROM. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Imaging study impression correlates with clinical tenderness and limited ROM. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== Plan ==
+Treatment plan includes conservative therapy and scheduled re-evaluation. Clinical note imported via CAPRI; formatting differs from original CPRS. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== Evidence ==
+Objective exam findings align with the historical complaints and imaging results. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Imaging study impression correlates with clinical tenderness and limited ROM. Imaging study impression correlates with clinical tenderness and limited ROM. Clinical note imported via CAPRI; formatting differs from original CPRS. Clinical note imported via CAPRI; formatting differs from original CPRS.
+
+== VA CPRS (CAPRI) Extract ==
+
+Clinic: MH | Provider: Dr. X | Signed: 2017-09-17
+
+ICD-10: M54.5; CPT: 99213

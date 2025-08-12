@@ -1,0 +1,30 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Rating Decision Code Sheet
+Doc Date: 2023-06-19
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+All names/IDs are synthetic; use for workflow testing only. Clinical note imported via CAPRI; formatting differs from original CPRS. Imaging study impression correlates with clinical tenderness and limited ROM. The Veteran reports persistent symptoms since deployment with periodic flare-ups. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== Findings ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. Clinical note imported via CAPRI; formatting differs from original CPRS. Provider recommended physical therapy and activity modification. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist.
+
+== Assessment ==
+The Veteran reports persistent symptoms since deployment with periodic flare-ups. This file simulates OCR text from scanned paper; line breaks may be inconsistent. All names/IDs are synthetic; use for workflow testing only. The Veteran reports persistent symptoms since deployment with periodic flare-ups.
+
+== Plan ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. Imaging study impression correlates with clinical tenderness and limited ROM. Objective exam findings align with the historical complaints and imaging results. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== Evidence ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. Mental health screening positive for trauma-related symptoms; safety plan discussed. Provider recommended physical therapy and activity modification.
+
+== Rating Analysis ==
+
+Evidence reviewed includes STRs, CAPRI notes, DBQs, imaging, and lay statements.
+
+Decision: Service connection denied
+
+Diagnostic Code: 6100 | Effective Date: 2023-10-14

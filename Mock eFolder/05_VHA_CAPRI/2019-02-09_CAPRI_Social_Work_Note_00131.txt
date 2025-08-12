@@ -1,0 +1,28 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: CAPRI Social Work Note
+Doc Date: 2019-02-09
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+Treatment plan includes conservative therapy and scheduled re-evaluation. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. The Veteran reports persistent symptoms since deployment with periodic flare-ups.
+
+== Findings ==
+Clinical note imported via CAPRI; formatting differs from original CPRS. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. All names/IDs are synthetic; use for workflow testing only. Clinical note imported via CAPRI; formatting differs from original CPRS.
+
+== Assessment ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. The Veteran reports persistent symptoms since deployment with periodic flare-ups. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Objective exam findings align with the historical complaints and imaging results. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. All names/IDs are synthetic; use for workflow testing only.
+
+== Plan ==
+Imaging study impression correlates with clinical tenderness and limited ROM. Imaging study impression correlates with clinical tenderness and limited ROM. Imaging study impression correlates with clinical tenderness and limited ROM.
+
+== Evidence ==
+Provider recommended physical therapy and activity modification. Imaging study impression correlates with clinical tenderness and limited ROM. Objective exam findings align with the historical complaints and imaging results. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Objective exam findings align with the historical complaints and imaging results. Imaging study impression correlates with clinical tenderness and limited ROM.
+
+== VA CPRS (CAPRI) Extract ==
+
+Clinic: Pain Mgmt | Provider: Dr. X | Signed: 2019-03-02
+
+ICD-10: F43.1; CPT: 97110

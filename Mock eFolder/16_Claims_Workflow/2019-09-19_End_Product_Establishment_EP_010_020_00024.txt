@@ -1,0 +1,19 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: End Product Establishment (EP 010, 020)
+Doc Date: 2019-09-19
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+Provider recommended physical therapy and activity modification. Objective exam findings align with the historical complaints and imaging results. Clinical note imported via CAPRI; formatting differs from original CPRS. Imaging study impression correlates with clinical tenderness and limited ROM. Clinical note imported via CAPRI; formatting differs from original CPRS.
+
+== Findings ==
+Clinical note imported via CAPRI; formatting differs from original CPRS. Imaging study impression correlates with clinical tenderness and limited ROM. Clinical note imported via CAPRI; formatting differs from original CPRS. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== Assessment ==
+Objective exam findings align with the historical complaints and imaging results. Mental health screening positive for trauma-related symptoms; safety plan discussed. Imaging study impression correlates with clinical tenderness and limited ROM. Mental health screening positive for trauma-related symptoms; safety plan discussed. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== Evidence ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. Treatment plan includes conservative therapy and scheduled re-evaluation. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist.

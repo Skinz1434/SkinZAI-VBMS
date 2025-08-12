@@ -1,0 +1,22 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Profile (Duty Limitations)
+Doc Date: 2012-05-25
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. Clinical note imported via CAPRI; formatting differs from original CPRS. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Treatment plan includes conservative therapy and scheduled re-evaluation. Imaging study impression correlates with clinical tenderness and limited ROM.
+
+== Findings ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Objective exam findings align with the historical complaints and imaging results. This file simulates OCR text from scanned paper; line breaks may be inconsistent. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. The Veteran reports persistent symptoms since deployment with periodic flare-ups.
+
+== Assessment ==
+Objective exam findings align with the historical complaints and imaging results. Objective exam findings align with the historical complaints and imaging results. Treatment plan includes conservative therapy and scheduled re-evaluation. All names/IDs are synthetic; use for workflow testing only. Treatment plan includes conservative therapy and scheduled re-evaluation. All names/IDs are synthetic; use for workflow testing only.
+
+== Plan ==
+Clinical note imported via CAPRI; formatting differs from original CPRS. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Imaging study impression correlates with clinical tenderness and limited ROM. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Provider recommended physical therapy and activity modification.
+
+== Evidence ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. Provider recommended physical therapy and activity modification. Treatment plan includes conservative therapy and scheduled re-evaluation. Provider recommended physical therapy and activity modification. All names/IDs are synthetic; use for workflow testing only. The Veteran reports persistent symptoms since deployment with periodic flare-ups.

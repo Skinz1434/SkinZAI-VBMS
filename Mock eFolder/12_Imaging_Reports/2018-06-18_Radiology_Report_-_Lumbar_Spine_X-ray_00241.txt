@@ -1,0 +1,24 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Radiology Report - Lumbar Spine X-ray
+Doc Date: 2018-06-18
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Scan skewed]
+
+== Assessment ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. Imaging study impression correlates with clinical tenderness and limited ROM. Treatment plan includes conservative therapy and scheduled re-evaluation. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Objective exam findings align with the historical complaints and imaging results. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== Plan ==
+Imaging study impression correlates with clinical tenderness and limited ROM. Treatment plan includes conservative therapy and scheduled re-evaluation. Objective exam findings align with the historical complaints and imaging results. All names/IDs are synthetic; use for workflow testing only.
+
+== Evidence ==
+Treatment plan includes conservative therapy and scheduled re-evaluation. Treatment plan includes conservative therapy and scheduled re-evaluation. Treatment plan includes conservative therapy and scheduled re-evaluation. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. The Veteran reports persistent symptoms since deployment with periodic flare-ups.
+
+== Imaging Metrics ==
+
+Modality: Ultrasound; Laterality: Left
+
+Impression: Degenerative changes

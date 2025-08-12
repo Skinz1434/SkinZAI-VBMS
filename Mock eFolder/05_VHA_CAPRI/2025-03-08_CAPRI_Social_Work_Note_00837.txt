@@ -1,0 +1,22 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: CAPRI Social Work Note
+Doc Date: 2025-03-08
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+Objective exam findings align with the historical complaints and imaging results. Treatment plan includes conservative therapy and scheduled re-evaluation. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== Findings ==
+The Veteran reports persistent symptoms since deployment with periodic flare-ups. Clinical note imported via CAPRI; formatting differs from original CPRS. Provider recommended physical therapy and activity modification. Treatment plan includes conservative therapy and scheduled re-evaluation. This file simulates OCR text from scanned paper; line breaks may be inconsistent. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== Plan ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. This file simulates OCR text from scanned paper; line breaks may be inconsistent. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Clinical note imported via CAPRI; formatting differs from original CPRS. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== VA CPRS (CAPRI) Extract ==
+
+Clinic: Pain Mgmt | Provider: Dr. X | Signed: 2025-06-09
+
+ICD-10: M25.561; CPT: 99213

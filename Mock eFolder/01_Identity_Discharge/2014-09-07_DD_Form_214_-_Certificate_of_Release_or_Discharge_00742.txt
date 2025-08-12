@@ -1,0 +1,19 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: DD Form 214 - Certificate of Release or Discharge
+Doc Date: 2014-09-07
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+Treatment plan includes conservative therapy and scheduled re-evaluation. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== Assessment ==
+Objective exam findings align with the historical complaints and imaging results. All names/IDs are synthetic; use for workflow testing only. Objective exam findings align with the historical complaints and imaging results. Clinical note imported via CAPRI; formatting differs from original CPRS.
+
+== Plan ==
+Clinical note imported via CAPRI; formatting differs from original CPRS. Objective exam findings align with the historical complaints and imaging results. Mental health screening positive for trauma-related symptoms; safety plan discussed.
+
+== Evidence ==
+All names/IDs are synthetic; use for workflow testing only. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Mental health screening positive for trauma-related symptoms; safety plan discussed. All names/IDs are synthetic; use for workflow testing only. The Veteran reports persistent symptoms since deployment with periodic flare-ups.

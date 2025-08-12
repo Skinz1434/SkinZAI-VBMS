@@ -1,0 +1,22 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: End Product Establishment (EP 010, 020)
+Doc Date: 2016-11-24
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. Provider recommended physical therapy and activity modification. Clinical note imported via CAPRI; formatting differs from original CPRS. Clinical note imported via CAPRI; formatting differs from original CPRS. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist.
+
+== Findings ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. Mental health screening positive for trauma-related symptoms; safety plan discussed. Provider recommended physical therapy and activity modification. Mental health screening positive for trauma-related symptoms; safety plan discussed. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== Assessment ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. All names/IDs are synthetic; use for workflow testing only. Objective exam findings align with the historical complaints and imaging results.
+
+== Plan ==
+Treatment plan includes conservative therapy and scheduled re-evaluation. All names/IDs are synthetic; use for workflow testing only. Objective exam findings align with the historical complaints and imaging results. All names/IDs are synthetic; use for workflow testing only. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== Evidence ==
+Clinical note imported via CAPRI; formatting differs from original CPRS. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Treatment plan includes conservative therapy and scheduled re-evaluation. Clinical note imported via CAPRI; formatting differs from original CPRS.

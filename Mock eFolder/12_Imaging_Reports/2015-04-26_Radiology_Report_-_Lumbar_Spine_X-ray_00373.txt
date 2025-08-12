@@ -1,0 +1,25 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Radiology Report - Lumbar Spine X-ray
+Doc Date: 2015-04-26
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. This file simulates OCR text from scanned paper; line breaks may be inconsistent. All names/IDs are synthetic; use for workflow testing only. Clinical note imported via CAPRI; formatting differs from original CPRS.
+
+== Findings ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. Objective exam findings align with the historical complaints and imaging results. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Imaging study impression correlates with clinical tenderness and limited ROM. This file simulates OCR text from scanned paper; line breaks may be inconsistent. All names/IDs are synthetic; use for workflow testing only.
+
+== Assessment ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Provider recommended physical therapy and activity modification. Provider recommended physical therapy and activity modification. Clinical note imported via CAPRI; formatting differs from original CPRS. This file simulates OCR text from scanned paper; line breaks may be inconsistent. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== Evidence ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. Treatment plan includes conservative therapy and scheduled re-evaluation. This file simulates OCR text from scanned paper; line breaks may be inconsistent. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Objective exam findings align with the historical complaints and imaging results. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== Imaging Metrics ==
+
+Modality: MRI; Laterality: Left
+
+Impression: Disc bulge L4-L5

@@ -1,0 +1,19 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: VA Form 21-8940 - TDIU
+Doc Date: 2016-08-22
+--- Synthetic content for testing; contains no real PII ---
+
+
+== Findings ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Treatment plan includes conservative therapy and scheduled re-evaluation. Clinical note imported via CAPRI; formatting differs from original CPRS. Objective exam findings align with the historical complaints and imaging results. Mental health screening positive for trauma-related symptoms; safety plan discussed.
+
+== Assessment ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Clinical note imported via CAPRI; formatting differs from original CPRS. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Mental health screening positive for trauma-related symptoms; safety plan discussed.
+
+== Plan ==
+Provider recommended physical therapy and activity modification. All names/IDs are synthetic; use for workflow testing only. Provider recommended physical therapy and activity modification.
+
+== Evidence ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. This file simulates OCR text from scanned paper; line breaks may be inconsistent. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Provider recommended physical therapy and activity modification.

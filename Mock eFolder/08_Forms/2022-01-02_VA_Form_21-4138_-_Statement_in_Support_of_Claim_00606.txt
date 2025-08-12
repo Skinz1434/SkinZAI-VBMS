@@ -1,0 +1,24 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: VA Form 21-4138 - Statement in Support of Claim
+Doc Date: 2022-01-02
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Coffee stain]
+
+== History ==
+Provider recommended physical therapy and activity modification. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Provider recommended physical therapy and activity modification. Objective exam findings align with the historical complaints and imaging results. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== Findings ==
+Objective exam findings align with the historical complaints and imaging results. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Mental health screening positive for trauma-related symptoms; safety plan discussed. Mental health screening positive for trauma-related symptoms; safety plan discussed.
+
+== Assessment ==
+Clinical note imported via CAPRI; formatting differs from original CPRS. Provider recommended physical therapy and activity modification. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist.
+
+== Plan ==
+The Veteran reports persistent symptoms since deployment with periodic flare-ups. Clinical note imported via CAPRI; formatting differs from original CPRS. Provider recommended physical therapy and activity modification. Provider recommended physical therapy and activity modification. Provider recommended physical therapy and activity modification. Objective exam findings align with the historical complaints and imaging results.
+
+== Evidence ==
+The Veteran reports persistent symptoms since deployment with periodic flare-ups. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Provider recommended physical therapy and activity modification. Imaging study impression correlates with clinical tenderness and limited ROM. The Veteran reports persistent symptoms since deployment with periodic flare-ups.

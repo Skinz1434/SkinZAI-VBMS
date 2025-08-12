@@ -1,0 +1,26 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: BVA Hearing Transcript (Mock)
+Doc Date: 2024-01-26
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+Objective exam findings align with the historical complaints and imaging results. All names/IDs are synthetic; use for workflow testing only. Treatment plan includes conservative therapy and scheduled re-evaluation. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist.
+
+== Findings ==
+Provider recommended physical therapy and activity modification. Provider recommended physical therapy and activity modification. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. The Veteran reports persistent symptoms since deployment with periodic flare-ups.
+
+== Assessment ==
+All names/IDs are synthetic; use for workflow testing only. All names/IDs are synthetic; use for workflow testing only. Clinical note imported via CAPRI; formatting differs from original CPRS. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== Plan ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== Evidence ==
+Imaging study impression correlates with clinical tenderness and limited ROM. Treatment plan includes conservative therapy and scheduled re-evaluation. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== BVA Findings ==
+
+The case is remanded for additional development, including new medical opinion.

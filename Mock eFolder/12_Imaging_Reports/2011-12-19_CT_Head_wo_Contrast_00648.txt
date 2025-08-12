@@ -1,0 +1,27 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: CT Head w/o Contrast
+Doc Date: 2011-12-19
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Ink bleed-through]
+
+== History ==
+Objective exam findings align with the historical complaints and imaging results. Clinical note imported via CAPRI; formatting differs from original CPRS. Imaging study impression correlates with clinical tenderness and limited ROM.
+
+== Findings ==
+Clinical note imported via CAPRI; formatting differs from original CPRS. All names/IDs are synthetic; use for workflow testing only. Provider recommended physical therapy and activity modification. Objective exam findings align with the historical complaints and imaging results. This file simulates OCR text from scanned paper; line breaks may be inconsistent. All names/IDs are synthetic; use for workflow testing only.
+
+== Assessment ==
+Imaging study impression correlates with clinical tenderness and limited ROM. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Imaging study impression correlates with clinical tenderness and limited ROM.
+
+== Plan ==
+All names/IDs are synthetic; use for workflow testing only. Imaging study impression correlates with clinical tenderness and limited ROM. Provider recommended physical therapy and activity modification.
+
+== Imaging Metrics ==
+
+Modality: X-ray; Laterality: Bilateral
+
+Impression: Degenerative changes

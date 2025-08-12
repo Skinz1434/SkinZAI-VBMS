@@ -1,0 +1,30 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Rating Decision Code Sheet
+Doc Date: 2019-09-13
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. Imaging study impression correlates with clinical tenderness and limited ROM. Imaging study impression correlates with clinical tenderness and limited ROM. Imaging study impression correlates with clinical tenderness and limited ROM. The Veteran reports persistent symptoms since deployment with periodic flare-ups.
+
+== Findings ==
+Imaging study impression correlates with clinical tenderness and limited ROM. Clinical note imported via CAPRI; formatting differs from original CPRS. Mental health screening positive for trauma-related symptoms; safety plan discussed. Mental health screening positive for trauma-related symptoms; safety plan discussed. Treatment plan includes conservative therapy and scheduled re-evaluation. Mental health screening positive for trauma-related symptoms; safety plan discussed.
+
+== Assessment ==
+Treatment plan includes conservative therapy and scheduled re-evaluation. Objective exam findings align with the historical complaints and imaging results. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Imaging study impression correlates with clinical tenderness and limited ROM. Objective exam findings align with the historical complaints and imaging results. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== Plan ==
+The Veteran reports persistent symptoms since deployment with periodic flare-ups. Objective exam findings align with the historical complaints and imaging results. Objective exam findings align with the historical complaints and imaging results. Objective exam findings align with the historical complaints and imaging results.
+
+== Evidence ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Provider recommended physical therapy and activity modification.
+
+== Rating Analysis ==
+
+Evidence reviewed includes STRs, CAPRI notes, DBQs, imaging, and lay statements.
+
+Decision: Service connection denied
+
+Diagnostic Code: 6100 | Effective Date: 2019-10-31

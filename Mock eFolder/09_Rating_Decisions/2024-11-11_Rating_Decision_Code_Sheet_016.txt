@@ -1,0 +1,15 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Rating Decision Code Sheet
+Doc Date: 2024-11-11
+--- Synthetic content for testing; contains no real PII ---
+
+== Issues Adjudicated ==
+- Tinnitus (DC 6260) -> 10% effective 2024-11-11
+- Hearing loss (DC 6100) -> 50% effective 2024-11-11
+- PTSD (DC 9411) -> 40% effective 2024-11-11
+- Migraine headaches (DC 8100) -> 10% effective 2024-11-11
+
+== Reasons and Bases ==
+Objective exam findings align with the historical complaints and imaging results. Mental health screening positive for trauma-related symptoms; safety plan discussed. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Treatment plan includes conservative therapy and scheduled re-evaluation. Provider recommended physical therapy and activity modification. All names/IDs are synthetic; use for workflow testing only. Objective exam findings align with the historical complaints and imaging results. This file simulates OCR text from scanned paper; line breaks may be inconsistent.

@@ -1,0 +1,19 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Award Letter - Monthly Entitlement
+Doc Date: 2021-09-03
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+All names/IDs are synthetic; use for workflow testing only. Objective exam findings align with the historical complaints and imaging results. Provider recommended physical therapy and activity modification. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Mental health screening positive for trauma-related symptoms; safety plan discussed. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist.
+
+== Findings ==
+Objective exam findings align with the historical complaints and imaging results. Treatment plan includes conservative therapy and scheduled re-evaluation. Clinical note imported via CAPRI; formatting differs from original CPRS. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Treatment plan includes conservative therapy and scheduled re-evaluation. The Veteran reports persistent symptoms since deployment with periodic flare-ups.
+
+== Plan ==
+Objective exam findings align with the historical complaints and imaging results. Provider recommended physical therapy and activity modification. Mental health screening positive for trauma-related symptoms; safety plan discussed.
+
+== Evidence ==
+All names/IDs are synthetic; use for workflow testing only. All names/IDs are synthetic; use for workflow testing only. Provider recommended physical therapy and activity modification.

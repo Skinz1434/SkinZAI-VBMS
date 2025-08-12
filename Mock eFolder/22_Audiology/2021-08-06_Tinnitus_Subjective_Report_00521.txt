@@ -1,0 +1,24 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Tinnitus Subjective Report
+Doc Date: 2021-08-06
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Scan skewed]
+
+== History ==
+Clinical note imported via CAPRI; formatting differs from original CPRS. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Objective exam findings align with the historical complaints and imaging results. Clinical note imported via CAPRI; formatting differs from original CPRS. All names/IDs are synthetic; use for workflow testing only. Clinical note imported via CAPRI; formatting differs from original CPRS.
+
+== Findings ==
+Treatment plan includes conservative therapy and scheduled re-evaluation. Imaging study impression correlates with clinical tenderness and limited ROM. Mental health screening positive for trauma-related symptoms; safety plan discussed. Provider recommended physical therapy and activity modification.
+
+== Assessment ==
+Provider recommended physical therapy and activity modification. Imaging study impression correlates with clinical tenderness and limited ROM. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== Plan ==
+Imaging study impression correlates with clinical tenderness and limited ROM. Imaging study impression correlates with clinical tenderness and limited ROM. Treatment plan includes conservative therapy and scheduled re-evaluation. All names/IDs are synthetic; use for workflow testing only.
+
+== Evidence ==
+Objective exam findings align with the historical complaints and imaging results. The Veteran reports persistent symptoms since deployment with periodic flare-ups. This file simulates OCR text from scanned paper; line breaks may be inconsistent.

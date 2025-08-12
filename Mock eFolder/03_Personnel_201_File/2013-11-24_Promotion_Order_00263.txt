@@ -1,0 +1,22 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Promotion Order
+Doc Date: 2013-11-24
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+The Veteran reports persistent symptoms since deployment with periodic flare-ups. All names/IDs are synthetic; use for workflow testing only. All names/IDs are synthetic; use for workflow testing only. Provider recommended physical therapy and activity modification.
+
+== Findings ==
+Clinical note imported via CAPRI; formatting differs from original CPRS. Objective exam findings align with the historical complaints and imaging results. The Veteran reports persistent symptoms since deployment with periodic flare-ups. The Veteran reports persistent symptoms since deployment with periodic flare-ups.
+
+== Assessment ==
+The Veteran reports persistent symptoms since deployment with periodic flare-ups. Objective exam findings align with the historical complaints and imaging results. Clinical note imported via CAPRI; formatting differs from original CPRS. All names/IDs are synthetic; use for workflow testing only. All names/IDs are synthetic; use for workflow testing only.
+
+== Plan ==
+Treatment plan includes conservative therapy and scheduled re-evaluation. All names/IDs are synthetic; use for workflow testing only. Imaging study impression correlates with clinical tenderness and limited ROM. Objective exam findings align with the historical complaints and imaging results. Imaging study impression correlates with clinical tenderness and limited ROM. Provider recommended physical therapy and activity modification.
+
+== Evidence ==
+Imaging study impression correlates with clinical tenderness and limited ROM. Objective exam findings align with the historical complaints and imaging results. Clinical note imported via CAPRI; formatting differs from original CPRS. Mental health screening positive for trauma-related symptoms; safety plan discussed.

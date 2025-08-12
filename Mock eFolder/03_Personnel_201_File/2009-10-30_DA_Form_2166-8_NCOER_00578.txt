@@ -1,0 +1,19 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: DA Form 2166-8 NCOER
+Doc Date: 2009-10-30
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+Treatment plan includes conservative therapy and scheduled re-evaluation. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Objective exam findings align with the historical complaints and imaging results. Objective exam findings align with the historical complaints and imaging results.
+
+== Findings ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Imaging study impression correlates with clinical tenderness and limited ROM. Mental health screening positive for trauma-related symptoms; safety plan discussed.
+
+== Plan ==
+Objective exam findings align with the historical complaints and imaging results. Imaging study impression correlates with clinical tenderness and limited ROM. Provider recommended physical therapy and activity modification. Treatment plan includes conservative therapy and scheduled re-evaluation. All names/IDs are synthetic; use for workflow testing only.
+
+== Evidence ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Treatment plan includes conservative therapy and scheduled re-evaluation.

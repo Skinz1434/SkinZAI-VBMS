@@ -1,0 +1,15 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Rating Decision Narrative
+Doc Date: 2024-06-02
+--- Synthetic content for testing; contains no real PII ---
+
+== Issues Adjudicated ==
+- Migraine headaches (DC 8100) -> 10% effective 2024-06-02
+- Left knee meniscal tear (DC 5258) -> 50% effective 2024-06-02
+- Lumbar strain (DC 5237) -> 50% effective 2024-06-02
+- Tinnitus (DC 6260) -> 50% effective 2024-06-02
+
+== Reasons and Bases ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Provider recommended physical therapy and activity modification. The Veteran reports persistent symptoms since deployment with periodic flare-ups. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Mental health screening positive for trauma-related symptoms; safety plan discussed. Clinical note imported via CAPRI; formatting differs from original CPRS. Treatment plan includes conservative therapy and scheduled re-evaluation.

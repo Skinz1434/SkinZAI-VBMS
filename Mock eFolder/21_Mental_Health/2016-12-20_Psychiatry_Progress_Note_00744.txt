@@ -1,0 +1,21 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Psychiatry Progress Note
+Doc Date: 2016-12-20
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Partially illegible]
+
+== Assessment ==
+Imaging study impression correlates with clinical tenderness and limited ROM. The Veteran reports persistent symptoms since deployment with periodic flare-ups. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Imaging study impression correlates with clinical tenderness and limited ROM.
+
+== Plan ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. Imaging study impression correlates with clinical tenderness and limited ROM. Treatment plan includes conservative therapy and scheduled re-evaluation. Mental health screening positive for trauma-related symptoms; safety plan discussed.
+
+== VA CPRS (CAPRI) Extract ==
+
+Clinic: MH | Provider: Dr. X | Signed: 2017-03-15
+
+ICD-10: G47.00; CPT: 97110

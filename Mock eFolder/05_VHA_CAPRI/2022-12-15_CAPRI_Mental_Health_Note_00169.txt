@@ -1,0 +1,28 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: CAPRI Mental Health Note
+Doc Date: 2022-12-15
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+Clinical note imported via CAPRI; formatting differs from original CPRS. Clinical note imported via CAPRI; formatting differs from original CPRS. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. This file simulates OCR text from scanned paper; line breaks may be inconsistent. All names/IDs are synthetic; use for workflow testing only.
+
+== Findings ==
+Provider recommended physical therapy and activity modification. The Veteran reports persistent symptoms since deployment with periodic flare-ups. All names/IDs are synthetic; use for workflow testing only. All names/IDs are synthetic; use for workflow testing only. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist.
+
+== Assessment ==
+Clinical note imported via CAPRI; formatting differs from original CPRS. All names/IDs are synthetic; use for workflow testing only. All names/IDs are synthetic; use for workflow testing only. Imaging study impression correlates with clinical tenderness and limited ROM. Objective exam findings align with the historical complaints and imaging results.
+
+== Plan ==
+Imaging study impression correlates with clinical tenderness and limited ROM. Objective exam findings align with the historical complaints and imaging results. All names/IDs are synthetic; use for workflow testing only. Clinical note imported via CAPRI; formatting differs from original CPRS.
+
+== Evidence ==
+The Veteran reports persistent symptoms since deployment with periodic flare-ups. Treatment plan includes conservative therapy and scheduled re-evaluation. All names/IDs are synthetic; use for workflow testing only. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Imaging study impression correlates with clinical tenderness and limited ROM. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== VA CPRS (CAPRI) Extract ==
+
+Clinic: Pain Mgmt | Provider: Dr. X | Signed: 2023-01-23
+
+ICD-10: F43.1; CPT: 92557

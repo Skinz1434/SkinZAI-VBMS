@@ -1,0 +1,28 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: CAPRI Mental Health Note
+Doc Date: 2021-01-10
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+All names/IDs are synthetic; use for workflow testing only. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Mental health screening positive for trauma-related symptoms; safety plan discussed. Mental health screening positive for trauma-related symptoms; safety plan discussed. Mental health screening positive for trauma-related symptoms; safety plan discussed. All names/IDs are synthetic; use for workflow testing only.
+
+== Findings ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. Imaging study impression correlates with clinical tenderness and limited ROM. This file simulates OCR text from scanned paper; line breaks may be inconsistent. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Clinical note imported via CAPRI; formatting differs from original CPRS. Imaging study impression correlates with clinical tenderness and limited ROM.
+
+== Assessment ==
+All names/IDs are synthetic; use for workflow testing only. Objective exam findings align with the historical complaints and imaging results. Objective exam findings align with the historical complaints and imaging results.
+
+== Plan ==
+Provider recommended physical therapy and activity modification. The Veteran reports persistent symptoms since deployment with periodic flare-ups. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Objective exam findings align with the historical complaints and imaging results. The Veteran reports persistent symptoms since deployment with periodic flare-ups.
+
+== Evidence ==
+Provider recommended physical therapy and activity modification. Objective exam findings align with the historical complaints and imaging results. Clinical note imported via CAPRI; formatting differs from original CPRS. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Imaging study impression correlates with clinical tenderness and limited ROM.
+
+== VA CPRS (CAPRI) Extract ==
+
+Clinic: Primary Care | Provider: Dr. X | Signed: 2021-04-20
+
+ICD-10: H93.19; CPT: 73610

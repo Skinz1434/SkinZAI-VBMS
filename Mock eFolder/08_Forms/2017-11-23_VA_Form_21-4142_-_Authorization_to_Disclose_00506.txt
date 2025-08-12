@@ -1,0 +1,21 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: VA Form 21-4142 - Authorization to Disclose
+Doc Date: 2017-11-23
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Staple shadow]
+
+== History ==
+All names/IDs are synthetic; use for workflow testing only. Objective exam findings align with the historical complaints and imaging results. Treatment plan includes conservative therapy and scheduled re-evaluation. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== Findings ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. Imaging study impression correlates with clinical tenderness and limited ROM. Provider recommended physical therapy and activity modification. Mental health screening positive for trauma-related symptoms; safety plan discussed. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== Plan ==
+Treatment plan includes conservative therapy and scheduled re-evaluation. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Mental health screening positive for trauma-related symptoms; safety plan discussed. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== Evidence ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. All names/IDs are synthetic; use for workflow testing only. Objective exam findings align with the historical complaints and imaging results. Provider recommended physical therapy and activity modification. Mental health screening positive for trauma-related symptoms; safety plan discussed.

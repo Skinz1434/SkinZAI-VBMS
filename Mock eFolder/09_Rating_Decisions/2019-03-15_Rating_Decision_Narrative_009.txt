@@ -1,0 +1,16 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Rating Decision Narrative
+Doc Date: 2019-03-15
+--- Synthetic content for testing; contains no real PII ---
+
+== Issues Adjudicated ==
+- Tinnitus (DC 6260) -> 70% effective 2019-03-15
+- Hearing loss (DC 6100) -> 0% effective 2019-03-15
+- Migraine headaches (DC 8100) -> 70% effective 2019-03-15
+- Left knee meniscal tear (DC 5258) -> 30% effective 2019-03-15
+- Right shoulder strain (DC 5201) -> 20% effective 2019-03-15
+
+== Reasons and Bases ==
+Provider recommended physical therapy and activity modification. Objective exam findings align with the historical complaints and imaging results. Objective exam findings align with the historical complaints and imaging results. Provider recommended physical therapy and activity modification. This file simulates OCR text from scanned paper; line breaks may be inconsistent. All names/IDs are synthetic; use for workflow testing only. Imaging study impression correlates with clinical tenderness and limited ROM. Clinical note imported via CAPRI; formatting differs from original CPRS.

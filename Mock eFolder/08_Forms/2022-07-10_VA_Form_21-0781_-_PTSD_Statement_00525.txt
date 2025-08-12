@@ -1,0 +1,19 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: VA Form 21-0781 - PTSD Statement
+Doc Date: 2022-07-10
+--- Synthetic content for testing; contains no real PII ---
+
+
+== Findings ==
+Objective exam findings align with the historical complaints and imaging results. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Imaging study impression correlates with clinical tenderness and limited ROM.
+
+== Assessment ==
+Objective exam findings align with the historical complaints and imaging results. Provider recommended physical therapy and activity modification. Imaging study impression correlates with clinical tenderness and limited ROM.
+
+== Plan ==
+Treatment plan includes conservative therapy and scheduled re-evaluation. Clinical note imported via CAPRI; formatting differs from original CPRS. Provider recommended physical therapy and activity modification.
+
+== Evidence ==
+Clinical note imported via CAPRI; formatting differs from original CPRS. Mental health screening positive for trauma-related symptoms; safety plan discussed. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Imaging study impression correlates with clinical tenderness and limited ROM. Imaging study impression correlates with clinical tenderness and limited ROM. Objective exam findings align with the historical complaints and imaging results.

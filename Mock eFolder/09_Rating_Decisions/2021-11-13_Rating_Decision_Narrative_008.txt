@@ -1,0 +1,17 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Rating Decision Narrative
+Doc Date: 2021-11-13
+--- Synthetic content for testing; contains no real PII ---
+
+== Issues Adjudicated ==
+- Left knee meniscal tear (DC 5258) -> 50% effective 2021-11-13
+- Migraine headaches (DC 8100) -> 50% effective 2021-11-13
+- PTSD (DC 9411) -> 70% effective 2021-11-13
+- Right shoulder strain (DC 5201) -> 20% effective 2021-11-13
+- Lumbar strain (DC 5237) -> 0% effective 2021-11-13
+- Tinnitus (DC 6260) -> 50% effective 2021-11-13
+
+== Reasons and Bases ==
+Clinical note imported via CAPRI; formatting differs from original CPRS. Objective exam findings align with the historical complaints and imaging results. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Clinical note imported via CAPRI; formatting differs from original CPRS. Treatment plan includes conservative therapy and scheduled re-evaluation. Objective exam findings align with the historical complaints and imaging results.

@@ -1,0 +1,13 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: BVA Hearing Transcript (Mock)
+Doc Date: 2020-10-21
+--- Synthetic content for testing; contains no real PII ---
+
+== ORDER/REMAND ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. Provider recommended physical therapy and activity modification. Clinical note imported via CAPRI; formatting differs from original CPRS. Imaging study impression correlates with clinical tenderness and limited ROM. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Provider recommended physical therapy and activity modification. Provider recommended physical therapy and activity modification. Objective exam findings align with the historical complaints and imaging results.
+== INSTRUCTIONS ==
+- Obtain addendum medical opinion
+- Request outstanding VA treatment records
+- Readjudicate and issue SSOC

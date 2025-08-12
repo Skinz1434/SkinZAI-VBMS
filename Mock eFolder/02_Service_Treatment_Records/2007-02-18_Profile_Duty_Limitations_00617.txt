@@ -1,0 +1,22 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Profile (Duty Limitations)
+Doc Date: 2007-02-18
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+Imaging study impression correlates with clinical tenderness and limited ROM. Objective exam findings align with the historical complaints and imaging results. The Veteran reports persistent symptoms since deployment with periodic flare-ups. The Veteran reports persistent symptoms since deployment with periodic flare-ups.
+
+== Findings ==
+Treatment plan includes conservative therapy and scheduled re-evaluation. All names/IDs are synthetic; use for workflow testing only. Imaging study impression correlates with clinical tenderness and limited ROM. Imaging study impression correlates with clinical tenderness and limited ROM. Clinical note imported via CAPRI; formatting differs from original CPRS.
+
+== Assessment ==
+Provider recommended physical therapy and activity modification. Objective exam findings align with the historical complaints and imaging results. Provider recommended physical therapy and activity modification.
+
+== Plan ==
+Objective exam findings align with the historical complaints and imaging results. All names/IDs are synthetic; use for workflow testing only. Objective exam findings align with the historical complaints and imaging results.
+
+== Evidence ==
+Objective exam findings align with the historical complaints and imaging results. All names/IDs are synthetic; use for workflow testing only. Provider recommended physical therapy and activity modification. Provider recommended physical therapy and activity modification. Mental health screening positive for trauma-related symptoms; safety plan discussed. The Veteran reports persistent symptoms since deployment with periodic flare-ups.

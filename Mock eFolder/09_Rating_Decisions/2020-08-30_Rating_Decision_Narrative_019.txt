@@ -1,0 +1,17 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Rating Decision Narrative
+Doc Date: 2020-08-30
+--- Synthetic content for testing; contains no real PII ---
+
+== Issues Adjudicated ==
+- PTSD (DC 9411) -> 40% effective 2020-08-30
+- Left knee meniscal tear (DC 5258) -> 70% effective 2020-08-30
+- Tinnitus (DC 6260) -> 40% effective 2020-08-30
+- Migraine headaches (DC 8100) -> 30% effective 2020-08-30
+- Right shoulder strain (DC 5201) -> 20% effective 2020-08-30
+- Lumbar strain (DC 5237) -> 40% effective 2020-08-30
+
+== Reasons and Bases ==
+All names/IDs are synthetic; use for workflow testing only. All names/IDs are synthetic; use for workflow testing only. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Treatment plan includes conservative therapy and scheduled re-evaluation. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Objective exam findings align with the historical complaints and imaging results. This file simulates OCR text from scanned paper; line breaks may be inconsistent. The Veteran reports persistent symptoms since deployment with periodic flare-ups.

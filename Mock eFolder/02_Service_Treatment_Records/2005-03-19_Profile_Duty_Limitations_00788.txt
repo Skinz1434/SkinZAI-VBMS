@@ -1,0 +1,21 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Profile (Duty Limitations)
+Doc Date: 2005-03-19
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Scan skewed]
+
+== Findings ==
+Objective exam findings align with the historical complaints and imaging results. Clinical note imported via CAPRI; formatting differs from original CPRS. Clinical note imported via CAPRI; formatting differs from original CPRS. Imaging study impression correlates with clinical tenderness and limited ROM. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== Assessment ==
+This file simulates OCR text from scanned paper; line breaks may be inconsistent. Imaging study impression correlates with clinical tenderness and limited ROM. Objective exam findings align with the historical complaints and imaging results.
+
+== Plan ==
+All names/IDs are synthetic; use for workflow testing only. Provider recommended physical therapy and activity modification. Treatment plan includes conservative therapy and scheduled re-evaluation.
+
+== Evidence ==
+Objective exam findings align with the historical complaints and imaging results. All names/IDs are synthetic; use for workflow testing only. Objective exam findings align with the historical complaints and imaging results. Provider recommended physical therapy and activity modification.

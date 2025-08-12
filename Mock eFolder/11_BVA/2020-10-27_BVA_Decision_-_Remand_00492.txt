@@ -1,0 +1,28 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: BVA Decision - Remand
+Doc Date: 2020-10-27
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Fold crease]
+
+== History ==
+Imaging study impression correlates with clinical tenderness and limited ROM. Provider recommended physical therapy and activity modification. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Provider recommended physical therapy and activity modification.
+
+== Findings ==
+All names/IDs are synthetic; use for workflow testing only. Provider recommended physical therapy and activity modification. Objective exam findings align with the historical complaints and imaging results. Objective exam findings align with the historical complaints and imaging results. Imaging study impression correlates with clinical tenderness and limited ROM. The Veteran reports persistent symptoms since deployment with periodic flare-ups.
+
+== Assessment ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. All names/IDs are synthetic; use for workflow testing only. Objective exam findings align with the historical complaints and imaging results.
+
+== Plan ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. Treatment plan includes conservative therapy and scheduled re-evaluation. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Provider recommended physical therapy and activity modification. Imaging study impression correlates with clinical tenderness and limited ROM. This file simulates OCR text from scanned paper; line breaks may be inconsistent.
+
+== Evidence ==
+Clinical note imported via CAPRI; formatting differs from original CPRS. Treatment plan includes conservative therapy and scheduled re-evaluation. Mental health screening positive for trauma-related symptoms; safety plan discussed. All names/IDs are synthetic; use for workflow testing only.
+
+== BVA Findings ==
+
+The case is remanded for additional development, including new medical opinion.

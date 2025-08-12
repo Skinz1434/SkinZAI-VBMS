@@ -1,0 +1,18 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: DD Form 214 - Certificate of Release or Discharge
+Doc Date: 2015-01-24
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Ink bleed-through]
+
+== History ==
+Imaging study impression correlates with clinical tenderness and limited ROM. Mental health screening positive for trauma-related symptoms; safety plan discussed. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Imaging study impression correlates with clinical tenderness and limited ROM.
+
+== Findings ==
+Imaging study impression correlates with clinical tenderness and limited ROM. Clinical note imported via CAPRI; formatting differs from original CPRS. All names/IDs are synthetic; use for workflow testing only. Imaging study impression correlates with clinical tenderness and limited ROM. Provider recommended physical therapy and activity modification. All names/IDs are synthetic; use for workflow testing only.
+
+== Evidence ==
+Objective exam findings align with the historical complaints and imaging results. Clinical note imported via CAPRI; formatting differs from original CPRS. Objective exam findings align with the historical complaints and imaging results. Provider recommended physical therapy and activity modification.

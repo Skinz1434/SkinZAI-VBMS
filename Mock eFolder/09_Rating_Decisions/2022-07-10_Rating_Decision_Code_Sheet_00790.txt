@@ -1,0 +1,26 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Rating Decision Code Sheet
+Doc Date: 2022-07-10
+--- Synthetic content for testing; contains no real PII ---
+
+
+[Low-contrast text]
+
+== Findings ==
+Clinical note imported via CAPRI; formatting differs from original CPRS. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Objective exam findings align with the historical complaints and imaging results. Provider recommended physical therapy and activity modification. Imaging study impression correlates with clinical tenderness and limited ROM. Provider recommended physical therapy and activity modification.
+
+== Assessment ==
+Clinical note imported via CAPRI; formatting differs from original CPRS. Provider recommended physical therapy and activity modification. Clinical note imported via CAPRI; formatting differs from original CPRS.
+
+== Plan ==
+Objective exam findings align with the historical complaints and imaging results. Objective exam findings align with the historical complaints and imaging results. Provider recommended physical therapy and activity modification.
+
+== Rating Analysis ==
+
+Evidence reviewed includes STRs, CAPRI notes, DBQs, imaging, and lay statements.
+
+Decision: Service connection denied
+
+Diagnostic Code: 5237 | Effective Date: 2022-10-24

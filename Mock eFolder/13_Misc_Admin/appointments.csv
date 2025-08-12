@@ -1,0 +1,89 @@
+date,clinic,status,location,provider
+2016-02-26,Audiology,Completed,Shreveport CBOC,MD
+2016-03-25,Lab,Completed,Overton Brooks VAMC,Psychologist
+2016-04-22,Lab,Scheduled,Shreveport CBOC,MD
+2016-05-20,Audiology,Completed,Monroe CBOC,MD
+2016-06-17,Lab,No-Show,Monroe CBOC,MD
+2016-07-15,Ortho,Scheduled,Shreveport CBOC,Psychologist
+2016-08-12,Lab,Scheduled,Overton Brooks VAMC,Psychologist
+2016-10-07,PT,Cancelled,Overton Brooks VAMC,PA
+2016-11-04,Primary Care,Cancelled,Overton Brooks VAMC,Audiologist
+2016-12-02,Audiology,Completed,Monroe CBOC,MD
+2016-12-30,Mental Health,Completed,Shreveport CBOC,Psychologist
+2017-01-27,Mental Health,No-Show,Overton Brooks VAMC,PA
+2017-03-24,Audiology,Cancelled,Overton Brooks VAMC,NP
+2017-05-19,Audiology,Completed,Shreveport CBOC,MD
+2017-08-11,Ortho,Completed,Overton Brooks VAMC,PA
+2017-09-08,PT,Scheduled,Monroe CBOC,NP
+2017-10-06,Audiology,Completed,Shreveport CBOC,PA
+2017-11-03,Ortho,Scheduled,Monroe CBOC,PA
+2017-12-01,PT,Scheduled,Monroe CBOC,PA
+2018-01-26,Mental Health,Cancelled,Overton Brooks VAMC,Psychologist
+2018-03-23,Lab,Scheduled,Shreveport CBOC,MD
+2018-04-20,Mental Health,Cancelled,Overton Brooks VAMC,PA
+2018-05-18,Mental Health,Cancelled,Monroe CBOC,NP
+2018-06-15,Primary Care,No-Show,Monroe CBOC,PA
+2018-08-10,Primary Care,Completed,Monroe CBOC,MD
+2018-09-07,Lab,Completed,Overton Brooks VAMC,MD
+2018-10-05,PT,Completed,Monroe CBOC,PA
+2019-03-22,Primary Care,Cancelled,Overton Brooks VAMC,NP
+2019-05-17,Mental Health,No-Show,Shreveport CBOC,PA
+2019-07-12,Lab,No-Show,Overton Brooks VAMC,MD
+2019-08-09,PT,Cancelled,Monroe CBOC,MD
+2019-09-06,Audiology,Cancelled,Overton Brooks VAMC,MD
+2019-10-04,Audiology,Scheduled,Monroe CBOC,NP
+2019-11-29,Lab,No-Show,Monroe CBOC,NP
+2019-12-27,Audiology,Scheduled,Overton Brooks VAMC,Audiologist
+2020-02-21,Audiology,Cancelled,Shreveport CBOC,MD
+2020-04-17,Audiology,Scheduled,Overton Brooks VAMC,NP
+2020-05-15,Lab,Scheduled,Monroe CBOC,Psychologist
+2020-06-12,Mental Health,Scheduled,Monroe CBOC,MD
+2020-07-10,PT,Cancelled,Overton Brooks VAMC,Psychologist
+2020-09-04,Lab,Cancelled,Shreveport CBOC,NP
+2020-10-02,Lab,Completed,Overton Brooks VAMC,Audiologist
+2020-10-30,Lab,Completed,Shreveport CBOC,MD
+2020-11-27,Mental Health,Scheduled,Monroe CBOC,PA
+2020-12-25,Mental Health,No-Show,Monroe CBOC,Audiologist
+2021-01-22,Mental Health,Cancelled,Monroe CBOC,PA
+2021-02-19,PT,Cancelled,Overton Brooks VAMC,PA
+2021-04-16,Lab,Completed,Overton Brooks VAMC,MD
+2021-05-14,Audiology,Completed,Shreveport CBOC,MD
+2021-08-06,Lab,Completed,Overton Brooks VAMC,NP
+2021-09-03,PT,Scheduled,Overton Brooks VAMC,NP
+2021-10-29,Mental Health,Cancelled,Shreveport CBOC,MD
+2021-11-26,Ortho,Completed,Monroe CBOC,Psychologist
+2022-01-21,Mental Health,Scheduled,Overton Brooks VAMC,MD
+2022-02-18,Audiology,Scheduled,Overton Brooks VAMC,MD
+2022-03-18,Audiology,Cancelled,Monroe CBOC,NP
+2022-04-15,Mental Health,Scheduled,Monroe CBOC,Psychologist
+2022-06-10,Primary Care,Scheduled,Shreveport CBOC,NP
+2022-07-08,PT,Cancelled,Overton Brooks VAMC,MD
+2022-08-05,Lab,Cancelled,Overton Brooks VAMC,PA
+2022-09-02,Mental Health,Completed,Overton Brooks VAMC,Psychologist
+2022-09-30,Audiology,Cancelled,Shreveport CBOC,PA
+2022-10-28,Mental Health,Scheduled,Monroe CBOC,MD
+2022-11-25,Lab,Scheduled,Shreveport CBOC,MD
+2022-12-23,Mental Health,Completed,Monroe CBOC,PA
+2023-04-14,PT,Scheduled,Monroe CBOC,NP
+2023-05-12,Audiology,Scheduled,Shreveport CBOC,MD
+2023-08-04,PT,Completed,Shreveport CBOC,NP
+2023-09-01,Mental Health,Completed,Shreveport CBOC,PA
+2023-09-29,Ortho,Cancelled,Shreveport CBOC,PA
+2023-10-27,Lab,Cancelled,Overton Brooks VAMC,NP
+2023-11-24,Primary Care,Cancelled,Monroe CBOC,MD
+2024-03-15,Lab,No-Show,Overton Brooks VAMC,Audiologist
+2024-05-10,Audiology,Completed,Monroe CBOC,MD
+2024-06-07,Mental Health,No-Show,Shreveport CBOC,Audiologist
+2024-07-05,Ortho,Scheduled,Shreveport CBOC,Audiologist
+2024-08-02,Primary Care,Cancelled,Shreveport CBOC,Psychologist
+2024-09-27,Mental Health,Scheduled,Overton Brooks VAMC,Audiologist
+2024-10-25,Primary Care,Completed,Shreveport CBOC,PA
+2024-11-22,Mental Health,Completed,Overton Brooks VAMC,MD
+2024-12-20,Primary Care,No-Show,Overton Brooks VAMC,PA
+2025-01-17,Lab,Cancelled,Monroe CBOC,Psychologist
+2025-02-14,Lab,Cancelled,Overton Brooks VAMC,NP
+2025-03-14,Audiology,Cancelled,Overton Brooks VAMC,MD
+2025-04-11,Mental Health,No-Show,Shreveport CBOC,NP
+2025-05-09,PT,Completed,Shreveport CBOC,NP
+2025-06-06,PT,Scheduled,Shreveport CBOC,MD
+2025-07-04,Lab,Scheduled,Shreveport CBOC,Audiologist

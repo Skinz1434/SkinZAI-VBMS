@@ -1,0 +1,20 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Statement of the Case (SOC)
+Doc Date: 2022-01-17
+--- Synthetic content for testing; contains no real PII ---
+
+
+== Assessment ==
+All names/IDs are synthetic; use for workflow testing only. Objective exam findings align with the historical complaints and imaging results. Mental health screening positive for trauma-related symptoms; safety plan discussed. The Veteran reports persistent symptoms since deployment with periodic flare-ups.
+
+== Plan ==
+Objective exam findings align with the historical complaints and imaging results. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Provider recommended physical therapy and activity modification. Provider recommended physical therapy and activity modification. Provider recommended physical therapy and activity modification. Mental health screening positive for trauma-related symptoms; safety plan discussed.
+
+== Evidence ==
+Provider recommended physical therapy and activity modification. Objective exam findings align with the historical complaints and imaging results. Objective exam findings align with the historical complaints and imaging results. This file simulates OCR text from scanned paper; line breaks may be inconsistent. This file simulates OCR text from scanned paper; line breaks may be inconsistent. The Veteran reports persistent symptoms since deployment with periodic flare-ups.
+
+== SOC Discussion ==
+
+All applicable statutes and regulations considered. Benefit of the doubt discussed.

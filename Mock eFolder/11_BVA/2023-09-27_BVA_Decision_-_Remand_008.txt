@@ -1,0 +1,13 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: BVA Decision - Remand
+Doc Date: 2023-09-27
+--- Synthetic content for testing; contains no real PII ---
+
+== ORDER/REMAND ==
+Provider recommended physical therapy and activity modification. The Veteran reports persistent symptoms since deployment with periodic flare-ups. Treatment plan includes conservative therapy and scheduled re-evaluation. Provider recommended physical therapy and activity modification. Objective exam findings align with the historical complaints and imaging results. Treatment plan includes conservative therapy and scheduled re-evaluation. Treatment plan includes conservative therapy and scheduled re-evaluation. Provider recommended physical therapy and activity modification.
+== INSTRUCTIONS ==
+- Obtain addendum medical opinion
+- Request outstanding VA treatment records
+- Readjudicate and issue SSOC

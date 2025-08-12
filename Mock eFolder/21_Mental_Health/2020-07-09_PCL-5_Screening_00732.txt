@@ -1,0 +1,28 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: PCL-5 Screening
+Doc Date: 2020-07-09
+--- Synthetic content for testing; contains no real PII ---
+
+
+== History ==
+Provider recommended physical therapy and activity modification. Provider recommended physical therapy and activity modification. Imaging study impression correlates with clinical tenderness and limited ROM.
+
+== Findings ==
+Objective exam findings align with the historical complaints and imaging results. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. Treatment plan includes conservative therapy and scheduled re-evaluation. Imaging study impression correlates with clinical tenderness and limited ROM.
+
+== Assessment ==
+Imaging study impression correlates with clinical tenderness and limited ROM. Treatment plan includes conservative therapy and scheduled re-evaluation. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. All names/IDs are synthetic; use for workflow testing only.
+
+== Plan ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. Objective exam findings align with the historical complaints and imaging results. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Clinical note imported via CAPRI; formatting differs from original CPRS.
+
+== Evidence ==
+Imaging study impression correlates with clinical tenderness and limited ROM. Provider recommended physical therapy and activity modification. Objective exam findings align with the historical complaints and imaging results. Treatment plan includes conservative therapy and scheduled re-evaluation. Imaging study impression correlates with clinical tenderness and limited ROM. Clinical note imported via CAPRI; formatting differs from original CPRS.
+
+== VA CPRS (CAPRI) Extract ==
+
+Clinic: Ortho | Provider: Dr. X | Signed: 2020-08-29
+
+ICD-10: H93.19; CPT: 92557

@@ -1,0 +1,17 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Rating Decision Code Sheet
+Doc Date: 2022-12-29
+--- Synthetic content for testing; contains no real PII ---
+
+== Issues Adjudicated ==
+- PTSD (DC 9411) -> 50% effective 2022-12-29
+- Left knee meniscal tear (DC 5258) -> 20% effective 2022-12-29
+- Right shoulder strain (DC 5201) -> 70% effective 2022-12-29
+- Hearing loss (DC 6100) -> 20% effective 2022-12-29
+- Lumbar strain (DC 5237) -> 70% effective 2022-12-29
+- Tinnitus (DC 6260) -> 50% effective 2022-12-29
+
+== Reasons and Bases ==
+All names/IDs are synthetic; use for workflow testing only. This file simulates OCR text from scanned paper; line breaks may be inconsistent. All names/IDs are synthetic; use for workflow testing only. Objective exam findings align with the historical complaints and imaging results. This file simulates OCR text from scanned paper; line breaks may be inconsistent. All names/IDs are synthetic; use for workflow testing only. Provider recommended physical therapy and activity modification. Clinical note imported via CAPRI; formatting differs from original CPRS.

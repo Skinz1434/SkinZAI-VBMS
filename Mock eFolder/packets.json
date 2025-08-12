@@ -1,0 +1,34 @@
+[
+  {
+    "name": "2017 Initial Claim Packet",
+    "contains": [
+      "VA Form 21-526EZ",
+      "VCAA/DTA Notice Letter",
+      "CAPRI Progress Note - Primary Care"
+    ]
+  },
+  {
+    "name": "2019 Appeal Packet (SOC/SSOC)",
+    "contains": [
+      "Statement of the Case (SOC)",
+      "Supplemental Statement of the Case (SSOC)",
+      "VA Form 21-4138 - Statement in Support of Claim"
+    ]
+  },
+  {
+    "name": "2020 BVA Remand Packet",
+    "contains": [
+      "BVA Decision - Remand",
+      "Development Worksheet",
+      "DBQ - Back (Thoracolumbar Spine) Conditions"
+    ]
+  },
+  {
+    "name": "2022 Increase/TDIU Packet",
+    "contains": [
+      "VA Form 21-8940 - TDIU",
+      "DBQ - PTSD Review",
+      "DBQ - Tinnitus and Hearing Loss"
+    ]
+  }
+]

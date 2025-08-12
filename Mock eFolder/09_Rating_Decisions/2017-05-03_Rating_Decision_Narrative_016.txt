@@ -1,0 +1,15 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Rating Decision Narrative
+Doc Date: 2017-05-03
+--- Synthetic content for testing; contains no real PII ---
+
+== Issues Adjudicated ==
+- Hearing loss (DC 6100) -> 70% effective 2017-05-03
+- Migraine headaches (DC 8100) -> 70% effective 2017-05-03
+- Lumbar strain (DC 5237) -> 10% effective 2017-05-03
+- Tinnitus (DC 6260) -> 70% effective 2017-05-03
+
+== Reasons and Bases ==
+Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. All names/IDs are synthetic; use for workflow testing only. Treatment plan includes conservative therapy and scheduled re-evaluation. Imaging study impression correlates with clinical tenderness and limited ROM. Clinical note imported via CAPRI; formatting differs from original CPRS. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Objective exam findings align with the historical complaints and imaging results. Objective exam findings align with the historical complaints and imaging results.

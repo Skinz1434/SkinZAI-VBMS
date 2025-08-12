@@ -1,0 +1,16 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Rating Decision Narrative
+Doc Date: 2017-09-22
+--- Synthetic content for testing; contains no real PII ---
+
+== Issues Adjudicated ==
+- Right shoulder strain (DC 5201) -> 20% effective 2017-09-22
+- PTSD (DC 9411) -> 20% effective 2017-09-22
+- Left knee meniscal tear (DC 5258) -> 70% effective 2017-09-22
+- Lumbar strain (DC 5237) -> 0% effective 2017-09-22
+- Migraine headaches (DC 8100) -> 20% effective 2017-09-22
+
+== Reasons and Bases ==
+Provider recommended physical therapy and activity modification. Treatment plan includes conservative therapy and scheduled re-evaluation. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Mental health screening positive for trauma-related symptoms; safety plan discussed. Treatment plan includes conservative therapy and scheduled re-evaluation. Treatment plan includes conservative therapy and scheduled re-evaluation. Mental health screening positive for trauma-related symptoms; safety plan discussed. All names/IDs are synthetic; use for workflow testing only.

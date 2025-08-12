@@ -1,0 +1,14 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Rating Decision Narrative
+Doc Date: 2024-02-05
+--- Synthetic content for testing; contains no real PII ---
+
+== Issues Adjudicated ==
+- Hearing loss (DC 6100) -> 0% effective 2024-02-05
+- Tinnitus (DC 6260) -> 40% effective 2024-02-05
+- PTSD (DC 9411) -> 50% effective 2024-02-05
+
+== Reasons and Bases ==
+Mental health screening positive for trauma-related symptoms; safety plan discussed. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Objective exam findings align with the historical complaints and imaging results. Objective exam findings align with the historical complaints and imaging results. Treatment plan includes conservative therapy and scheduled re-evaluation. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. All names/IDs are synthetic; use for workflow testing only. Mental health screening positive for trauma-related symptoms; safety plan discussed.

@@ -1,0 +1,15 @@
+*** MOCK DOCUMENT ***
+Veteran: Jordan R. Sampleton (File#: F31605305, EDIPI: 0400481269)
+Branch: Navy | MOS: 25B Information Tech
+Doc Title: Rating Decision Narrative
+Doc Date: 2021-05-09
+--- Synthetic content for testing; contains no real PII ---
+
+== Issues Adjudicated ==
+- Tinnitus (DC 6260) -> 20% effective 2021-05-09
+- Lumbar strain (DC 5237) -> 30% effective 2021-05-09
+- PTSD (DC 9411) -> 20% effective 2021-05-09
+- Right shoulder strain (DC 5201) -> 30% effective 2021-05-09
+
+== Reasons and Bases ==
+The Veteran reports persistent symptoms since deployment with periodic flare-ups. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Clinical note imported via CAPRI; formatting differs from original CPRS. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. This file simulates OCR text from scanned paper; line breaks may be inconsistent. Treatment plan includes conservative therapy and scheduled re-evaluation. Adjudication considered all evidence under 38 CFR Part 4 and duty to assist. All names/IDs are synthetic; use for workflow testing only.
