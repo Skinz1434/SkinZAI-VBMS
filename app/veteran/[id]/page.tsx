@@ -4,25 +4,27 @@ import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import GlobalSearch from '../../components/GlobalSearch';
-import { getVeteranById, getClaimsByVeteranId, getDocumentsByVeteranId, type Veteran, type Claim, type Document } from '../../lib/mockData';
+import { massiveMockDatabase } from '../../lib/massiveMockData';
 
 export default function VeteranProfile() {
   const params = useParams();
   const router = useRouter();
-  const [veteran, setVeteran] = useState<Veteran | null>(null);
-  const [claims, setClaims] = useState<Claim[]>([]);
-  const [documents, setDocuments] = useState<Document[]>([]);
+  const [veteran, setVeteran] = useState<any>(null);
+  const [claims, setClaims] = useState<any[]>([]);
+  const [documents, setDocuments] = useState<any[]>([]);
   const [activeTab, setActiveTab] = useState('overview');
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const veteranId = params.id as string;
-    const veteranData = getVeteranById(veteranId);
+    const veteranData = massiveMockDatabase.veterans.find(v => v.id === veteranId);
     
     if (veteranData) {
       setVeteran(veteranData);
-      setClaims(getClaimsByVeteranId(veteranId));
-      setDocuments(getDocumentsByVeteranId(veteranId));
+      const veteranClaims = massiveMockDatabase.claims.filter(c => c.veteranId === veteranId);
+      setClaims(veteranClaims);
+      const veteranDocs = massiveMockDatabase.documents.filter(d => d.veteranId === veteranId);
+      setDocuments(veteranDocs);
       
       // Store current veteran context
       localStorage.setItem('vbms-current-veteran', JSON.stringify(veteranData));
