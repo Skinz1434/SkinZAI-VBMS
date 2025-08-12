@@ -1,0 +1,32 @@
+services:
+  opensearch:
+    image: opensearchproject/opensearch:2.12.0
+    environment:
+      - discovery.type=single-node
+      - plugins.security.disabled=true
+      - OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m
+    ports: ["9200:9200"]
+  dashboards:
+    image: opensearchproject/opensearch-dashboards:2.12.0
+    environment:
+      - OPENSEARCH_HOSTS=http://opensearch:9200
+    ports: ["5601:5601"]
+    depends_on: [ opensearch ]
+
+  ocr:
+    build: ./ocr
+    environment:
+      - S3_ENDPOINT=http://minio:9000
+      - S3_ACCESS_KEY=minio
+      - S3_SECRET_KEY=minio123
+      - S3_BUCKET=efolder
+    ports: ["8082:8082"]
+    depends_on: [ minio ]
+
+  indexer:
+    build: ./indexer
+    environment:
+      - OS_HOST=http://opensearch:9200
+      - OS_INDEX=documents
+    ports: ["8083:8083"]
+    depends_on: [ opensearch ]

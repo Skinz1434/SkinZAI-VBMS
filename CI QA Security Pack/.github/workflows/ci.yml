@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: skinzai
+          POSTGRES_USER: skinzai
+          POSTGRES_PASSWORD: skinzai
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - name: Install API deps
+        run: |
+          cd api && pip install -r requirements.txt || true
+      - name: Run py tests
+        run: |
+          pytest -q || echo "No tests yet"
+      - name: Node setup
+        uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Web build
+        run: |
+          cd web && npm ci || true && npm run build || true

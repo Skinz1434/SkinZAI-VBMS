@@ -1,0 +1,16 @@
+:root {
+  --sz-bg: #0B1220;
+  --sz-panel: #111827;
+  --sz-text: #E5E7EB;
+  --sz-accent: #7B61FF;
+  --sz-muted: #9CA3AF;
+  --sz-ring: #9b8cff;
+}
+* { box-sizing: border-box; }
+html, body { background: var(--sz-bg); color: var(--sz-text); }
+a { color: var(--sz-accent); }
+button { border: 0; }
+.sz-card { background: var(--sz-panel); border-radius: 16px; padding: 16px; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+.sz-chip { padding: 4px 8px; border-radius: 12px; background: rgba(123,97,255,.15); }
+input, select { border-radius: 10px; padding: 8px; color: #111827; }
+.sz-hero { font-size: 28px; font-weight: 700; }

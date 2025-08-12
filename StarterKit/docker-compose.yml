@@ -1,0 +1,61 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: skinzai
+      POSTGRES_USER: skinzai
+      POSTGRES_PASSWORD: skinzai
+    ports: ["5432:5432"]
+    volumes: [ "db_data:/var/lib/postgresql/data" ]
+
+  minio:
+    image: minio/minio:RELEASE.2024-01-01T00-00-00Z
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: minio
+      MINIO_ROOT_PASSWORD: minio123
+    ports: ["9000:9000","9001:9001"]
+    volumes: [ "minio_data:/data" ]
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports: ["5672:5672","15672:15672"]
+
+  api:
+    build: ./api
+    environment:
+      - DATABASE_URL=postgresql://skinzai:skinzai@db:5432/skinzai
+      - S3_ENDPOINT=http://minio:9000
+      - S3_ACCESS_KEY=minio
+      - S3_SECRET_KEY=minio123
+      - S3_BUCKET=efolder
+      - CORS_ORIGINS=http://localhost:3000
+    volumes:
+      - ./data:/app/data
+    ports: ["8000:8000"]
+    depends_on: [ db, minio ]
+
+  web:
+    build:
+      context: ./web
+      dockerfile_inline: |
+        FROM node:20-alpine
+        WORKDIR /app
+        COPY package.json ./
+        RUN npm install --legacy-peer-deps
+        COPY . .
+        EXPOSE 3000
+        CMD ["npm","run","dev"]
+    ports: ["3000:3000"]
+    depends_on: [ api ]
+
+  worker:
+    image: python:3.11-slim
+    working_dir: /app
+    volumes: [ "./worker:/app" ]
+    command: ["python","ingest_worker.py"]
+    depends_on: [ rabbitmq ]
+
+volumes:
+  db_data: {}
+  minio_data: {}

@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: skinzai-api
+    env: docker
+    plan: starter
+    autoDeploy: true
+    dockerContext: ./api
+    dockerfilePath: ./api/Dockerfile
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: S3_ENDPOINT
+        sync: false
+      - key: S3_ACCESS_KEY
+        sync: false
+      - key: S3_SECRET_KEY
+        sync: false
+      - key: S3_BUCKET
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+
+  - type: web
+    name: skinzai-ml
+    env: docker
+    plan: starter
+    autoDeploy: true
+    dockerContext: ./ml
+    dockerfilePath: ./ml/Dockerfile
+    envVars:
+      - key: BROKER_URL
+        sync: false
+      - key: RESULT_BACKEND
+        sync: false
+      - key: API_URL
+        sync: false

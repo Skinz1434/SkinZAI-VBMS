@@ -1,0 +1,18 @@
+services:
+  ml:
+    build: ./ml
+    environment:
+      - BROKER_URL=amqp://guest:guest@rabbitmq:5672//
+      - RESULT_BACKEND=rpc://
+      - API_URL=http://api:8000
+    ports: ["8088:8088"]
+    depends_on: [ rabbitmq, api ]
+
+  mlworker:
+    build: ./ml
+    command: ["celery","-A","celery_app.celery","worker","-l","INFO"]
+    environment:
+      - BROKER_URL=amqp://guest:guest@rabbitmq:5672//
+      - RESULT_BACKEND=rpc://
+      - API_URL=http://api:8000
+    depends_on: [ rabbitmq, ml ]

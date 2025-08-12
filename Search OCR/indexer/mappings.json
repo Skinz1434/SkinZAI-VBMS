@@ -1,0 +1,44 @@
+{
+  "settings": {
+    "index": {
+      "number_of_shards": 1,
+      "number_of_replicas": 0
+    }
+  },
+  "mappings": {
+    "properties": {
+      "id": {
+        "type": "keyword"
+      },
+      "participant_id": {
+        "type": "keyword"
+      },
+      "claim_id": {
+        "type": "keyword"
+      },
+      "doc_type": {
+        "type": "keyword"
+      },
+      "source": {
+        "type": "keyword"
+      },
+      "received_date": {
+        "type": "date",
+        "format": "yyyy-MM-dd||strict_date_optional_time||epoch_millis"
+      },
+      "doc_date": {
+        "type": "date",
+        "format": "yyyy-MM-dd||strict_date_optional_time||epoch_millis"
+      },
+      "tags": {
+        "type": "keyword"
+      },
+      "text": {
+        "type": "text"
+      },
+      "path": {
+        "type": "keyword"
+      }
+    }
+  }
+}

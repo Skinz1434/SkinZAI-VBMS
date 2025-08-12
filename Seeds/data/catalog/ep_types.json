@@ -1,0 +1,92 @@
+[
+  {
+    "code": "010",
+    "name": "Original Compensation",
+    "min_contentions": 3,
+    "max_contentions": 6,
+    "task_flow": [
+      "dev_request_records",
+      "order_exam",
+      "review_evidence",
+      "rate_issue",
+      "quality_review",
+      "award_finalize",
+      "correspondence_send"
+    ],
+    "doc_mix": [
+      "STR",
+      "DBQ",
+      "CAPRI",
+      "Imaging",
+      "Correspondence"
+    ]
+  },
+  {
+    "code": "020",
+    "name": "Increased Evaluation",
+    "min_contentions": 2,
+    "max_contentions": 4,
+    "task_flow": [
+      "order_exam",
+      "review_evidence",
+      "rate_issue",
+      "award_finalize",
+      "correspondence_send"
+    ],
+    "doc_mix": [
+      "DBQ",
+      "CAPRI",
+      "Imaging",
+      "Correspondence"
+    ]
+  },
+  {
+    "code": "040",
+    "name": "Supplemental (Reopened)",
+    "min_contentions": 1,
+    "max_contentions": 3,
+    "task_flow": [
+      "dev_request_records",
+      "review_evidence",
+      "order_exam",
+      "rate_issue",
+      "correspondence_send"
+    ],
+    "doc_mix": [
+      "DBQ",
+      "Lay",
+      "PrivateMedical",
+      "Correspondence"
+    ]
+  },
+  {
+    "code": "110",
+    "name": "Pension / Aid & Attendance (mock)",
+    "min_contentions": 0,
+    "max_contentions": 0,
+    "task_flow": [
+      "dev_request_records",
+      "review_evidence",
+      "correspondence_send"
+    ],
+    "doc_mix": [
+      "IncomeAssets",
+      "Caregiver",
+      "Correspondence"
+    ]
+  },
+  {
+    "code": "400",
+    "name": "Administrative Review (mock)",
+    "min_contentions": 0,
+    "max_contentions": 1,
+    "task_flow": [
+      "review_evidence",
+      "correspondence_send"
+    ],
+    "doc_mix": [
+      "Administrative",
+      "Correspondence"
+    ]
+  }
+]

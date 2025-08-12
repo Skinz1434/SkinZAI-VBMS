@@ -1,0 +1,344 @@
+openapi: 3.0.3
+info:
+  title: SkinZAI VBMS API
+  version: "2.0.0"
+servers:
+  - url: http://localhost:8000
+tags:
+  - name: participants
+  - name: claims
+  - name: contentions
+  - name: documents
+  - name: tasks
+  - name: decisions
+  - name: awards
+  - name: correspondence
+  - name: nwq
+  - name: audit
+
+paths:
+  /health:
+    get:
+      summary: Health check
+      responses:
+        '200': { description: ok }
+
+  /participants:
+    get:
+      tags: [participants]
+      summary: Search participants
+      parameters:
+        - in: query
+          name: q
+          schema: { type: string }
+      responses:
+        '200':
+          description: List
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/Participant' }
+    post:
+      tags: [participants]
+      summary: Create participant (synthetic)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ParticipantCreate' }
+      responses:
+        '201': { description: Created }
+
+  /participants/{id}:
+    get:
+      tags: [participants]
+      summary: Get participant
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Participant
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Participant' }
+
+  /claims:
+    post:
+      tags: [claims]
+      summary: Create claim/EP
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ClaimCreate' }
+      responses:
+        '201': { description: Created }
+    get:
+      tags: [claims]
+      summary: List claims
+      parameters:
+        - in: query
+          name: ep_type
+          schema: { type: string }
+      responses:
+        '200':
+          description: List
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/Claim' }
+
+  /claims/{id}:
+    get:
+      tags: [claims]
+      summary: Get claim
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Claim
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Claim' }
+
+  /claims/{id}/contentions:
+    post:
+      tags: [contentions]
+      summary: Add contention to claim
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ContentionCreate' }
+      responses:
+        '201': { description: Created }
+    get:
+      tags: [contentions]
+      summary: List contentions for a claim
+      responses:
+        '200':
+          description: List
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/Contention' }
+
+  /documents:
+    get:
+      tags: [documents]
+      summary: Search documents (metadata)
+      parameters:
+        - in: query
+          name: q
+          schema: { type: string }
+        - in: query
+          name: type
+          schema: { type: string }
+      responses:
+        '200':
+          description: List
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/Document' }
+    post:
+      tags: [documents]
+      summary: Register a document (metadata) already uploaded to S3
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/DocumentCreate' }
+      responses:
+        '201': { description: Created }
+
+  /tasks:
+    post:
+      tags: [tasks]
+      summary: Create task
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/TaskCreate' }
+      responses:
+        '201': { description: Created }
+    get:
+      tags: [tasks]
+      summary: List tasks
+      responses:
+        '200':
+          description: List
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/Task' }
+
+  /decisions:
+    post:
+      tags: [decisions]
+      summary: Create decision (draft)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/DecisionCreate' }
+      responses:
+        '201': { description: Created }
+
+  /awards:
+    post:
+      tags: [awards]
+      summary: Create award snapshot
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/AwardCreate' }
+      responses:
+        '201': { description: Created }
+
+  /audit:
+    get:
+      tags: [audit]
+      summary: List audit events
+      responses:
+        '200':
+          description: List
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/AuditEvent' }
+
+components:
+  schemas:
+    Participant:
+      type: object
+      properties:
+        id: { type: string }
+        file_number: { type: string }
+        first_name: { type: string }
+        last_name: { type: string }
+        dob: { type: string, format: date }
+        poa: { type: string }
+        flags: { type: array, items: { type: string } }
+    ParticipantCreate:
+      type: object
+      required: [file_number, first_name, last_name]
+      properties:
+        file_number: { type: string }
+        first_name: { type: string }
+        last_name: { type: string }
+        dob: { type: string, format: date }
+    Claim:
+      type: object
+      properties:
+        id: { type: string }
+        participant_id: { type: string }
+        ep_type: { type: string }
+        lane: { type: string }
+        jurisdiction: { type: string }
+        status: { type: string }
+        opened_at: { type: string, format: date-time }
+        closed_at: { type: string, format: date-time }
+    ClaimCreate:
+      type: object
+      required: [participant_id, ep_type]
+      properties:
+        participant_id: { type: string }
+        ep_type: { type: string }
+        lane: { type: string }
+        jurisdiction: { type: string }
+    Contention:
+      type: object
+      properties:
+        id: { type: string }
+        claim_id: { type: string }
+        title: { type: string }
+        basis: { type: string }
+        indicators: { type: array, items: { type: string } }
+        dc_suggested: { type: string }
+        status: { type: string }
+    ContentionCreate:
+      type: object
+      required: [title]
+      properties:
+        title: { type: string }
+        basis: { type: string }
+        indicators: { type: array, items: { type: string } }
+    Document:
+      type: object
+      properties:
+        id: { type: string }
+        participant_id: { type: string }
+        claim_id: { type: string }
+        doc_type: { type: string }
+        source: { type: string }
+        received_date: { type: string, format: date }
+        doc_date: { type: string, format: date }
+        path: { type: string }
+        ocr: { type: boolean }
+        tags: { type: array, items: { type: string } }
+    DocumentCreate:
+      type: object
+      required: [participant_id, doc_type, received_date, path]
+      properties:
+        participant_id: { type: string }
+        claim_id: { type: string }
+        doc_type: { type: string }
+        source: { type: string }
+        received_date: { type: string, format: date }
+        doc_date: { type: string, format: date }
+        path: { type: string }
+        tags: { type: array, items: { type: string } }
+    Task:
+      type: object
+      properties:
+        id: { type: string }
+        claim_id: { type: string }
+        type: { type: string }
+        status: { type: string }
+        assignee: { type: string }
+        due_at: { type: string, format: date-time }
+    TaskCreate:
+      type: object
+      required: [claim_id, type]
+      properties:
+        claim_id: { type: string }
+        type: { type: string }
+        assignee: { type: string }
+        due_at: { type: string, format: date-time }
+    DecisionCreate:
+      type: object
+      required: [claim_id]
+      properties:
+        claim_id: { type: string }
+        issues: { type: array, items: { type: string } }
+        codes: { type: array, items: { type: string } }
+    AwardCreate:
+      type: object
+      required: [claim_id]
+      properties:
+        claim_id: { type: string }
+        combined_percent: { type: integer }
+    AuditEvent:
+      type: object
+      properties:
+        id: { type: string }
+        actor_id: { type: string }
+        object_type: { type: string }
+        object_id: { type: string }
+        action: { type: string }
+        at: { type: string, format: date-time }

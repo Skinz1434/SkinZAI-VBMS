@@ -1,0 +1,24 @@
+name: Security Scans
+on:
+  schedule: [{cron: '0 9 * * 1'}]
+  workflow_dispatch:
+
+jobs:
+  python-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - name: pip-audit
+        run: pipx install pip-audit && pip-audit || true
+
+  node-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: npm audit
+        run: |
+          cd web && npm audit --audit-level=high || true

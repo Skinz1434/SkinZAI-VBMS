@@ -1,0 +1,20 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "panels": [
+    {
+      "type": "graph",
+      "title": "API Requests (dummy)",
+      "targets": [
+        {
+          "expr": "up"
+        }
+      ],
+      "id": 1
+    }
+  ],
+  "schemaVersion": 30,
+  "title": "SkinZAI Overview",
+  "version": 1
+}

@@ -1,0 +1,4 @@
+services:
+  codesheet:
+    build: ./codesheet
+    ports: ["8084:8084"]

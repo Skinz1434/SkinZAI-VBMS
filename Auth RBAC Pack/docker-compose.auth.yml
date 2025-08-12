@@ -1,0 +1,9 @@
+services:
+  auth:
+    build: ./auth
+    environment:
+      - DATABASE_URL=postgresql://skinzai:skinzai@db:5432/skinzai
+      - JWT_SECRET=dev-secret-change-me
+      - JWT_ALG=HS256
+    ports: ["8081:8081"]
+    depends_on: [ db ]

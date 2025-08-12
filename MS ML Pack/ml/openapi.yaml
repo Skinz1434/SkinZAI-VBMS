@@ -1,0 +1,48 @@
+openapi: 3.0.3
+info:
+  title: SkinZAI ML Service
+  version: "1.0.0"
+servers:
+  - url: http://localhost:8088
+paths:
+  /health:
+    get:
+      summary: health
+      responses:
+        '200': { description: ok }
+  /infer/claim:
+    post:
+      summary: sync inference for a claim context
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                claim_id: { type: string }
+                documents:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id: { type: string }
+                      doc_type: { type: string }
+                      text: { type: string }
+                      tags: { type: array, items: { type: string } }
+      responses:
+        '200': { description: results }
+  /infer/sample:
+    post:
+      summary: returns sample clusters + diagnostics for UI wiring
+      responses:
+        '200': { description: sample }
+  /train:
+    post:
+      summary: trains or retrains models
+      parameters:
+        - in: query
+          name: mock
+          schema: { type: integer, default: 1 }
+      responses:
+        '200': { description: ok }

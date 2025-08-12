@@ -1,0 +1,80 @@
+[
+  {
+    "type": "STR",
+    "examples": [
+      "SF-600",
+      "Profile DA 3349",
+      "Immunization",
+      "DD 689"
+    ]
+  },
+  {
+    "type": "DBQ",
+    "examples": [
+      "DBQ Back",
+      "DBQ Knee",
+      "DBQ Mental",
+      "DBQ Audio",
+      "DBQ Headaches"
+    ]
+  },
+  {
+    "type": "CAPRI",
+    "examples": [
+      "Primary Care Note",
+      "Orthopedics Note",
+      "Mental Health Note",
+      "Audiology Note"
+    ]
+  },
+  {
+    "type": "Imaging",
+    "examples": [
+      "Radiology Report",
+      "MRI Knee",
+      "CT Head"
+    ]
+  },
+  {
+    "type": "Lay",
+    "examples": [
+      "Buddy Statement",
+      "Personal Statement"
+    ]
+  },
+  {
+    "type": "PrivateMedical",
+    "examples": [
+      "Private Clinic Note",
+      "Chiro Note"
+    ]
+  },
+  {
+    "type": "IncomeAssets",
+    "examples": [
+      "Bank Statements (mock)",
+      "SSA 1099 (mock)"
+    ]
+  },
+  {
+    "type": "Caregiver",
+    "examples": [
+      "Care Plan (mock)"
+    ]
+  },
+  {
+    "type": "Administrative",
+    "examples": [
+      "RO Admin Memo (mock)"
+    ]
+  },
+  {
+    "type": "Correspondence",
+    "examples": [
+      "VCAA_DTA_Notice.pdf",
+      "Exam_Scheduling.pdf",
+      "Decision_Letter.pdf",
+      "SOC_SSOC_Cover.pdf"
+    ]
+  }
+]

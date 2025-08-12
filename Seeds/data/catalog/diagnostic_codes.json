@@ -1,0 +1,239 @@
+[
+  {
+    "dc": "5237",
+    "name": "Lumbosacral strain",
+    "category": "Spine",
+    "dbq": "DBQ Back (Thoracolumbar)",
+    "doc_hints": [
+      "DBQ Back",
+      "Radiology Report",
+      "SF-600"
+    ]
+  },
+  {
+    "dc": "5242",
+    "name": "Degenerative arthritis of the spine",
+    "category": "Spine",
+    "dbq": "DBQ Back (Thoracolumbar)",
+    "doc_hints": [
+      "DBQ Back",
+      "Radiology Report"
+    ]
+  },
+  {
+    "dc": "5243",
+    "name": "Intervertebral disc syndrome (IVDS)",
+    "category": "Spine",
+    "dbq": "DBQ Back (Thoracolumbar)",
+    "doc_hints": [
+      "DBQ Back",
+      "MRI Report",
+      "CAPRI Ortho"
+    ]
+  },
+  {
+    "dc": "5257",
+    "name": "Knee instability",
+    "category": "Knee",
+    "dbq": "DBQ Knee and Lower Leg",
+    "doc_hints": [
+      "DBQ Knee",
+      "Orthopedics Note",
+      "MRI Knee"
+    ]
+  },
+  {
+    "dc": "5258",
+    "name": "Dislocated semilunar cartilage (meniscal)",
+    "category": "Knee",
+    "dbq": "DBQ Knee and Lower Leg",
+    "doc_hints": [
+      "DBQ Knee",
+      "MRI Knee"
+    ]
+  },
+  {
+    "dc": "5260",
+    "name": "Limitation of flexion of the knee",
+    "category": "Knee",
+    "dbq": "DBQ Knee and Lower Leg",
+    "doc_hints": [
+      "DBQ Knee",
+      "Ortho Exam"
+    ]
+  },
+  {
+    "dc": "5261",
+    "name": "Limitation of extension of the knee",
+    "category": "Knee",
+    "dbq": "DBQ Knee and Lower Leg",
+    "doc_hints": [
+      "DBQ Knee"
+    ]
+  },
+  {
+    "dc": "5201",
+    "name": "Limitation of arm motion (shoulder)",
+    "category": "Shoulder",
+    "dbq": "DBQ Shoulder and Arm",
+    "doc_hints": [
+      "DBQ Shoulder",
+      "X-ray Shoulder"
+    ]
+  },
+  {
+    "dc": "5215",
+    "name": "Limitation of wrist motion",
+    "category": "Wrist",
+    "dbq": "DBQ Wrist",
+    "doc_hints": [
+      "DBQ Wrist"
+    ]
+  },
+  {
+    "dc": "8100",
+    "name": "Migraines",
+    "category": "Neurological",
+    "dbq": "DBQ Headaches",
+    "doc_hints": [
+      "DBQ Headaches",
+      "Neurology Note"
+    ]
+  },
+  {
+    "dc": "8045",
+    "name": "Residuals of TBI (simplified)",
+    "category": "Neurological",
+    "dbq": "DBQ TBI",
+    "doc_hints": [
+      "DBQ TBI",
+      "Neuropsych Eval"
+    ]
+  },
+  {
+    "dc": "8520",
+    "name": "Sciatic nerve paralysis/neuritis",
+    "category": "Neurological",
+    "dbq": "DBQ Peripheral Nerves",
+    "doc_hints": [
+      "DBQ Peripheral Nerves",
+      "Neuro Exam"
+    ]
+  },
+  {
+    "dc": "9411",
+    "name": "PTSD",
+    "category": "Mental",
+    "dbq": "DBQ Mental Disorders",
+    "doc_hints": [
+      "DBQ Mental",
+      "Psychiatry Note"
+    ]
+  },
+  {
+    "dc": "9434",
+    "name": "Major depressive disorder",
+    "category": "Mental",
+    "dbq": "DBQ Mental Disorders",
+    "doc_hints": [
+      "DBQ Mental",
+      "Psychotherapy Note"
+    ]
+  },
+  {
+    "dc": "9413",
+    "name": "Anxiety disorder",
+    "category": "Mental",
+    "dbq": "DBQ Mental Disorders",
+    "doc_hints": [
+      "DBQ Mental"
+    ]
+  },
+  {
+    "dc": "6260",
+    "name": "Tinnitus",
+    "category": "Auditory",
+    "dbq": "DBQ Tinnitus/Hearing",
+    "doc_hints": [
+      "DBQ Audio",
+      "Audiogram"
+    ]
+  },
+  {
+    "dc": "6100",
+    "name": "Hearing loss",
+    "category": "Auditory",
+    "dbq": "DBQ Tinnitus/Hearing",
+    "doc_hints": [
+      "DBQ Audio",
+      "Audiogram"
+    ]
+  },
+  {
+    "dc": "6204",
+    "name": "Peripheral vestibular disorders (mock)",
+    "category": "Auditory",
+    "dbq": "DBQ Ear Conditions",
+    "doc_hints": [
+      "DBQ Ear",
+      "ENT Note"
+    ]
+  },
+  {
+    "dc": "6602",
+    "name": "Asthma",
+    "category": "Respiratory",
+    "dbq": "DBQ Respiratory",
+    "doc_hints": [
+      "DBQ Respiratory",
+      "PFT"
+    ]
+  },
+  {
+    "dc": "6847",
+    "name": "Sleep apnea (mock)",
+    "category": "Respiratory",
+    "dbq": "DBQ Sleep Apnea",
+    "doc_hints": [
+      "Sleep Study",
+      "CPAP Note"
+    ]
+  },
+  {
+    "dc": "7319",
+    "name": "Irritable bowel syndrome",
+    "category": "GI",
+    "dbq": "DBQ Intestinal Conditions",
+    "doc_hints": [
+      "GI Note"
+    ]
+  },
+  {
+    "dc": "7346",
+    "name": "GERD",
+    "category": "GI",
+    "dbq": "DBQ Esophageal Conditions",
+    "doc_hints": [
+      "GI Note",
+      "Endoscopy"
+    ]
+  },
+  {
+    "dc": "7806",
+    "name": "Dermatitis or eczema",
+    "category": "Skin",
+    "dbq": "DBQ Skin Conditions",
+    "doc_hints": [
+      "Dermatology Note"
+    ]
+  },
+  {
+    "dc": "7813",
+    "name": "Dermatophytosis",
+    "category": "Skin",
+    "dbq": "DBQ Skin Conditions",
+    "doc_hints": [
+      "Dermatology Note"
+    ]
+  }
+]
