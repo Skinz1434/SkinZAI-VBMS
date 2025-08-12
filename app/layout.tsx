@@ -1,5 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import QBitChatbot from './components/QBitChatbot';
+import { AuthProvider } from './components/AuthProvider';
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -39,7 +41,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="antialiased font-sans">
-        {children}
+        <AuthProvider>
+          {children}
+          <QBitChatbot />
+        </AuthProvider>
       </body>
     </html>
   );

@@ -3,10 +3,20 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import GlobalSearch from './components/GlobalSearch';
+import WelcomeModal from './components/WelcomeModal';
+import AuthModal from './components/AuthModal';
+import ActivityFeed from './components/ActivityFeed';
+import UserProfile from './components/UserProfile';
+import KeyboardShortcuts from './components/KeyboardShortcuts';
+import { useAuth } from './components/AuthProvider';
+import { massiveMockDatabase } from './lib/massiveMockData';
 
 export default function VBMSHomePage() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [currentVeteran, setCurrentVeteran] = useState<any>(null);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [authMode, setAuthMode] = useState<'login' | 'signup'>('login');
+  const { user, logout, isAuthenticated } = useAuth();
 
   useEffect(() => {
     setIsLoaded(true);
@@ -17,20 +27,44 @@ export default function VBMSHomePage() {
     }
   }, []);
 
-  // System statistics - real operational data
+  // System statistics - calculated from massive mock data
   const systemStats = {
     activeUsers: 1247,
-    claimsInProgress: 2847,
+    claimsInProgress: massiveMockDatabase.claims.length,
     averageProcessingTime: '4.2 minutes',
-    monthlyExamsEliminated: 623,
-    accuracyRate: '97.2%',
-    costSavingsThisMonth: '$2.3M'
+    monthlyExamsEliminated: massiveMockDatabase.claims.filter(c => !c.examRequired).length,
+    accuracyRate: `${(massiveMockDatabase.claims.reduce((acc, c) => acc + (c.rumevAnalysis?.confidence || 0), 0) / massiveMockDatabase.claims.length).toFixed(1)}%`,
+    costSavingsThisMonth: `$${((massiveMockDatabase.claims.filter(c => !c.examRequired).length * 3500) / 1000).toFixed(1)}K`,
+    totalVeterans: massiveMockDatabase.veterans.length,
+    totalDocuments: massiveMockDatabase.documents.length
   };
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200">
-      {/* Global Search Component */}
       <GlobalSearch />
+      
+      <WelcomeModal
+        pageName="home"
+        title="VBMS Platform"
+        description="Welcome to the Veterans Benefits Management System - a comprehensive AI-powered platform for processing disability compensation claims with unprecedented speed and accuracy."
+        features={[
+          "AI-powered claims processing with RUMEV1 system",
+          "Real-time system performance and analytics dashboard",
+          "Multi-agent orchestration with specialized AI capabilities"
+        ]}
+        demoActions={[
+          { label: 'View Active Claims', action: () => window.location.href = '/claims' },
+          { label: 'Explore Analytics', action: () => window.location.href = '/analytics' },
+          { label: 'See Agent Network', action: () => window.location.href = '/orchestration' }
+        ]}
+      />
+      
+      <AuthModal
+        isOpen={authModalOpen}
+        onClose={() => setAuthModalOpen(false)}
+        mode={authMode}
+        onModeChange={setAuthMode}
+      />
       
       {/* Clean Professional Header */}
       <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur-sm sticky top-0 z-50">
@@ -56,6 +90,7 @@ export default function VBMSHomePage() {
                 { name: 'Claims', href: '/claims' },
                 { name: 'eFolder', href: '/efolder' },
                 { name: 'Analytics', href: '/analytics' },
+                { name: 'Reports', href: '/reports' },
                 { name: 'Orchestration', href: '/orchestration' }
               ].map((item) => (
                 <Link
@@ -76,9 +111,31 @@ export default function VBMSHomePage() {
                   <p className="text-sm font-medium text-slate-300">{currentVeteran.name}</p>
                 </div>
               )}
-              <button className="px-4 py-2 text-sm bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg transition-colors border border-slate-700">
-                Sign In
-              </button>
+              
+              {isAuthenticated ? (
+                <UserProfile />
+              ) : (
+                <div className="flex items-center space-x-2">
+                  <button
+                    onClick={() => {
+                      setAuthMode('login');
+                      setAuthModalOpen(true);
+                    }}
+                    className="px-4 py-2 text-sm text-slate-400 hover:text-slate-200 transition-colors"
+                  >
+                    Sign In
+                  </button>
+                  <button
+                    onClick={() => {
+                      setAuthMode('signup');
+                      setAuthModalOpen(true);
+                    }}
+                    className="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors"
+                  >
+                    Sign Up
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -113,7 +170,7 @@ export default function VBMSHomePage() {
               </p>
               <div className="flex items-center text-xs text-slate-500">
                 <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                Processing 2,847 active claims
+                Processing {systemStats.claimsInProgress} active claims
               </div>
             </div>
 
@@ -128,7 +185,7 @@ export default function VBMSHomePage() {
               </p>
               <div className="flex items-center text-xs text-slate-500">
                 <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                623 exams eliminated this month
+                {systemStats.monthlyExamsEliminated} exams eliminated this month
               </div>
             </div>
 
@@ -143,7 +200,7 @@ export default function VBMSHomePage() {
               </p>
               <div className="flex items-center text-xs text-slate-500">
                 <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                15,847 documents indexed
+                {systemStats.totalDocuments} documents indexed
               </div>
             </div>
           </div>
@@ -154,12 +211,12 @@ export default function VBMSHomePage() {
             
             <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-6">
               <div>
-                <p className="text-2xl font-light text-slate-100">{systemStats.activeUsers}</p>
-                <p className="text-xs text-slate-500 mt-1">Active Users</p>
+                <p className="text-2xl font-light text-slate-100">{systemStats.totalVeterans}</p>
+                <p className="text-xs text-slate-500 mt-1">Veterans in System</p>
               </div>
               <div>
                 <p className="text-2xl font-light text-slate-100">{systemStats.claimsInProgress}</p>
-                <p className="text-xs text-slate-500 mt-1">Claims Processing</p>
+                <p className="text-xs text-slate-500 mt-1">Active Claims</p>
               </div>
               <div>
                 <p className="text-2xl font-light text-slate-100">{systemStats.averageProcessingTime}</p>
@@ -175,7 +232,7 @@ export default function VBMSHomePage() {
               </div>
               <div>
                 <p className="text-2xl font-light text-emerald-400">{systemStats.costSavingsThisMonth}</p>
-                <p className="text-xs text-slate-500 mt-1">Monthly Savings</p>
+                <p className="text-xs text-slate-500 mt-1">Cost Savings</p>
               </div>
             </div>
           </div>
@@ -194,7 +251,7 @@ export default function VBMSHomePage() {
                 <h4 className="font-medium text-slate-200 mb-2">Agent A: Leiden Detection</h4>
                 <p className="text-xs text-slate-400 leading-relaxed">
                   Applies community detection algorithms to identify claim patterns and group similar conditions. 
-                  Processes 2,847 claims daily with 98.7% clustering accuracy.
+                  Processes {systemStats.claimsInProgress} claims daily with 98.7% clustering accuracy.
                 </p>
               </div>
               
@@ -202,7 +259,7 @@ export default function VBMSHomePage() {
                 <h4 className="font-medium text-slate-200 mb-2">Agent B: XGBoost Engine</h4>
                 <p className="text-xs text-slate-400 leading-relaxed">
                   Predictive modeling for rating determinations and exam necessity. Trained on 1.2M historical 
-                  claims with 97.2% accuracy in outcome predictions.
+                  claims with {systemStats.accuracyRate} accuracy in outcome predictions.
                 </p>
               </div>
               
@@ -210,7 +267,7 @@ export default function VBMSHomePage() {
                 <h4 className="font-medium text-slate-200 mb-2">Agent C: NLP Processor</h4>
                 <p className="text-xs text-slate-400 leading-relaxed">
                   Natural language processing for medical record analysis and PII anonymization. Processes 
-                  4,291 documents daily while maintaining HIPAA compliance.
+                  {systemStats.totalDocuments} documents daily while maintaining HIPAA compliance.
                 </p>
               </div>
               
@@ -225,20 +282,41 @@ export default function VBMSHomePage() {
           </div>
 
           {/* Quick Actions */}
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 mb-12">
             <Link href="/claims" className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg transition-colors border border-slate-700">
               View Active Claims
             </Link>
             <Link href="/efolder" className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg transition-colors border border-slate-700">
               Access eFolder System
             </Link>
+            <Link href="/exams" className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg transition-colors border border-slate-700">
+              Exam Management
+            </Link>
+            <Link href="/conditions" className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg transition-colors border border-slate-700">
+              Rating Conditions
+            </Link>
             <Link href="/analytics" className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg transition-colors border border-slate-700">
               Performance Analytics
+            </Link>
+            <Link href="/reports" className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg transition-colors border border-slate-700">
+              Reports & Export
             </Link>
             <Link href="/orchestration" className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg transition-colors border border-slate-700">
               Agent Orchestration
             </Link>
           </div>
+          
+          {/* Recent Activity */}
+          {isAuthenticated && (
+            <div className="mb-12">
+              <ActivityFeed 
+                limit={10}
+                showFilters={false}
+                compact={true}
+                autoRefresh={true}
+              />
+            </div>
+          )}
         </section>
       </main>
 
@@ -262,6 +340,9 @@ export default function VBMSHomePage() {
           </div>
         </div>
       </footer>
+      
+      {/* Global Components */}
+      <KeyboardShortcuts />
     </div>
   );
 }
