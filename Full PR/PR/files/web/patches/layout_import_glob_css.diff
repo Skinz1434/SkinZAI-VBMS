@@ -1,2 +1,0 @@
-*** Add this near the top of your web/app/layout.tsx ***
-import '../styles/globals.css'
