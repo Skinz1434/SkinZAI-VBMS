@@ -63,7 +63,7 @@ graph TB
     C --> H["🔒 Clean, Anonymous<br/>HIPAA-Compliant Data"]
     D --> I["📈 Performance Metrics<br/>Model Improvements"]
     
-    style A fill:#e1f5fe
+    style A fill:#e1f5fe + text #0B1220
     style B fill:#fff3e0
     style C fill:#f3e5f5
     style D fill:#e8f5e8
