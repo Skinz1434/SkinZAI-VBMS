@@ -1,20 +1,8 @@
 {
   "builds": [
     {
-      "src": "StarterKit/web/next.config.js",
-      "use": "@vercel/next",
-      "config": {
-        "distDir": ".next"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/StarterKit/web/$1"
+      "src": "next.config.js",
+      "use": "@vercel/next"
     }
   ]
 }
