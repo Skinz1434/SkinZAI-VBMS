@@ -10,13 +10,7 @@ The deployment issue was caused by Vercel not knowing which package to deploy in
 
 1. Go to [vercel.com/new](https://vercel.com/new)
 2. Import your GitHub repository: `Skinz1434/SkinZAI-VBMS`
-3. Configure the project:
-   - **Framework Preset**: Next.js (auto-detected)
-   - **Root Directory**: `StarterKit/web` ← **IMPORTANT: Set this!**
-   - **Build Command**: `npm run build` (auto-detected)
-   - **Output Directory**: `.next` (auto-detected)
-   - **Install Command**: `npm install --legacy-peer-deps`
-
+3. **Vercel will auto-detect the Next.js app** in `StarterKit/web/` via the `vercel.json` builds configuration
 4. **Environment Variables**: Add these in Vercel dashboard:
    ```
    NEXT_PUBLIC_API_URL=/api/proxy
@@ -45,9 +39,9 @@ vercel
 ## 🔧 What We Fixed
 
 ### 1. **Monorepo Structure**
-- ✅ Added `rootDirectory: "StarterKit/web"` to `vercel.json`
-- ✅ Updated build commands to work from the correct directory
-- ✅ Removed problematic function patterns
+- ✅ Added `builds` configuration to `vercel.json` pointing to `StarterKit/web/package.json`
+- ✅ Used `@vercel/next` builder for proper Next.js detection
+- ✅ Removed invalid `rootDirectory` property and problematic function patterns
 
 ### 2. **API Proxy Setup**
 - ✅ Moved API proxy from serverless functions to Next.js rewrites

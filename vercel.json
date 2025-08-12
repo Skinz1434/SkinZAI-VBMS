@@ -1,15 +1,14 @@
 {
-  "version": 2,
-  "name": "skinzai-vbms",
-  "buildCommand": "cd StarterKit/web && npm install --legacy-peer-deps && npm run build",
-  "outputDirectory": "StarterKit/web/.next",
-  "installCommand": "cd StarterKit/web && npm install --legacy-peer-deps",
-  "rootDirectory": "StarterKit/web",
-  "framework": "nextjs",
+  "builds": [
+    {
+      "src": "StarterKit/web/package.json",
+      "use": "@vercel/next"
+    }
+  ],
   "rewrites": [
     {
-      "source": "/api/proxy/:path*",
-      "destination": "https://your-backend-api.railway.app/:path*"
+      "source": "/api/proxy/(.*)",
+      "destination": "https://your-backend-api.railway.app/$1"
     }
   ],
   "headers": [
@@ -29,10 +28,5 @@
         { "key": "Cache-Control", "value": "no-store, max-age=0" }
       ]
     }
-  ],
-  "env": {
-    "NEXT_PUBLIC_API_URL": "/api/proxy",
-    "NEXT_PUBLIC_APP_NAME": "SkinZAI VBMS",
-    "NEXT_PUBLIC_ENVIRONMENT": "production"
-  }
+  ]
 }
