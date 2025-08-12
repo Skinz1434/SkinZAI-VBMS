@@ -2,294 +2,336 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import GlobalSearch from '../components/GlobalSearch';
+import { mockDatabase } from '../lib/mockData';
 
-export default function Analytics() {
+export default function VBMSAnalytics() {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [activeTimeframe, setActiveTimeframe] = useState('7d');
+  const [activeTimeframe, setActiveTimeframe] = useState('30d');
 
   useEffect(() => {
     setIsLoaded(true);
   }, []);
 
-  const analyticsData = {
+  // Calculate real analytics based on actual mock data
+  const totalClaims = mockDatabase.claims.length;
+  const totalVeterans = mockDatabase.veterans.length;
+  const totalDocuments = mockDatabase.documents.length;
+  const examsEliminated = mockDatabase.claims.filter(c => !c.examRequired).length;
+  const highPriorityClaims = mockDatabase.claims.filter(c => c.priority === 'High').length;
+  const averageConfidence = mockDatabase.claims.reduce((acc, claim) => 
+    acc + (claim.rumevAnalysis?.confidence || 0), 0) / totalClaims;
+
+  // System performance metrics based on mock data
+  const systemMetrics = {
     '7d': {
-      examsSaved: 1847,
-      costSavings: '$2.3M',
-      accuracy: 97.2,
-      processingTime: 4.2,
-      veteransHelped: 1203
+      claimsProcessed: totalClaims,
+      examsEliminated: examsEliminated,
+      avgProcessingTime: 4.2,
+      accuracyRate: averageConfidence.toFixed(1),
+      costSavings: (examsEliminated * 3500).toLocaleString(), // $3,500 per exam
+      veteransServed: totalVeterans,
+      documentsProcessed: totalDocuments,
+      systemUptime: 99.97
     },
     '30d': {
-      examsSaved: 7234,
-      costSavings: '$9.1M',
-      accuracy: 97.8,
-      processingTime: 3.9,
-      veteransHelped: 4891
+      claimsProcessed: totalClaims * 4.3, // Extrapolated
+      examsEliminated: examsEliminated * 4.3,
+      avgProcessingTime: 3.8,
+      accuracyRate: (averageConfidence + 0.5).toFixed(1),
+      costSavings: (examsEliminated * 4.3 * 3500).toLocaleString(),
+      veteransServed: totalVeterans * 4.1,
+      documentsProcessed: totalDocuments * 4.2,
+      systemUptime: 99.95
     },
     '90d': {
-      examsSaved: 21892,
-      costSavings: '$27.6M',
-      accuracy: 98.1,
-      processingTime: 3.6,
-      veteransHelped: 14672
+      claimsProcessed: totalClaims * 12.8,
+      examsEliminated: examsEliminated * 12.8,
+      avgProcessingTime: 3.6,
+      accuracyRate: (averageConfidence + 1.2).toFixed(1),
+      costSavings: (examsEliminated * 12.8 * 3500).toLocaleString(),
+      veteransServed: totalVeterans * 12.3,
+      documentsProcessed: totalDocuments * 12.5,
+      systemUptime: 99.92
     }
   };
 
-  const currentData = analyticsData[activeTimeframe as keyof typeof analyticsData];
+  const currentData = systemMetrics[activeTimeframe as keyof typeof systemMetrics];
 
-  const performanceMetrics = [
-    { name: 'Leiden Community Detection', accuracy: 98.7, speed: 'Ultra-Fast', status: 'Optimal' },
-    { name: 'XGBoost Prediction Engine', accuracy: 97.2, speed: 'Real-time', status: 'Optimal' },
-    { name: 'NLP Anonymization', accuracy: 99.9, speed: 'Instant', status: 'Optimal' },
-    { name: 'Continuous Learning', accuracy: 96.4, speed: 'Adaptive', status: 'Learning' },
+  // Agent performance based on actual system data
+  const agentMetrics = [
+    {
+      name: 'Agent A - Leiden Detection',
+      accuracy: 98.7,
+      uptime: 99.97,
+      throughput: Math.round(totalClaims / 7), // Daily average
+      status: 'Optimal',
+      description: 'Community clustering for claim patterns'
+    },
+    {
+      name: 'Agent B - XGBoost Engine', 
+      accuracy: averageConfidence,
+      uptime: 99.99,
+      throughput: Math.round(totalClaims / 7),
+      status: 'Optimal',
+      description: 'Predictive modeling for exam necessity'
+    },
+    {
+      name: 'Agent C - NLP Processor',
+      accuracy: 99.1,
+      uptime: 100.0,
+      throughput: Math.round(totalDocuments / 7),
+      status: 'Optimal', 
+      description: 'Medical record analysis and PII protection'
+    },
+    {
+      name: 'Agent D - Learning System',
+      accuracy: 96.4,
+      uptime: 99.95,
+      throughput: 18, // Pattern updates per day
+      status: 'Learning',
+      description: 'Continuous model improvement'
+    }
   ];
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-purple-400/10 to-pink-600/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-br from-emerald-400/10 to-blue-600/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      </div>
+  // Condition-specific analytics
+  const conditionStats = mockDatabase.claims.reduce((acc, claim) => {
+    claim.conditions.forEach(condition => {
+      const category = condition.category;
+      if (!acc[category]) {
+        acc[category] = { count: 0, examRate: 0, avgRating: 0 };
+      }
+      acc[category].count++;
+      if (claim.examRequired) acc[category].examRate++;
+    });
+    return acc;
+  }, {} as Record<string, { count: number; examRate: number; avgRating: number }>);
 
-      {/* Navigation */}
-      <nav className="relative z-50 backdrop-blur-xl bg-white/5 border-b border-white/10">
+  return (
+    <div className="min-h-screen bg-slate-950 text-slate-200">
+      <GlobalSearch />
+      
+      {/* Professional Header */}
+      <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur-sm sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-pink-600 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-lg">S</span>
-              </div>
+            <div className="flex items-center space-x-4">
+              <Link href="/" className="p-2 hover:bg-slate-800 rounded-lg transition-colors">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </Link>
               <div>
-                <h1 className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
-                  SkinZAI VBMS
-                </h1>
-                <p className="text-xs text-gray-400">RUMEV1 Analytics</p>
+                <h1 className="text-lg font-semibold text-slate-100">Performance Analytics</h1>
+                <p className="text-sm text-slate-500">RUMEV1 System Intelligence & Metrics</p>
               </div>
-            </Link>
+            </div>
             
-            <div className="hidden md:flex items-center space-x-6">
-              {['Dashboard', 'Analytics', 'Claims', 'Veterans', 'Settings'].map((item) => (
-                <Link
-                  key={item}
-                  href={item === 'Dashboard' ? '/dashboard' : `/${item.toLowerCase()}`}
-                  className={`text-sm font-medium transition-all duration-300 hover:scale-105 ${
-                    item === 'Analytics' 
-                      ? 'text-purple-400 border-b-2 border-purple-400 pb-1' 
-                      : 'text-gray-300 hover:text-white'
-                  }`}
-                >
-                  {item}
-                </Link>
-              ))}
+            <div className="flex items-center space-x-4">
+              <div className="flex bg-slate-800 rounded-lg p-1 border border-slate-700">
+                {[
+                  { key: '7d', label: '7 Days' },
+                  { key: '30d', label: '30 Days' }, 
+                  { key: '90d', label: '90 Days' }
+                ].map((timeframe) => (
+                  <button
+                    key={timeframe.key}
+                    onClick={() => setActiveTimeframe(timeframe.key)}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                      activeTimeframe === timeframe.key
+                        ? 'bg-blue-600 text-white'
+                        : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700'
+                    }`}
+                  >
+                    {timeframe.label}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </nav>
+      </header>
 
-      {/* Main Content */}
-      <div className={`relative z-40 max-w-7xl mx-auto px-6 py-8 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        
-        {/* Header */}
-        <div className="flex items-center justify-between mb-8">
-          <div>
-            <h1 className="text-4xl font-bold text-white mb-2">Advanced Analytics</h1>
-            <p className="text-gray-300">RUMEV1 Performance Intelligence & Insights</p>
+      <main className={`transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+        {/* Key Performance Indicators */}
+        <section className="max-w-7xl mx-auto px-6 py-8">
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold text-slate-100 mb-2">System Performance Overview</h2>
+            <p className="text-slate-400">
+              Comprehensive analytics for the {activeTimeframe} period showing RUMEV1 AI system performance 
+              and claims processing efficiency.
+            </p>
           </div>
 
-          {/* Time Filter */}
-          <div className="flex bg-white/5 backdrop-blur-xl rounded-2xl p-2 border border-white/10">
-            {[
-              { key: '7d', label: '7 Days' },
-              { key: '30d', label: '30 Days' },
-              { key: '90d', label: '90 Days' }
-            ].map((timeframe) => (
-              <button
-                key={timeframe.key}
-                onClick={() => setActiveTimeframe(timeframe.key)}
-                className={`px-6 py-2 rounded-xl font-medium transition-all duration-300 ${
-                  activeTimeframe === timeframe.key
-                    ? 'bg-gradient-to-r from-purple-500 to-pink-600 text-white shadow-lg'
-                    : 'text-gray-300 hover:text-white hover:bg-white/5'
-                }`}
-              >
-                {timeframe.label}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Key Metrics */}
-        <div className="grid md:grid-cols-5 gap-6 mb-8">
-          <div className="bg-gradient-to-br from-emerald-500/20 to-teal-600/20 backdrop-blur-xl rounded-2xl border border-emerald-400/30 p-6 hover:scale-105 transition-all duration-500">
-            <div className="text-3xl mb-3">🚫</div>
-            <div className="text-3xl font-bold text-emerald-400 mb-2">{currentData.examsSaved.toLocaleString()}</div>
-            <div className="text-sm text-emerald-300">Exams Eliminated</div>
-          </div>
-
-          <div className="bg-gradient-to-br from-yellow-500/20 to-orange-600/20 backdrop-blur-xl rounded-2xl border border-yellow-400/30 p-6 hover:scale-105 transition-all duration-500">
-            <div className="text-3xl mb-3">💰</div>
-            <div className="text-3xl font-bold text-yellow-400 mb-2">{currentData.costSavings}</div>
-            <div className="text-sm text-yellow-300">Cost Savings</div>
-          </div>
-
-          <div className="bg-gradient-to-br from-blue-500/20 to-indigo-600/20 backdrop-blur-xl rounded-2xl border border-blue-400/30 p-6 hover:scale-105 transition-all duration-500">
-            <div className="text-3xl mb-3">🎯</div>
-            <div className="text-3xl font-bold text-blue-400 mb-2">{currentData.accuracy}%</div>
-            <div className="text-sm text-blue-300">AI Accuracy</div>
-          </div>
-
-          <div className="bg-gradient-to-br from-purple-500/20 to-violet-600/20 backdrop-blur-xl rounded-2xl border border-purple-400/30 p-6 hover:scale-105 transition-all duration-500">
-            <div className="text-3xl mb-3">⚡</div>
-            <div className="text-3xl font-bold text-purple-400 mb-2">{currentData.processingTime}min</div>
-            <div className="text-sm text-purple-300">Avg Processing</div>
-          </div>
-
-          <div className="bg-gradient-to-br from-pink-500/20 to-rose-600/20 backdrop-blur-xl rounded-2xl border border-pink-400/30 p-6 hover:scale-105 transition-all duration-500">
-            <div className="text-3xl mb-3">🎖️</div>
-            <div className="text-3xl font-bold text-pink-400 mb-2">{currentData.veteransHelped.toLocaleString()}</div>
-            <div className="text-sm text-pink-300">Veterans Helped</div>
-          </div>
-        </div>
-
-        {/* Performance Analysis */}
-        <div className="grid md:grid-cols-2 gap-8 mb-8">
-          {/* Agent Performance */}
-          <div className="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-8">
-            <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-              <span className="mr-3">🤖</span>
-              Agent Performance Matrix
-            </h2>
-            
-            <div className="space-y-6">
-              {performanceMetrics.map((agent, index) => (
-                <div key={index} className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="font-semibold text-white text-sm">{agent.name}</h3>
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                      agent.status === 'Optimal' 
-                        ? 'bg-emerald-500/20 text-emerald-400' 
-                        : 'bg-yellow-500/20 text-yellow-400'
-                    }`}>
-                      {agent.status}
-                    </span>
-                  </div>
-                  
-                  <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div>
-                      <span className="text-gray-400">Accuracy</span>
-                      <div className="text-xl font-bold text-white">{agent.accuracy}%</div>
-                    </div>
-                    <div>
-                      <span className="text-gray-400">Speed</span>
-                      <div className="text-xl font-bold text-blue-400">{agent.speed}</div>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-4">
-                    <div className="w-full bg-gray-700/50 rounded-full h-2">
-                      <div
-                        className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full transition-all duration-1000"
-                        style={{ width: `${agent.accuracy}%` }}
-                      ></div>
-                    </div>
-                  </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-sm font-medium text-slate-400">Claims Processed</h3>
+                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white text-sm">📋</span>
                 </div>
-              ))}
+              </div>
+              <div className="text-2xl font-bold text-slate-100 mb-1">
+                {Math.round(currentData.claimsProcessed).toLocaleString()}
+              </div>
+              <div className="text-xs text-slate-500">
+                {(currentData.claimsProcessed / (activeTimeframe === '7d' ? 7 : activeTimeframe === '30d' ? 30 : 90)).toFixed(0)} per day
+              </div>
+            </div>
+
+            <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-sm font-medium text-slate-400">Exams Eliminated</h3>
+                <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white text-sm">✅</span>
+                </div>
+              </div>
+              <div className="text-2xl font-bold text-emerald-400 mb-1">
+                {Math.round(currentData.examsEliminated).toLocaleString()}
+              </div>
+              <div className="text-xs text-slate-500">
+                {((currentData.examsEliminated / currentData.claimsProcessed) * 100).toFixed(1)}% elimination rate
+              </div>
+            </div>
+
+            <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-sm font-medium text-slate-400">Avg Processing Time</h3>
+                <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white text-sm">⚡</span>
+                </div>
+              </div>
+              <div className="text-2xl font-bold text-purple-400 mb-1">
+                {currentData.avgProcessingTime} min
+              </div>
+              <div className="text-xs text-slate-500">
+                60% faster than baseline
+              </div>
+            </div>
+
+            <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-sm font-medium text-slate-400">Cost Savings</h3>
+                <div className="w-8 h-8 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white text-sm">💰</span>
+                </div>
+              </div>
+              <div className="text-2xl font-bold text-yellow-400 mb-1">
+                ${currentData.costSavings}
+              </div>
+              <div className="text-xs text-slate-500">
+                Eliminated exam costs
+              </div>
             </div>
           </div>
 
-          {/* Impact Visualization */}
-          <div className="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-8">
-            <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-              <span className="mr-3">📊</span>
-              Impact Visualization
-            </h2>
-            
-            <div className="space-y-6">
-              {/* Savings Over Time */}
-              <div className="bg-gradient-to-r from-emerald-500/10 to-blue-600/10 rounded-2xl p-6 border border-emerald-400/20">
-                <h3 className="text-lg font-semibold text-white mb-4">Cumulative Savings Impact</h3>
-                <div className="flex items-end space-x-2 h-32">
-                  {[65, 78, 92, 88, 95, 87, 100].map((height, index) => (
-                    <div
-                      key={index}
-                      className="bg-gradient-to-t from-emerald-400 to-blue-500 rounded-t flex-1 transition-all duration-1000 hover:from-emerald-300 hover:to-blue-400"
-                      style={{ height: `${height}%` }}
-                    ></div>
-                  ))}
-                </div>
-                <div className="flex justify-between text-xs text-gray-400 mt-2">
-                  <span>Week 1</span>
-                  <span>Week 7</span>
-                </div>
-              </div>
-
-              {/* Efficiency Metrics */}
-              <div className="bg-gradient-to-r from-purple-500/10 to-pink-600/10 rounded-2xl p-6 border border-purple-400/20">
-                <h3 className="text-lg font-semibold text-white mb-4">System Efficiency</h3>
-                <div className="space-y-4">
-                  {[
-                    { label: 'Processing Speed', value: 94, color: 'from-purple-500 to-purple-400' },
-                    { label: 'Resource Optimization', value: 87, color: 'from-pink-500 to-pink-400' },
-                    { label: 'Prediction Accuracy', value: 97, color: 'from-blue-500 to-blue-400' }
-                  ].map((metric, index) => (
-                    <div key={index}>
-                      <div className="flex justify-between text-sm mb-2">
-                        <span className="text-gray-300">{metric.label}</span>
-                        <span className="text-white font-semibold">{metric.value}%</span>
+          {/* Agent Performance Matrix */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-12">
+            <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-slate-100 mb-6">RUMEV1 Agent Performance</h3>
+              <div className="space-y-4">
+                {agentMetrics.map((agent, index) => (
+                  <div key={index} className="bg-slate-800 rounded-lg p-4 border border-slate-700">
+                    <div className="flex items-center justify-between mb-3">
+                      <h4 className="font-medium text-slate-200 text-sm">{agent.name}</h4>
+                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                        agent.status === 'Optimal' 
+                          ? 'bg-emerald-500/20 text-emerald-400'
+                          : 'bg-yellow-500/20 text-yellow-400'
+                      }`}>
+                        {agent.status}
+                      </span>
+                    </div>
+                    
+                    <p className="text-xs text-slate-400 mb-3">{agent.description}</p>
+                    
+                    <div className="grid grid-cols-3 gap-4 text-sm">
+                      <div>
+                        <span className="text-slate-500">Accuracy</span>
+                        <div className="text-lg font-semibold text-slate-100">{agent.accuracy.toFixed(1)}%</div>
                       </div>
-                      <div className="w-full bg-gray-700/50 rounded-full h-2">
-                        <div
-                          className={`bg-gradient-to-r ${metric.color} h-2 rounded-full transition-all duration-1000`}
-                          style={{ width: `${metric.value}%` }}
+                      <div>
+                        <span className="text-slate-500">Uptime</span>
+                        <div className="text-lg font-semibold text-emerald-400">{agent.uptime}%</div>
+                      </div>
+                      <div>
+                        <span className="text-slate-500">Throughput</span>
+                        <div className="text-lg font-semibold text-blue-400">{agent.throughput}/day</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Condition Category Analysis */}
+            <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-slate-100 mb-6">Condition Category Analysis</h3>
+              <div className="space-y-4">
+                {Object.entries(conditionStats).map(([category, stats]) => (
+                  <div key={category} className="bg-slate-800 rounded-lg p-4 border border-slate-700">
+                    <div className="flex items-center justify-between mb-2">
+                      <h4 className="font-medium text-slate-200">{category}</h4>
+                      <span className="text-sm text-slate-400">{stats.count} claims</span>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <div className="flex justify-between text-sm">
+                        <span className="text-slate-500">Exam Elimination Rate</span>
+                        <span className="text-emerald-400 font-medium">
+                          {((1 - stats.examRate / stats.count) * 100).toFixed(1)}%
+                        </span>
+                      </div>
+                      
+                      <div className="w-full bg-slate-700 rounded-full h-2">
+                        <div 
+                          className="bg-gradient-to-r from-emerald-500 to-emerald-400 h-2 rounded-full"
+                          style={{ width: `${(1 - stats.examRate / stats.count) * 100}%` }}
                         ></div>
                       </div>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Predictive Insights */}
-        <div className="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-8">
-          <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-            <span className="mr-3">🔮</span>
-            Predictive Insights & Trends
-          </h2>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-gradient-to-br from-blue-500/10 to-indigo-600/10 rounded-2xl p-6 border border-blue-400/20">
-              <h3 className="text-lg font-semibold text-white mb-3">Next Week Forecast</h3>
-              <div className="text-2xl font-bold text-blue-400 mb-2">$3.1M</div>
-              <div className="text-sm text-gray-300">Projected savings with 12% increase</div>
-            </div>
-
-            <div className="bg-gradient-to-br from-emerald-500/10 to-teal-600/10 rounded-2xl p-6 border border-emerald-400/20">
-              <h3 className="text-lg font-semibold text-white mb-3">Optimization Potential</h3>
-              <div className="text-2xl font-bold text-emerald-400 mb-2">23%</div>
-              <div className="text-sm text-gray-300">Additional efficiency gains available</div>
-            </div>
-
-            <div className="bg-gradient-to-br from-purple-500/10 to-violet-600/10 rounded-2xl p-6 border border-purple-400/20">
-              <h3 className="text-lg font-semibold text-white mb-3">Learning Rate</h3>
-              <div className="text-2xl font-bold text-purple-400 mb-2">+0.3%</div>
-              <div className="text-sm text-gray-300">Weekly accuracy improvement</div>
+          {/* System Health Metrics */}
+          <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
+            <h3 className="text-lg font-semibold text-slate-100 mb-6">System Health & Reliability</h3>
+            
+            <div className="grid md:grid-cols-4 gap-6">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-emerald-400 mb-1">
+                  {currentData.systemUptime}%
+                </div>
+                <div className="text-sm text-slate-400">System Uptime</div>
+              </div>
+              
+              <div className="text-center">
+                <div className="text-2xl font-bold text-blue-400 mb-1">
+                  {currentData.accuracyRate}%
+                </div>
+                <div className="text-sm text-slate-400">Decision Accuracy</div>
+              </div>
+              
+              <div className="text-center">
+                <div className="text-2xl font-bold text-purple-400 mb-1">
+                  {Math.round(currentData.documentsProcessed).toLocaleString()}
+                </div>
+                <div className="text-sm text-slate-400">Documents Processed</div>
+              </div>
+              
+              <div className="text-center">
+                <div className="text-2xl font-bold text-yellow-400 mb-1">
+                  {Math.round(currentData.veteransServed).toLocaleString()}
+                </div>
+                <div className="text-sm text-slate-400">Veterans Served</div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Floating Refresh Button */}
-      <div className="fixed bottom-8 right-8 z-50">
-        <button className="bg-gradient-to-r from-purple-500 to-pink-600 w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 hover:scale-110">
-          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-          </svg>
-        </button>
-      </div>
+        </section>
+      </main>
     </div>
   );
 }
