@@ -2,8 +2,14 @@ import './globals.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'SkinZAI VBMS',
-  description: 'Veterans Benefits Management System',
+  title: 'SkinZAI VBMS - Revolutionary AI-Powered Veterans Benefits',
+  description: 'Eliminating $4.2 billion in unnecessary medical exams through revolutionary AI, Leiden community detection, and XGBoost prediction engines. The future of Veterans Benefits Management.',
+  keywords: ['Veterans Benefits', 'AI', 'Medical Exams', 'RUMEV1', 'Leiden Algorithm', 'XGBoost', 'VA', 'Healthcare'],
+  openGraph: {
+    title: 'SkinZAI VBMS - The Future of Veterans Benefits',
+    description: 'Revolutionary AI-Powered Veterans Benefits Management System',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({ 
@@ -12,24 +18,9 @@ export default function RootLayout({
   children: React.ReactNode 
 }) {
   return (
-    <html lang="en">
-      <body className="bg-gray-900 text-gray-200">
-        <div className="flex min-h-screen">
-          <aside className="w-64 bg-gray-800 p-4">
-            <h2 className="text-xl font-bold mb-4">SkinZAI VBMS</h2>
-            <nav className="space-y-2">
-              <a href="/" className="block px-3 py-2 rounded hover:bg-gray-700">Dashboard</a>
-              <a href="/search" className="block px-3 py-2 rounded hover:bg-gray-700">Search</a>
-              <a href="/claims" className="block px-3 py-2 rounded hover:bg-gray-700">Claims</a>
-              <a href="/efolder" className="block px-3 py-2 rounded hover:bg-gray-700">eFolder</a>
-              <a href="/development" className="block px-3 py-2 rounded hover:bg-gray-700">Development</a>
-              <a href="/decisions" className="block px-3 py-2 rounded hover:bg-gray-700">Decisions</a>
-              <a href="/queue" className="block px-3 py-2 rounded hover:bg-gray-700">Work Queue</a>
-              <a href="/admin" className="block px-3 py-2 rounded hover:bg-gray-700">Admin</a>
-            </nav>
-          </aside>
-          <main className="flex-1 p-6">{children}</main>
-        </div>
+    <html lang="en" className="scroll-smooth">
+      <body className="antialiased font-sans">
+        {children}
       </body>
     </html>
   );
