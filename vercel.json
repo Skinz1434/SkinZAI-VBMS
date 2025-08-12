@@ -5,12 +5,6 @@
       "use": "@vercel/next"
     }
   ],
-  "rewrites": [
-    {
-      "source": "/api/proxy/(.*)",
-      "destination": "https://your-backend-api.railway.app/$1"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
