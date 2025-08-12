@@ -87,3 +87,4 @@ data/*.gz
 *.crt
 secrets/
 credentials/
+.vercel

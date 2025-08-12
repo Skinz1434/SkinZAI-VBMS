@@ -3,178 +3,89 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-export default function VBMSAnalytics() {
+export default function Analytics() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [activeTimeframe, setActiveTimeframe] = useState('7d');
-  const [selectedMetric, setSelectedMetric] = useState('overview');
-  const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
     setIsLoaded(true);
-    const timer = setInterval(() => setCurrentTime(new Date()), 1000);
-    return () => clearInterval(timer);
   }, []);
 
-  // Enhanced analytics data with veteran-focused metrics
   const analyticsData = {
     '7d': {
       examsSaved: 1847,
       costSavings: '$2.3M',
       accuracy: 97.2,
       processingTime: 4.2,
-      veteransHelped: 1203,
-      claimsProcessed: 2847,
-      avgRating: 92.5,
-      errorRate: 0.3,
-      throughput: 406.7
+      veteransHelped: 1203
     },
     '30d': {
       examsSaved: 7234,
       costSavings: '$9.1M',
       accuracy: 97.8,
       processingTime: 3.9,
-      veteransHelped: 4891,
-      claimsProcessed: 11384,
-      avgRating: 93.2,
-      errorRate: 0.2,
-      throughput: 379.5
+      veteransHelped: 4891
     },
     '90d': {
       examsSaved: 21892,
       costSavings: '$27.6M',
       accuracy: 98.1,
       processingTime: 3.6,
-      veteransHelped: 14672,
-      claimsProcessed: 34156,
-      avgRating: 94.1,
-      errorRate: 0.15,
-      throughput: 379.5
+      veteransHelped: 14672
     }
   };
 
   const currentData = analyticsData[activeTimeframe as keyof typeof analyticsData];
 
-  // Real veteran claim types and their processing performance
-  const claimTypePerformance = [
-    { type: 'PTSD', processed: 847, accuracy: 98.9, avgTime: 3.2, saved: '$1.2M', examRate: 15 },
-    { type: 'Musculoskeletal', processed: 623, accuracy: 96.8, avgTime: 4.1, saved: '$890K', examRate: 35 },
-    { type: 'Hearing Loss/Tinnitus', processed: 445, accuracy: 99.2, avgTime: 2.8, saved: '$340K', examRate: 8 },
-    { type: 'Respiratory', processed: 234, accuracy: 97.1, avgTime: 3.9, saved: '$180K', examRate: 22 },
-    { type: 'Neurological', processed: 189, accuracy: 95.6, avgTime: 5.2, saved: '$120K', examRate: 45 }
-  ];
-
-  // RUMEV1 Agent Performance Analytics
-  const agentAnalytics = [
-    { 
-      name: 'Agent A - Leiden Detection', 
-      accuracy: 98.7, 
-      speed: 'Ultra-Fast',
-      status: 'Optimal',
-      processed: 2847,
-      errors: 12,
-      uptime: 99.97,
-      modelVersion: 'Leiden-v2.1.3',
-      lastUpdate: '2025-08-12'
-    },
-    { 
-      name: 'Agent B - XGBoost Engine', 
-      accuracy: 97.2, 
-      speed: 'Real-time',
-      status: 'Optimal',
-      processed: 2847,
-      errors: 8,
-      uptime: 99.99,
-      modelVersion: 'XGBoost-Pro-4.2',
-      lastUpdate: '2025-08-11'
-    },
-    { 
-      name: 'Agent C - NLP Processor', 
-      accuracy: 99.1, 
-      speed: 'Instant',
-      status: 'Optimal',
-      processed: 4291,
-      errors: 3,
-      uptime: 100.0,
-      modelVersion: 'GPT-4o-Fine-VA',
-      lastUpdate: '2025-08-12'
-    },
-    { 
-      name: 'Agent D - Learning System', 
-      accuracy: 96.4, 
-      speed: 'Adaptive',
-      status: 'Learning',
-      processed: 127,
-      errors: 2,
-      uptime: 99.95,
-      modelVersion: 'Claude-3.5-Sonnet-VA',
-      lastUpdate: '2025-08-12'
-    },
+  const performanceMetrics = [
+    { name: 'Leiden Community Detection', accuracy: 98.7, speed: 'Ultra-Fast', status: 'Optimal' },
+    { name: 'XGBoost Prediction Engine', accuracy: 97.2, speed: 'Real-time', status: 'Optimal' },
+    { name: 'NLP Anonymization', accuracy: 99.9, speed: 'Instant', status: 'Optimal' },
+    { name: 'Continuous Learning', accuracy: 96.4, speed: 'Adaptive', status: 'Learning' },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-      {/* Professional Background */}
-      <div className="absolute inset-0 neural-grid opacity-20"></div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden">
+      {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-purple-500/10 to-pink-600/10 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-br from-emerald-500/10 to-blue-600/10 rounded-full blur-3xl"></div>
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-purple-400/10 to-pink-600/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-br from-emerald-400/10 to-blue-600/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      {/* Professional Header */}
-      <header className="relative z-50 glass-strong border-b border-slate-700/50">
+      {/* Navigation */}
+      <nav className="relative z-50 backdrop-blur-xl bg-white/5 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            {/* VA Logo & System Name */}
-            <Link href="/" className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-700 rounded-lg flex items-center justify-center shadow-lg mirror-effect">
-                <div className="text-white font-bold text-xl">VA</div>
+            <Link href="/" className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-pink-600 rounded-xl flex items-center justify-center">
+                <span className="text-white font-bold text-lg">S</span>
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-white font-display">
-                  VBMS Analytics
+                <h1 className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+                  SkinZAI VBMS
                 </h1>
-                <p className="text-sm text-slate-400 font-medium">Performance Intelligence & Insights</p>
+                <p className="text-xs text-gray-400">RUMEV1 Analytics</p>
               </div>
             </Link>
-
-            {/* System Status & Navigation */}
-            <div className="flex items-center space-x-6">
-              <div className="hidden lg:flex items-center space-x-4 text-sm">
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                  <span className="text-emerald-400 font-medium">Analytics Online</span>
-                </div>
-                <div className="text-slate-400 font-mono">
-                  {currentTime.toLocaleTimeString()}
-                </div>
-              </div>
-              
-              <nav className="hidden md:flex items-center space-x-6">
-                {[
-                  { name: 'Dashboard', icon: '📊' },
-                  { name: 'Analytics', icon: '📈', active: true },
-                  { name: 'Claims', icon: '📋' },
-                  { name: 'eFolder', icon: '📁' },
-                  { name: 'Orchestration', icon: '🤖' }
-                ].map((item) => (
-                  <Link
-                    key={item.name}
-                    href={`/${item.name.toLowerCase()}`}
-                    className={`flex items-center space-x-2 transition-all duration-300 hover:scale-105 px-3 py-2 rounded-lg ${
-                      item.active 
-                        ? 'text-purple-400 bg-purple-500/10 border border-purple-500/30' 
-                        : 'text-slate-300 hover:text-white hover:bg-white/5'
-                    }`}
-                  >
-                    <span>{item.icon}</span>
-                    <span className="font-medium">{item.name}</span>
-                  </Link>
-                ))}
-              </nav>
+            
+            <div className="hidden md:flex items-center space-x-6">
+              {['Dashboard', 'Analytics', 'Claims', 'Veterans', 'Settings'].map((item) => (
+                <Link
+                  key={item}
+                  href={item === 'Dashboard' ? '/dashboard' : `/${item.toLowerCase()}`}
+                  className={`text-sm font-medium transition-all duration-300 hover:scale-105 ${
+                    item === 'Analytics' 
+                      ? 'text-purple-400 border-b-2 border-purple-400 pb-1' 
+                      : 'text-gray-300 hover:text-white'
+                  }`}
+                >
+                  {item}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
-      </header>
+      </nav>
 
       {/* Main Content */}
       <div className={`relative z-40 max-w-7xl mx-auto px-6 py-8 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -251,7 +162,7 @@ export default function VBMSAnalytics() {
             </h2>
             
             <div className="space-y-6">
-              {agentAnalytics.map((agent, index) => (
+              {performanceMetrics.map((agent, index) => (
                 <div key={index} className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="font-semibold text-white text-sm">{agent.name}</h3>

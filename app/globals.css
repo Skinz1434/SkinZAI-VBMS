@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -36,13 +34,10 @@ html {
 }
 
 body {
-  font-family: 'Source Sans Pro', 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background: var(--skinzai-background);
   color: var(--skinzai-text);
   overflow-x: hidden;
-  font-weight: 400;
-  line-height: 1.6;
-  letter-spacing: -0.01em;
 }
 
 /* Custom Animations */
@@ -316,28 +311,13 @@ body {
   }
 
   .font-display {
-    font-family: 'Roboto', 'Inter', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     font-weight: 700;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
+    font-variation-settings: 'wght' 700;
   }
 
   .font-mono {
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
-    font-feature-settings: 'liga' 1, 'calt' 1;
-  }
-
-  .font-body {
-    font-family: 'Source Sans Pro', 'Inter', system-ui, sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.01em;
-  }
-
-  .font-heading {
-    font-family: 'Roboto', 'Inter', system-ui, sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.025em;
-    line-height: 1.3;
+    font-family: 'JetBrains Mono', monospace;
   }
 
   .delay-100 {
