@@ -2,6 +2,7 @@
 // This creates a comprehensive, enterprise-level VBMS dataset
 
 import { Veteran, Claim, Document, ClaimCondition, EvidenceItem, ClaimNote, TrackedItem } from './mockData';
+import { createDocumentDatabase, DocumentMetadata, getDocumentStatistics } from './documentDatabase';
 
 // Generate 50+ comprehensive veteran profiles
 export const massiveVeterans: Veteran[] = [
@@ -662,9 +663,17 @@ function generateExtractedData(docType: string): Record<string, any> {
   }
 }
 
-// Export massive mock database
+// Create comprehensive document database with real medical records
+const comprehensiveDocuments: DocumentMetadata[] = createDocumentDatabase(massiveVeterans, massiveClaims);
+
+// Get document statistics for analytics
+export const documentStats = getDocumentStatistics(comprehensiveDocuments);
+
+// Export massive mock database with enhanced document system
 export const massiveMockDatabase = {
   veterans: massiveVeterans,
   claims: massiveClaims,
-  documents: massiveDocuments
+  documents: massiveDocuments,
+  comprehensiveDocuments: comprehensiveDocuments,
+  documentStats: documentStats
 };
