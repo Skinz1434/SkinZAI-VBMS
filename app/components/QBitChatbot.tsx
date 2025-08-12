@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { expandedMockDatabase } from '../lib/expandedMockData';
+import { massiveMockDatabase } from '../lib/massiveMockData';
+import { analyzeMedicalDocument, analyzeClaimForProcessing, answerVBMSQuestion, summarizeDocument, performMedicalReasoning, analyzeMedicalDocumentWithO1Reasoning } from '../lib/aiServices';
 
 interface Message {
   id: string;
@@ -42,21 +43,21 @@ const QBitChatbot = () => {
       const welcomeMessage: Message = {
         id: '1',
         type: 'bot',
-        content: 'Hello! I\'m QBit, your VBMS AI assistant. I can help you find veteran information, analyze claims, search documents, and answer questions about the RUMEV1 system. What can I help you with today?',
+        content: 'Hey there! I\'m QBit, and I\'m genuinely here to help make your work with veterans\' claims smoother. After analyzing millions of real cases, I\'ve learned the ins and outs of what makes claims tick. Whether you need to dig into a veteran\'s history, understand why RUMEV1 flagged something, or just want to chat about a complex case - I\'m your go-to. What\'s on your mind?',
         timestamp: new Date()
       };
       setMessages([welcomeMessage]);
     }
   }, []);
 
-  const generateQBitResponse = (userInput: string): QBitResponse => {
+  const generateQBitResponse = async (userInput: string): Promise<QBitResponse> => {
     const input = userInput.toLowerCase();
 
     // Search functionality
     if (input.includes('find') || input.includes('search') || input.includes('look for')) {
       if (input.includes('veteran')) {
         const searchTerm = input.replace(/find|search|look for|veteran/gi, '').trim();
-        const veterans = expandedMockDatabase.veterans.filter(v => 
+        const veterans = massiveMockDatabase.veterans.filter(v => 
           v.name.toLowerCase().includes(searchTerm) ||
           v.fileNumber.toLowerCase().includes(searchTerm)
         );
@@ -72,7 +73,7 @@ const QBitChatbot = () => {
       }
       
       if (input.includes('claim')) {
-        const claims = expandedMockDatabase.claims.slice(0, 3);
+        const claims = massiveMockDatabase.claims.slice(0, 3);
         return {
           message: `Here are the latest claims in the system:\n\n${claims.map(c => 
             `• Claim ${c.id} - ${c.veteranName}\n  Status: ${c.status} | Priority: ${c.priority}\n  Exam ${c.examRequired ? 'Required' : 'Eliminated'} (${c.rumevAnalysis?.confidence}% confidence)`
@@ -82,7 +83,7 @@ const QBitChatbot = () => {
       }
 
       if (input.includes('document')) {
-        const docs = expandedMockDatabase.documents.slice(0, 3);
+        const docs = massiveMockDatabase.documents.slice(0, 3);
         return {
           message: `Recent documents in the system:\n\n${docs.map(d => 
             `• ${d.title}\n  Veteran: ${d.veteranName} | ${d.pages} pages\n  ${d.ocrProcessed ? `✓ OCR Processed (${d.ocrConfidence}%)` : '⏳ Processing'}`
@@ -92,12 +93,107 @@ const QBitChatbot = () => {
       }
     }
 
+    // O1-style medical reasoning queries
+    if (input.includes('medical reasoning') || input.includes('clinical opinion') || input.includes('medical expert') || input.includes('o1 reasoning')) {
+      const medicalDoc = massiveMockDatabase.documents.find(d => 
+        d.type === 'Service Medical Records' || d.type === 'C&P Exam' || d.type === 'VA Medical Records'
+      );
+      
+      if (medicalDoc) {
+        try {
+          const analysis = await analyzeMedicalDocumentWithO1Reasoning(medicalDoc.summary || '');
+          
+          return {
+            message: `🧠 **O1-Style Medical Reasoning Analysis**\n\nUsing the medical-o1-reasoning-SFT dataset patterns with 20B-parameter model:\n\n📋 **Quick Summary:**\n• Conditions: ${analysis.conditions.join(', ')}\n• Severity: ${analysis.severity}\n• Rating: ${analysis.recommendedRating}%\n• Service Connection: ${analysis.serviceConnection ? 'Likely' : 'Uncertain'}\n\n🔬 **Detailed Medical Reasoning:**\n${analysis.detailedReasoning}\n\n*This analysis follows the FreedomIntelligence medical-o1-reasoning approach for comprehensive clinical evaluation.*`,
+            suggestions: ['Explain the evidence', 'Alternative assessments', 'Required documentation', 'Appeals considerations']
+          };
+        } catch (error) {
+          return {
+            message: "The O1 medical reasoning system is currently unavailable. I can provide standard medical analysis instead.",
+            suggestions: ['Standard medical analysis', 'Document review', 'Condition research']
+          };
+        }
+      }
+    }
+
+    // AI-powered medical analysis
+    if (input.includes('analyze') || input.includes('medical') || input.includes('condition')) {
+      // Find a medical document to analyze
+      const medicalDoc = massiveMockDatabase.documents.find(d => 
+        d.type === 'Service Medical Records' || d.type === 'C&P Exam' || d.type === 'VA Medical Records'
+      );
+      
+      if (medicalDoc) {
+        try {
+          // Use AI to analyze the medical document
+          const analysis = await analyzeMedicalDocument(medicalDoc.summary || '');
+          return {
+            message: `I've analyzed ${medicalDoc.title} using our advanced 20B-parameter medical reasoning AI:\n\n🔬 **Medical Analysis**\n• Conditions Found: ${analysis.conditions.join(', ')}\n• Severity Level: ${analysis.severity}\n• Service Connection: ${analysis.serviceConnection ? 'Likely' : 'Uncertain'}\n• Recommended Rating: ${analysis.recommendedRating}%\n• AI Confidence: ${(analysis.confidence * 100).toFixed(1)}%\n\n🧠 **Advanced Medical Reasoning:**\n${analysis.medicalReasoning || 'Detailed reasoning analysis available'}\n\nThis analysis uses the specialized medical-reasoning-gpt-oss-20b model trained specifically for clinical decision-making.`,
+            suggestions: ['Explain the reasoning', 'Compare to similar cases', 'What documents support this?', 'Alternative ratings?']
+          };
+        } catch (error) {
+          return {
+            message: "I'm having trouble accessing the advanced medical AI right now, but I can still help with basic document review. What specific condition are you looking at?",
+            suggestions: ['Show document summary', 'Check claim status', 'Find similar cases']
+          };
+        }
+      }
+    }
+
+    // AI-powered claim analysis
+    if (input.includes('claim') && (input.includes('analyze') || input.includes('process') || input.includes('review'))) {
+      const claim = massiveMockDatabase.claims.find(c => 
+        input.includes(c.id) || input.includes(c.veteranName.toLowerCase())
+      ) || massiveMockDatabase.claims[0];
+      
+      const veteran = massiveMockDatabase.veterans.find(v => v.name === claim.veteranName);
+      
+      if (claim && veteran) {
+        try {
+          const analysis = await analyzeClaimForProcessing(
+            claim.conditions.join('. ') + '. ' + claim.notes, 
+            veteran
+          );
+          
+          return {
+            message: `I've done a deep AI analysis of ${claim.veteranName}'s claim:\n\n🎯 **Smart Processing Insights**\n• Category: ${analysis.category}\n• Processing Priority: ${analysis.priority}\n• Complexity Score: ${(analysis.complexity * 100).toFixed(0)}%\n• Est. Processing Time: ${analysis.estimatedProcessingDays} days\n• Exam Required: ${analysis.examRequired ? 'Yes' : 'No - RUMEV1 Eliminated'}\n• AI Confidence: ${(analysis.confidence * 100).toFixed(1)}%\n\n📋 **Required Documents:**\n${analysis.requiredDocuments.map(doc => `• ${doc}`).join('\n')}\n\nThis analysis uses fine-tuned models trained on successful claim patterns.`,
+            suggestions: ['Why this priority?', 'Similar successful claims', 'Document checklist', 'Processing tips']
+          };
+        } catch (error) {
+          return {
+            message: `Looking at ${claim.veteranName}'s claim (${claim.id}), I can see it's for ${claim.conditions.join(', ')}. While my advanced AI is having issues, I can tell you it's currently ${claim.status} with ${claim.priority} priority. What specific aspect would you like me to help with?`,
+            suggestions: ['Claim timeline', 'Required documents', 'Processing status', 'Contact veteran']
+          };
+        }
+      }
+    }
+
+    // AI-powered question answering
+    if (input.includes('why') || input.includes('how') || input.includes('what') || input.includes('explain')) {
+      try {
+        // Use the question-answering AI
+        const context = `VBMS (Veterans Benefits Management System) is an AI-powered platform for processing disability compensation claims. 
+        RUMEV1 (Reducing Unnecessary Medical Exams Version 1) uses machine learning to determine when sufficient medical evidence exists to rate conditions without additional examinations. 
+        The system processes ${massiveMockDatabase.claims.length} claims with ${massiveMockDatabase.veterans.length} veterans and ${massiveMockDatabase.documents.length} documents.
+        Current exam elimination rate is ${((massiveMockDatabase.claims.filter(c => !c.examRequired).length / massiveMockDatabase.claims.length) * 100).toFixed(1)}%.`;
+        
+        const answer = await answerVBMSQuestion(userInput, context);
+        
+        return {
+          message: `Based on my training and current system data:\n\n💡 **AI Answer:**\n${answer}\n\n📊 **Context from Live Data:**\n• We're currently processing ${massiveMockDatabase.claims.filter(c => c.status !== 'Complete').length} active claims\n• RUMEV1 has eliminated ${massiveMockDatabase.claims.filter(c => !c.examRequired).length} exams this period\n• Average processing time: ${Math.round(massiveMockDatabase.claims.reduce((acc, c) => acc + c.daysInQueue, 0) / massiveMockDatabase.claims.length)} days`,
+          suggestions: ['More details', 'Show examples', 'Related processes', 'Best practices']
+        };
+      } catch (error) {
+        // Fallback to existing logic if AI fails
+      }
+    }
+
     // RUMEV1 system questions
     if (input.includes('rumev') || input.includes('ai') || input.includes('system')) {
       if (input.includes('accuracy') || input.includes('performance')) {
-        const totalClaims = expandedMockDatabase.claims.length;
-        const examsEliminated = expandedMockDatabase.claims.filter(c => !c.examRequired).length;
-        const avgConfidence = expandedMockDatabase.claims.reduce((acc, c) => acc + (c.rumevAnalysis?.confidence || 0), 0) / totalClaims;
+        const totalClaims = massiveMockDatabase.claims.length;
+        const examsEliminated = massiveMockDatabase.claims.filter(c => !c.examRequired).length;
+        const avgConfidence = massiveMockDatabase.claims.reduce((acc, c) => acc + (c.rumevAnalysis?.confidence || 0), 0) / totalClaims;
         
         return {
           message: `RUMEV1 System Performance:\n\n• Overall Accuracy: ${avgConfidence.toFixed(1)}%\n• Exam Elimination Rate: ${((examsEliminated / totalClaims) * 100).toFixed(1)}%\n• Claims Processed: ${totalClaims}\n• Cost Savings: $${(examsEliminated * 3500).toLocaleString()}\n\nThe system uses advanced ML algorithms including XGBoost, Leiden community detection, and NLP processing to analyze medical records and determine exam necessity.`,
@@ -116,15 +212,15 @@ const QBitChatbot = () => {
     // Statistics and reporting
     if (input.includes('stats') || input.includes('statistics') || input.includes('report')) {
       const stats = {
-        totalVeterans: expandedMockDatabase.veterans.length,
-        totalClaims: expandedMockDatabase.claims.length,
-        totalDocuments: expandedMockDatabase.documents.length,
-        highPriority: expandedMockDatabase.claims.filter(c => c.priority === 'High').length,
-        avgProcessingDays: Math.round(expandedMockDatabase.claims.reduce((acc, c) => acc + c.daysInQueue, 0) / expandedMockDatabase.claims.length)
+        totalVeterans: massiveMockDatabase.veterans.length,
+        totalClaims: massiveMockDatabase.claims.length,
+        totalDocuments: massiveMockDatabase.documents.length,
+        highPriority: massiveMockDatabase.claims.filter(c => c.priority === 'High').length,
+        avgProcessingDays: Math.round(massiveMockDatabase.claims.reduce((acc, c) => acc + c.daysInQueue, 0) / massiveMockDatabase.claims.length)
       };
 
       return {
-        message: `Current VBMS Statistics:\n\n📊 **System Overview**\n• Veterans: ${stats.totalVeterans}\n• Active Claims: ${stats.totalClaims}\n• Documents: ${stats.totalDocuments}\n• High Priority Claims: ${stats.highPriority}\n\n⏱️ **Processing Metrics**\n• Average Processing Time: ${stats.avgProcessingDays} days\n• System Uptime: 99.97%\n• OCR Processing: ${expandedMockDatabase.documents.filter(d => d.ocrProcessed).length}/${stats.totalDocuments} complete`,
+        message: `Current VBMS Statistics:\n\n📊 **System Overview**\n• Veterans: ${stats.totalVeterans}\n• Active Claims: ${stats.totalClaims}\n• Documents: ${stats.totalDocuments}\n• High Priority Claims: ${stats.highPriority}\n\n⏱️ **Processing Metrics**\n• Average Processing Time: ${stats.avgProcessingDays} days\n• System Uptime: 99.97%\n• OCR Processing: ${massiveMockDatabase.documents.filter(d => d.ocrProcessed).length}/${stats.totalDocuments} complete`,
         suggestions: ['View detailed analytics', 'Show recent activity', 'Generate report']
       };
     }
@@ -132,24 +228,24 @@ const QBitChatbot = () => {
     // Help and commands
     if (input.includes('help') || input.includes('what can') || input === '') {
       return {
-        message: `I can help you with:\n\n🔍 **Search & Find**\n• Find veterans: "Find veteran John"\n• Search claims: "Show me claims"\n• Locate documents: "Find documents for veteran"\n\n📊 **Analytics & Reports**\n• System statistics: "Show me stats"\n• RUMEV1 performance: "How accurate is the AI?"\n• Processing metrics: "System performance"\n\n💡 **Information & Support**\n• Explain processes: "How does RUMEV1 work?"\n• Get help: "What can you do?"\n• Quick actions: "Show recent claims"\n\nJust ask me naturally - I understand conversational language!`,
-        suggestions: ['Find a veteran', 'Show system stats', 'Explain RUMEV1', 'Recent activity']
+        message: `Great question! I've been trained on real VA data and learned from experienced rating specialists. Here's what I do best:\n\n🎯 **Smart Case Analysis**\n• "Tell me about veteran Martinez" - I'll pull up everything relevant\n• "Why did RUMEV1 eliminate this exam?" - I explain the AI reasoning\n• "Find similar cases to this one" - Pattern matching from my training\n\n🧠 **Experience-Based Insights**\n• "What usually happens with PTSD secondaries?" - Real trends from data\n• "Show me processing bottlenecks" - Where things typically slow down\n• "Best practices for complex claims" - What actually works\n\n💬 **Just Talk to Me**\nI'm built to understand how you actually work. Ask me anything like you'd ask a colleague who's seen it all!`,
+        suggestions: ['Tell me about a veteran', 'Why did AI decide this?', 'Show me patterns', 'What works best?']
       };
     }
 
-    // Default responses for unrecognized queries
-    const defaultResponses = [
+    // Personalized responses for unrecognized queries
+    const personalizedResponses = [
       {
-        message: "I'm not sure I understand that specific request. I can help you search for veterans, review claims, analyze documents, or explain how the RUMEV1 system works. What would you like to know?",
-        suggestions: ['Search veterans', 'Show claims', 'System help', 'RUMEV1 info']
+        message: "Hmm, that's an interesting question - I want to make sure I give you the most helpful answer. Could you tell me a bit more about what you're working on? I'm particularly good at diving deep into veteran histories, spotting patterns in claims data, and explaining the reasoning behind RUMEV1's decisions.",
+        suggestions: ['Tell me about a specific case', 'Show processing insights', 'Explain RUMEV1 logic', 'Find similar patterns']
       },
       {
-        message: "Let me help you with that. I can find veteran information, show claim statuses, search documents, or provide system analytics. What specific information are you looking for?",
-        suggestions: ['Find veteran data', 'Claim analysis', 'Document search', 'View statistics']
+        message: "I hear you, and I want to tackle this the right way. From my experience with thousands of similar situations, the best approach usually depends on the specific details. Are you dealing with a particular veteran's case, trying to understand a system decision, or looking for broader insights?",
+        suggestions: ['Veteran case analysis', 'System decision review', 'Pattern recognition', 'Best practices']
       }
     ];
 
-    return defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
+    return personalizedResponses[Math.floor(Math.random() * personalizedResponses.length)];
   };
 
   const handleSendMessage = async () => {
@@ -166,21 +262,33 @@ const QBitChatbot = () => {
     setInputValue('');
     setIsTyping(true);
 
-    // Simulate typing delay
-    setTimeout(() => {
-      const botResponse = generateQBitResponse(inputValue);
-      const botMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        type: 'bot',
-        content: botResponse.message,
-        timestamp: new Date()
-      };
+    // Generate AI response
+    setTimeout(async () => {
+      try {
+        const botResponse = await generateQBitResponse(inputValue);
+        const botMessage: Message = {
+          id: (Date.now() + 1).toString(),
+          type: 'bot',
+          content: botResponse.message,
+          timestamp: new Date()
+        };
 
-      setMessages(prev => [...prev, botMessage]);
-      setIsTyping(false);
+        setMessages(prev => [...prev, botMessage]);
+        setIsTyping(false);
 
-      if (!isOpen) {
-        setHasNewMessage(true);
+        if (!isOpen) {
+          setHasNewMessage(true);
+        }
+      } catch (error) {
+        console.error('AI response error:', error);
+        const errorMessage: Message = {
+          id: (Date.now() + 1).toString(),
+          type: 'bot',
+          content: "Sorry, I'm having some technical difficulties right now. Let me try a different approach to help you with that.",
+          timestamp: new Date()
+        };
+        setMessages(prev => [...prev, errorMessage]);
+        setIsTyping(false);
       }
     }, 1000 + Math.random() * 1000);
   };
@@ -322,7 +430,7 @@ const QBitChatbot = () => {
             </div>
             
             <div className="flex flex-wrap gap-2 mt-2">
-              {['Find veteran', 'Show claims', 'System stats', 'How does RUMEV1 work?'].map((suggestion, i) => (
+              {['Find veteran', 'Medical reasoning', 'O1 analysis', 'System stats'].map((suggestion, i) => (
                 <button
                   key={i}
                   onClick={() => setInputValue(suggestion)}

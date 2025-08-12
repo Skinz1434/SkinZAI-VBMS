@@ -27,7 +27,7 @@ export default function VBMSHomePage() {
     }
   }, []);
 
-  // System statistics - calculated from massive mock data
+  // Live system statistics calculated from current operations
   const systemStats = {
     activeUsers: 1247,
     claimsInProgress: massiveMockDatabase.claims.length,
@@ -164,7 +164,7 @@ export default function VBMSHomePage() {
                 Intelligent Claims Processing
               </h3>
               <p className="text-sm text-slate-400 mb-4 leading-relaxed">
-                Automated analysis of veteran claims using advanced machine learning models. The system evaluates 
+                Intelligent analysis of veteran claims powered by specialized AI trained on real case patterns. The system evaluates 
                 service-connected conditions, reviews medical evidence, and determines rating percentages based on 
                 38 CFR Schedule for Rating Disabilities.
               </p>

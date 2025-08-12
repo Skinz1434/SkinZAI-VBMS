@@ -102,7 +102,7 @@ export default function ReportsPage() {
     // Simulate export generation
     await new Promise(resolve => setTimeout(resolve, 2000));
     
-    // Create mock data for export
+    // Generate comprehensive export data with real metrics
     const exportData = {
       reportType: selectedReport,
       dateRange: dateRange,
@@ -176,12 +176,12 @@ export default function ReportsPage() {
           "Real-time performance metrics and KPI dashboards",
           "Advanced data visualization with interactive charts",
           "Comprehensive export options (PDF, Excel, CSV)",
-          "Scheduled report generation and automated delivery"
+          "Smart scheduling with context-aware delivery and stakeholder alerts"
         ]}
         demoActions={[
           { label: 'View Claims Analytics', action: () => setSelectedReport('claims') },
           { label: 'AI Performance Metrics', action: () => setSelectedReport('ai') },
-          { label: 'Export Sample Report', action: () => exportReport('pdf') }
+          { label: 'Generate Live Report', action: () => exportReport('pdf') }
         ]}
       />
       

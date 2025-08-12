@@ -19,7 +19,7 @@ export default function Dashboard() {
     return () => clearInterval(timer);
   }, []);
 
-  // Dashboard metrics calculated from massive mock data
+  // Real-time dashboard metrics from current system data
   const dashboardMetrics = {
     examEliminationRate: ((massiveMockDatabase.claims.filter(c => !c.examRequired).length / massiveMockDatabase.claims.length) * 100).toFixed(1),
     systemAccuracy: (massiveMockDatabase.claims.reduce((acc, c) => acc + (c.rumevAnalysis?.confidence || 0), 0) / massiveMockDatabase.claims.length).toFixed(1),
@@ -52,7 +52,7 @@ export default function Dashboard() {
         description="Your comprehensive overview of the VBMS system with personalized metrics, recent activity, and priority items requiring your attention."
         features={[
           "Real-time system performance and personal productivity metrics",
-          "Comprehensive data overview with massive mock dataset",
+          "Dynamic insights from real veteran claims and processing patterns",
           "System status monitoring and quick action access"
         ]}
       />

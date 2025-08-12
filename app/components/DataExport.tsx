@@ -138,7 +138,15 @@ export default function DataExport({ isOpen, onClose, initialDataType = 'claims'
         data: exportConfig.dataType === 'claims' ? massiveMockDatabase.claims.slice(0, 100) :
               exportConfig.dataType === 'veterans' ? massiveMockDatabase.veterans.slice(0, 50) :
               exportConfig.dataType === 'documents' ? massiveMockDatabase.documents.slice(0, 200) :
-              [{ sampleAnalytics: 'Sample analytics data would be here' }]
+              [{
+                performanceMetrics: {
+                  claimsProcessed: massiveMockDatabase.claims.length,
+                  examEliminations: massiveMockDatabase.claims.filter(c => !c.examRequired).length,
+                  avgConfidence: massiveMockDatabase.claims.reduce((acc, c) => acc + (c.rumevAnalysis?.confidence || 0), 0) / massiveMockDatabase.claims.length,
+                  costSavings: massiveMockDatabase.claims.filter(c => !c.examRequired).length * 3500,
+                  processingEfficiency: Math.round(massiveMockDatabase.claims.filter(c => c.status === 'Complete').length / massiveMockDatabase.claims.length * 100)
+                }
+              }]
       };
 
       // Create and download file
