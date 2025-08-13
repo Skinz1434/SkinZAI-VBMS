@@ -6,13 +6,14 @@ import Link from 'next/link';
 import GlobalSearch from '../../components/GlobalSearch';
 import { massiveMockDatabase } from '../../lib/massiveMockData';
 import { performMedicalReasoning, analyzeMedicalDocumentWithO1Reasoning } from '../../lib/aiServices';
+import { DocumentMetadata } from '../../lib/documentDatabase';
 
 export default function ClaimDetail() {
   const params = useParams();
   const router = useRouter();
   const [claim, setClaim] = useState<any>(null);
   const [veteran, setVeteran] = useState<any>(null);
-  const [documents, setDocuments] = useState<any[]>([]);
+  const [documents, setDocuments] = useState<DocumentMetadata[]>([]);
   const [activeTab, setActiveTab] = useState('overview');
   const [isLoaded, setIsLoaded] = useState(false);
   const [examDraftStatus, setExamDraftStatus] = useState('not_started');
@@ -31,10 +32,12 @@ export default function ClaimDetail() {
       setClaim(claimData);
       const veteranData = massiveMockDatabase.veterans.find(v => v.id === claimData.veteranId);
       setVeteran(veteranData);
-      const claimDocs = massiveMockDatabase.documents.filter(d => 
-        d.veteranId === claimData.veteranId && 
-        d.title.toLowerCase().includes(claimData.conditions[0]?.name?.toLowerCase() || '')
-      ).slice(0, 10);
+      
+      // Get comprehensive documents for this claim
+      const claimDocs = massiveMockDatabase.comprehensiveDocuments.filter(
+        (d: DocumentMetadata) => d.veteranId === claimData.veteranId && 
+        (d.claimId === claimId || !d.claimId) // Include claim-specific and general veteran docs
+      );
       setDocuments(claimDocs);
       
       // Check if there's an existing MDEO review
@@ -574,42 +577,210 @@ export default function ClaimDetail() {
             )}
 
             {activeTab === 'documents' && (
-              <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
-                <h3 className="font-semibold text-slate-100 mb-4">Related Documents ({documents.length})</h3>
-                <div className="space-y-3">
-                  {documents.length === 0 ? (
-                    <p className="text-slate-400">No documents found for this claim.</p>
-                  ) : (
-                    documents.map((doc) => (
-                      <div key={doc.id} className="bg-slate-800 rounded-lg p-4 border border-slate-700 hover:border-slate-600 transition-colors">
+              <div className="space-y-6">
+                {/* Document Statistics */}
+                <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="font-semibold text-slate-100">Claim Evidence & Medical Records</h3>
+                    <Link 
+                      href={`/efolder/${veteran.id}`}
+                      className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors text-sm"
+                    >
+                      Open Full eFolder →
+                    </Link>
+                  </div>
+                  
+                  <div className="grid md:grid-cols-4 gap-4 mb-6">
+                    <div className="bg-slate-800 rounded-lg p-3 border border-slate-700">
+                      <p className="text-2xl font-bold text-slate-100">{documents.length}</p>
+                      <p className="text-xs text-slate-400">Total Documents</p>
+                    </div>
+                    <div className="bg-slate-800 rounded-lg p-3 border border-slate-700">
+                      <p className="text-2xl font-bold text-emerald-400">
+                        {documents.filter(d => d.relevanceScore && d.relevanceScore >= 90).length}
+                      </p>
+                      <p className="text-xs text-slate-400">High Relevance</p>
+                    </div>
+                    <div className="bg-slate-800 rounded-lg p-3 border border-slate-700">
+                      <p className="text-2xl font-bold text-blue-400">
+                        {documents.filter(d => d.reviewStatus === 'reviewed' || d.reviewStatus === 'verified').length}
+                      </p>
+                      <p className="text-xs text-slate-400">Reviewed</p>
+                    </div>
+                    <div className="bg-slate-800 rounded-lg p-3 border border-slate-700">
+                      <p className="text-2xl font-bold text-purple-400">
+                        {documents.reduce((acc, d) => acc + d.pages, 0)}
+                      </p>
+                      <p className="text-xs text-slate-400">Total Pages</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Critical Evidence Documents */}
+                <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
+                  <h4 className="font-semibold text-slate-100 mb-4 flex items-center">
+                    <span className="text-emerald-400 mr-2">⚡</span>
+                    Critical Evidence for This Claim
+                  </h4>
+                  <div className="space-y-3">
+                    {documents.filter(doc => 
+                      doc.claimId === claim.id || 
+                      ['C&P Exam', 'DBQ', 'Nexus Letter', 'VA Decision'].includes(doc.type)
+                    ).slice(0, 5).map((doc) => (
+                      <div key={doc.id} className="bg-slate-800 rounded-lg p-4 border border-slate-700 hover:border-emerald-600/50 transition-all">
                         <div className="flex items-start justify-between">
                           <div className="flex-1">
-                            <p className="font-medium text-slate-200">{doc.title}</p>
-                            <p className="text-sm text-slate-400 mt-1">Type: {doc.type} • {doc.pages} pages</p>
-                            <p className="text-xs text-slate-500 mt-2">Uploaded: {new Date(doc.uploadDate).toLocaleDateString()}</p>
+                            <div className="flex items-center space-x-2 mb-2">
+                              <span className="text-lg">
+                                {doc.type === 'C&P Exam' ? '🔍' : 
+                                 doc.type === 'DBQ' ? '📝' : 
+                                 doc.type === 'Nexus Letter' ? '🔗' : 
+                                 doc.type === 'VA Decision' ? '⚖️' : '📄'}
+                              </span>
+                              <p className="font-medium text-slate-200">{doc.title}</p>
+                            </div>
+                            
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs text-slate-400 mb-2">
+                              <span>Type: {doc.type}</span>
+                              <span>{doc.pages} pages</span>
+                              <span>{new Date(doc.documentDate).toLocaleDateString()}</span>
+                              <span className="text-emerald-400 font-medium">{doc.relevanceScore}% relevant</span>
+                            </div>
+                            
+                            {doc.extractedData && (
+                              <div className="bg-slate-900/50 rounded p-2 mt-2">
+                                {doc.extractedData.serviceConnection && doc.extractedData.serviceConnection.length > 0 && (
+                                  <div className="text-xs mb-2">
+                                    <p className="text-emerald-400 font-medium mb-1">✓ Service Connection Established</p>
+                                    {doc.extractedData.serviceConnection.map((conn, i) => (
+                                      <div key={i} className="ml-2 text-slate-300">
+                                        • {conn.condition} - {conn.connectionType} connection
+                                      </div>
+                                    ))}
+                                  </div>
+                                )}
+                                
+                                {doc.extractedData.disabilities && doc.extractedData.disabilities.length > 0 && (
+                                  <div className="text-xs">
+                                    <p className="text-blue-400 font-medium mb-1">Disability Ratings:</p>
+                                    {doc.extractedData.disabilities.map((disability, i) => (
+                                      <div key={i} className="ml-2 text-slate-300">
+                                        • {disability.condition}: <span className="text-emerald-400">{disability.percentage}%</span>
+                                      </div>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
+                            )}
+                            
+                            {doc.reviewNotes && (
+                              <p className="text-xs text-slate-400 mt-2 italic">"{doc.reviewNotes}"</p>
+                            )}
                           </div>
-                          <div className="flex items-center space-x-2">
+                          
+                          <div className="flex flex-col items-end space-y-2 ml-4">
                             <span className={`px-2 py-1 text-xs rounded border ${
-                              doc.reviewStatus === 'Reviewed' 
+                              doc.reviewStatus === 'verified' 
+                                ? 'bg-blue-500/10 text-blue-400 border-blue-500/30'
+                                : doc.reviewStatus === 'reviewed'
                                 ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
-                                : 'bg-slate-700 text-slate-400 border-slate-600'
+                                : 'bg-yellow-500/10 text-yellow-400 border-yellow-500/30'
                             }`}>
                               {doc.reviewStatus}
                             </span>
                             <Link 
                               href={`/efolder/${veteran.id}?doc=${doc.id}`}
-                              className="p-2 bg-slate-700 hover:bg-slate-600 rounded transition-colors"
+                              className="px-3 py-1 bg-slate-700 hover:bg-slate-600 text-slate-200 rounded text-xs transition-colors"
                             >
-                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                              </svg>
+                              View
                             </Link>
                           </div>
                         </div>
                       </div>
-                    ))
-                  )}
+                    ))}
+                  </div>
+                </div>
+
+                {/* Supporting Medical Evidence */}
+                <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
+                  <h4 className="font-semibold text-slate-100 mb-4">Supporting Medical Evidence</h4>
+                  
+                  {/* Group by document type */}
+                  {['Service Treatment Record', 'VA Medical Record', 'Private Medical Record', 'Imaging Report', 'Lab Report', 'Mental Health Note'].map(docType => {
+                    const typeDocs = documents.filter(d => d.type === docType);
+                    if (typeDocs.length === 0) return null;
+                    
+                    return (
+                      <div key={docType} className="mb-4">
+                        <h5 className="text-sm font-medium text-slate-300 mb-2">
+                          {docType}s ({typeDocs.length})
+                        </h5>
+                        <div className="grid md:grid-cols-2 gap-2">
+                          {typeDocs.slice(0, 4).map((doc) => (
+                            <div key={doc.id} className="bg-slate-800 border border-slate-700 rounded p-2 text-xs hover:border-slate-600 transition-colors">
+                              <div className="flex items-center justify-between mb-1">
+                                <p className="text-slate-200 font-medium truncate flex-1 mr-2">{doc.title}</p>
+                                <span className="text-slate-500">{doc.pages}p</span>
+                              </div>
+                              <div className="flex items-center justify-between text-slate-400">
+                                <span>{new Date(doc.documentDate).toLocaleDateString()}</span>
+                                <Link 
+                                  href={`/efolder/${veteran.id}?doc=${doc.id}`}
+                                  className="text-blue-400 hover:text-blue-300"
+                                >
+                                  View →
+                                </Link>
+                              </div>
+                              {doc.extractedData?.diagnoses && (
+                                <p className="text-slate-500 mt-1 truncate">
+                                  Dx: {doc.extractedData.diagnoses[0]}
+                                </p>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                        {typeDocs.length > 4 && (
+                          <p className="text-xs text-slate-500 text-center mt-2">
+                            +{typeDocs.length - 4} more {docType}s
+                          </p>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Administrative Documents */}
+                <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
+                  <h4 className="font-semibold text-slate-100 mb-4">Administrative & Service Records</h4>
+                  <div className="space-y-2">
+                    {documents.filter(d => 
+                      ['DD214', 'Personnel Record', 'Buddy Statement', 'VA Decision', 'Social Security Records'].includes(d.type)
+                    ).map((doc) => (
+                      <div key={doc.id} className="bg-slate-800 border border-slate-700 rounded p-3 hover:border-slate-600 transition-colors">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center space-x-3">
+                            <span className="text-sm">
+                              {doc.type === 'DD214' ? '🎖️' : 
+                               doc.type === 'Personnel Record' ? '📁' : 
+                               doc.type === 'Buddy Statement' ? '👥' : '📋'}
+                            </span>
+                            <div>
+                              <p className="text-sm font-medium text-slate-200">{doc.title}</p>
+                              <p className="text-xs text-slate-400">
+                                {doc.type} • {new Date(doc.documentDate).toLocaleDateString()} • {doc.pages} pages
+                              </p>
+                            </div>
+                          </div>
+                          <Link 
+                            href={`/efolder/${veteran.id}?doc=${doc.id}`}
+                            className="text-xs text-blue-400 hover:text-blue-300"
+                          >
+                            View →
+                          </Link>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             )}

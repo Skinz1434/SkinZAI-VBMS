@@ -5,13 +5,15 @@ import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import GlobalSearch from '../../components/GlobalSearch';
 import { massiveMockDatabase } from '../../lib/massiveMockData';
+import { DocumentMetadata } from '../../lib/documentDatabase';
 
 export default function VeteranProfile() {
   const params = useParams();
   const router = useRouter();
   const [veteran, setVeteran] = useState<any>(null);
   const [claims, setClaims] = useState<any[]>([]);
-  const [documents, setDocuments] = useState<any[]>([]);
+  const [documents, setDocuments] = useState<DocumentMetadata[]>([]);
+  const [documentStats, setDocumentStats] = useState<any>(null);
   const [activeTab, setActiveTab] = useState('overview');
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -23,8 +25,25 @@ export default function VeteranProfile() {
       setVeteran(veteranData);
       const veteranClaims = massiveMockDatabase.claims.filter(c => c.veteranId === veteranId);
       setClaims(veteranClaims);
-      const veteranDocs = massiveMockDatabase.documents.filter(d => d.veteranId === veteranId);
+      
+      // Get comprehensive documents for this veteran
+      const veteranDocs = massiveMockDatabase.comprehensiveDocuments.filter(
+        (d: DocumentMetadata) => d.veteranId === veteranId
+      );
       setDocuments(veteranDocs);
+      
+      // Calculate document statistics
+      const stats = {
+        totalDocuments: veteranDocs.length,
+        totalPages: veteranDocs.reduce((acc: number, doc: DocumentMetadata) => acc + doc.pages, 0),
+        reviewedCount: veteranDocs.filter((d: DocumentMetadata) => d.reviewStatus === 'reviewed').length,
+        verifiedCount: veteranDocs.filter((d: DocumentMetadata) => d.authenticity === 'verified').length,
+        categories: veteranDocs.reduce((acc: any, doc: DocumentMetadata) => {
+          acc[doc.category] = (acc[doc.category] || 0) + 1;
+          return acc;
+        }, {})
+      };
+      setDocumentStats(stats);
       
       // Store current veteran context
       localStorage.setItem('vbms-current-veteran', JSON.stringify(veteranData));
@@ -362,6 +381,173 @@ export default function VeteranProfile() {
                       <p className="text-slate-200">{new Date(veteran.dob).toLocaleDateString()}</p>
                     </div>
                   </div>
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'documents' && (
+              <div className="space-y-6">
+                {/* Document Statistics */}
+                {documentStats && (
+                  <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
+                    <h3 className="font-semibold text-slate-100 mb-4">Document Overview</h3>
+                    <div className="grid md:grid-cols-4 gap-4">
+                      <div className="bg-slate-800 rounded-lg p-4 border border-slate-700">
+                        <p className="text-2xl font-bold text-slate-100">{documentStats.totalDocuments}</p>
+                        <p className="text-sm text-slate-400">Total Documents</p>
+                      </div>
+                      <div className="bg-slate-800 rounded-lg p-4 border border-slate-700">
+                        <p className="text-2xl font-bold text-emerald-400">{documentStats.totalPages}</p>
+                        <p className="text-sm text-slate-400">Total Pages</p>
+                      </div>
+                      <div className="bg-slate-800 rounded-lg p-4 border border-slate-700">
+                        <p className="text-2xl font-bold text-blue-400">{documentStats.reviewedCount}</p>
+                        <p className="text-sm text-slate-400">Reviewed</p>
+                      </div>
+                      <div className="bg-slate-800 rounded-lg p-4 border border-slate-700">
+                        <p className="text-2xl font-bold text-purple-400">{documentStats.verifiedCount}</p>
+                        <p className="text-sm text-slate-400">Verified</p>
+                      </div>
+                    </div>
+                    
+                    {/* Document Categories */}
+                    <div className="mt-4 pt-4 border-t border-slate-800">
+                      <p className="text-sm font-medium text-slate-300 mb-3">Documents by Category</p>
+                      <div className="grid md:grid-cols-3 gap-2">
+                        {Object.entries(documentStats.categories).map(([category, count]) => (
+                          <div key={category} className="flex justify-between text-sm">
+                            <span className="text-slate-400">{category}:</span>
+                            <span className="text-slate-200 font-medium">{count as number}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Document List */}
+                <div className="space-y-3">
+                  {documents.length === 0 ? (
+                    <div className="bg-slate-900 border border-slate-800 rounded-lg p-8 text-center">
+                      <p className="text-slate-400">No documents found.</p>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="flex items-center justify-between mb-4">
+                        <h3 className="font-semibold text-slate-100">Medical Records & Evidence ({documents.length})</h3>
+                        <Link 
+                          href={`/efolder/${veteran.id}`}
+                          className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors text-sm"
+                        >
+                          Open Full eFolder →
+                        </Link>
+                      </div>
+                      
+                      {/* Group documents by type */}
+                      {['DD214', 'Service Treatment Record', 'VA Medical Record', 'C&P Exam', 'DBQ', 'Nexus Letter', 'Private Medical Record', 'Imaging Report', 'Lab Report'].map(docType => {
+                        const typeDocs = documents.filter((doc: any) => doc.type === docType);
+                        if (typeDocs.length === 0) return null;
+                        
+                        return (
+                          <div key={docType} className="bg-slate-900 border border-slate-800 rounded-lg p-4">
+                            <h4 className="font-medium text-slate-100 mb-3 flex items-center justify-between">
+                              <span>{docType} ({typeDocs.length})</span>
+                              <span className="text-xs text-slate-500">
+                                {typeDocs.reduce((acc: number, d: any) => acc + d.pages, 0)} pages
+                              </span>
+                            </h4>
+                            
+                            <div className="space-y-2">
+                              {typeDocs.slice(0, 3).map((doc: any) => (
+                                <div key={doc.id} className="bg-slate-800 border border-slate-700 rounded p-3 hover:border-slate-600 transition-colors">
+                                  <div className="flex items-start justify-between">
+                                    <div className="flex-1">
+                                      <p className="text-sm font-medium text-slate-200 mb-1">{doc.title}</p>
+                                      <div className="flex items-center space-x-4 text-xs text-slate-400">
+                                        <span>{new Date(doc.documentDate).toLocaleDateString()}</span>
+                                        <span>{doc.pages} pages</span>
+                                        <span>{doc.fileSize}</span>
+                                        {doc.relevanceScore && (
+                                          <span className="text-emerald-400">{doc.relevanceScore}% relevant</span>
+                                        )}
+                                      </div>
+                                      
+                                      {doc.extractedData && (
+                                        <div className="mt-2 text-xs">
+                                          {doc.extractedData.diagnoses && (
+                                            <p className="text-slate-500">
+                                              Diagnoses: <span className="text-slate-300">{doc.extractedData.diagnoses.slice(0, 2).join(', ')}</span>
+                                            </p>
+                                          )}
+                                          {doc.extractedData.serviceConnection && doc.extractedData.serviceConnection.length > 0 && (
+                                            <p className="text-emerald-400 mt-1">✓ Service Connection Evidence</p>
+                                          )}
+                                          {doc.extractedData.disabilities && doc.extractedData.disabilities.length > 0 && (
+                                            <p className="text-blue-400 mt-1">
+                                              Rating: {doc.extractedData.disabilities[0].percentage}% - {doc.extractedData.disabilities[0].condition}
+                                            </p>
+                                          )}
+                                        </div>
+                                      )}
+                                    </div>
+                                    
+                                    <div className="flex flex-col items-end space-y-1">
+                                      <span className={`px-2 py-0.5 text-xs rounded border ${
+                                        doc.reviewStatus === 'reviewed' 
+                                          ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
+                                          : doc.reviewStatus === 'verified'
+                                          ? 'bg-blue-500/10 text-blue-400 border-blue-500/30'
+                                          : 'bg-yellow-500/10 text-yellow-400 border-yellow-500/30'
+                                      }`}>
+                                        {doc.reviewStatus}
+                                      </span>
+                                      <Link 
+                                        href={`/efolder/${veteran.id}?doc=${doc.id}`}
+                                        className="text-xs text-blue-400 hover:text-blue-300"
+                                      >
+                                        View →
+                                      </Link>
+                                    </div>
+                                  </div>
+                                </div>
+                              ))}
+                              
+                              {typeDocs.length > 3 && (
+                                <p className="text-xs text-slate-500 text-center pt-1">
+                                  +{typeDocs.length - 3} more {docType} documents
+                                </p>
+                              )}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'history' && (
+              <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
+                <h3 className="font-semibold text-slate-100 mb-4">Claims History</h3>
+                <div className="space-y-4">
+                  {claims.map((claim, index) => (
+                    <div key={claim.id} className="border-l-4 border-blue-500 pl-4">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="font-medium text-slate-200">{claim.id}</p>
+                          <p className="text-sm text-slate-400">{claim.type} - {claim.status}</p>
+                          <p className="text-xs text-slate-500">Submitted: {new Date(claim.submittedDate).toLocaleDateString()}</p>
+                        </div>
+                        <Link 
+                          href={`/claims/${claim.id}`}
+                          className="text-blue-400 hover:text-blue-300 text-sm"
+                        >
+                          Details →
+                        </Link>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             )}
