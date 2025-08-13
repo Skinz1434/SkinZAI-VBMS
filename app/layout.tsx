@@ -1,6 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import QBitChatbot from './components/QBitChatbot';
+import QBitChat from './components/QBitChat';
 import { AuthProvider } from './components/AuthProvider';
 
 export const metadata: Metadata = {
@@ -43,7 +43,7 @@ export default function RootLayout({
       <body className="antialiased font-sans">
         <AuthProvider>
           {children}
-          <QBitChatbot />
+          <QBitChat />
         </AuthProvider>
       </body>
     </html>

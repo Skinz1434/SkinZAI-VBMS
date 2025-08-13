@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: nova-qbit-backend
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn app.main_simplified:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: APP_NAME
+        value: NOVA QBit
+      - key: VERSION
+        value: 1.0.0
+      - key: ENVIRONMENT
+        value: production
+      - key: CORS_ORIGINS
+        value: '["https://skinzai-vbms.vercel.app", "https://nova-platform.vercel.app", "http://localhost:3000"]'
+      - key: LOG_LEVEL
+        value: INFO
