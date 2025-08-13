@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import GlobalSearch from '../../components/GlobalSearch';
+import AppLayout from '../../components/AppLayout';
 import { massiveMockDatabase } from '../../lib/massiveMockData';
 import { DocumentMetadata } from '../../lib/documentDatabase';
 
@@ -127,60 +127,51 @@ export default function VeteranEFolder() {
 
   if (!veteran) {
     return (
-      <div className="min-h-screen bg-slate-950 text-slate-200 flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-semibold text-slate-100 mb-2">eFolder Not Found</h1>
-          <p className="text-slate-400 mb-4">The requested eFolder could not be located.</p>
-          <button 
-            onClick={() => router.push('/')}
-            className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg transition-colors border border-slate-700"
-          >
-            Return Home
-          </button>
+      <AppLayout>
+        <div className="min-h-screen bg-slate-950 text-slate-200 flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-2xl font-semibold text-slate-100 mb-2">eFolder Not Found</h1>
+            <p className="text-slate-400 mb-4">The requested eFolder could not be located.</p>
+            <button 
+              onClick={() => router.push('/')}
+              className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg transition-colors border border-slate-700"
+            >
+              Return Home
+            </button>
+          </div>
         </div>
-      </div>
+      </AppLayout>
     );
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200">
-      <GlobalSearch />
-      
-      {/* Header */}
-      <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur-sm sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <button 
-                onClick={() => router.back()}
-                className="p-2 hover:bg-slate-800 rounded-lg transition-colors"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
+    <AppLayout>
+      <div className="text-slate-200">
+        {/* Header */}
+        <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur-sm sticky top-0 z-40">
+          <div className="max-w-7xl mx-auto px-6 py-4">
+            <div className="flex items-center justify-between">
               <div>
                 <h1 className="text-lg font-semibold text-slate-100">Electronic Folder (eFolder)</h1>
                 <p className="text-sm text-slate-500">{veteran.name} • {veteran.fileNumber} • {stats.totalDocuments} Documents</p>
               </div>
-            </div>
-            
-            <div className="flex items-center space-x-4">
-              <Link 
-                href={`/veteran/${veteran.id}`}
-                className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg transition-colors border border-slate-700"
-              >
-                View Profile
-              </Link>
-              <button className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">
-                Upload Document
-              </button>
+              
+              <div className="flex items-center space-x-4">
+                <Link 
+                  href={`/veteran/${veteran.id}`}
+                  className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg transition-colors border border-slate-700"
+                >
+                  View Profile
+                </Link>
+                <button className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">
+                  Upload Document
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </header>
+        </header>
 
-      <main className={`transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+        <main className={`transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
         <div className="max-w-7xl mx-auto px-6 py-8">
           {/* Statistics Bar */}
           <div className="bg-slate-900 border border-slate-800 rounded-lg p-4 mb-6">
@@ -545,7 +536,8 @@ export default function VeteranEFolder() {
             </div>
           </div>
         </div>
-      </main>
-    </div>
+        </main>
+      </div>
+    </AppLayout>
   );
 }

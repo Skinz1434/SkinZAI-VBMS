@@ -2,11 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import GlobalSearch from './components/GlobalSearch';
+import AppLayout from './components/AppLayout';
 import WelcomeModal from './components/WelcomeModal';
 import AuthModal from './components/AuthModal';
 import ActivityFeed from './components/ActivityFeed';
-import UserProfile from './components/UserProfile';
 import KeyboardShortcuts from './components/KeyboardShortcuts';
 import { useAuth } from './components/AuthProvider';
 import { massiveMockDatabase } from './lib/massiveMockData';
@@ -40,9 +39,7 @@ export default function VBMSHomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200">
-      <GlobalSearch />
-      
+    <AppLayout>
       <WelcomeModal
         pageName="home"
         title="VBMS Platform"
@@ -65,86 +62,11 @@ export default function VBMSHomePage() {
         mode={authMode}
         onModeChange={setAuthMode}
       />
-      
-      {/* Clean Professional Header */}
-      <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            {/* Logo and System Name */}
-            <div className="flex items-center space-x-4">
-              <div className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center border border-slate-700">
-                <span className="text-slate-300 font-semibold">VA</span>
-              </div>
-              <div>
-                <h1 className="text-lg font-semibold text-slate-100">
-                  Veterans Benefits Management System
-                </h1>
-                <p className="text-xs text-slate-500">Enhanced with RUMEV1 AI Intelligence</p>
-              </div>
-            </div>
-            
-            {/* Primary Navigation */}
-            <nav className="hidden md:flex items-center space-x-1">
-              {[
-                { name: 'Dashboard', href: '/dashboard' },
-                { name: 'Claims', href: '/claims' },
-                { name: 'eFolder', href: '/efolder' },
-                { name: 'Analytics', href: '/analytics' },
-                { name: 'Reports', href: '/reports' },
-                { name: 'Orchestration', href: '/orchestration' }
-              ].map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="px-4 py-2 text-sm text-slate-400 hover:text-slate-100 hover:bg-slate-800/50 rounded-lg transition-all duration-200"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </nav>
-
-            {/* User Context */}
-            <div className="flex items-center space-x-4">
-              {currentVeteran && (
-                <div className="hidden lg:block text-right">
-                  <p className="text-xs text-slate-500">Current Context</p>
-                  <p className="text-sm font-medium text-slate-300">{currentVeteran.name}</p>
-                </div>
-              )}
-              
-              {isAuthenticated ? (
-                <UserProfile />
-              ) : (
-                <div className="flex items-center space-x-2">
-                  <button
-                    onClick={() => {
-                      setAuthMode('login');
-                      setAuthModalOpen(true);
-                    }}
-                    className="px-4 py-2 text-sm text-slate-400 hover:text-slate-200 transition-colors"
-                  >
-                    Sign In
-                  </button>
-                  <button
-                    onClick={() => {
-                      setAuthMode('signup');
-                      setAuthModalOpen(true);
-                    }}
-                    className="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors"
-                  >
-                    Sign Up
-                  </button>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </header>
 
       {/* Main Content */}
-      <main className={`transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+      <div className={`transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'} p-6`}>
         {/* System Overview Section */}
-        <section className="max-w-7xl mx-auto px-6 py-12">
+        <section className="max-w-7xl mx-auto py-12">
           <div className="mb-12">
             <h2 className="text-3xl font-light text-slate-100 mb-4">
               Veterans Benefits Processing Platform
@@ -318,7 +240,7 @@ export default function VBMSHomePage() {
             </div>
           )}
         </section>
-      </main>
+      </div>
 
       {/* Footer */}
       <footer className="border-t border-slate-800 mt-24">
@@ -343,6 +265,6 @@ export default function VBMSHomePage() {
       
       {/* Global Components */}
       <KeyboardShortcuts />
-    </div>
+    </AppLayout>
   );
 }

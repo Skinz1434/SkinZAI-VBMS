@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
-import GlobalSearch from '../../components/GlobalSearch';
+import AppLayout from '../../components/AppLayout';
 import { massiveMockDatabase } from '../../lib/massiveMockData';
 import { performMedicalReasoning, analyzeMedicalDocumentWithO1Reasoning } from '../../lib/aiServices';
 import { DocumentMetadata } from '../../lib/documentDatabase';
@@ -199,57 +199,48 @@ export default function ClaimDetail() {
 
   if (!claim || !veteran) {
     return (
-      <div className="min-h-screen bg-slate-950 text-slate-200 flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-semibold text-slate-100 mb-2">Claim Not Found</h1>
-          <p className="text-slate-400 mb-4">The requested claim could not be located.</p>
-          <button 
-            onClick={() => router.push('/claims')}
-            className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg transition-colors border border-slate-700"
-          >
-            Return to Claims
-          </button>
+      <AppLayout>
+        <div className="min-h-screen bg-slate-950 text-slate-200 flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-2xl font-semibold text-slate-100 mb-2">Claim Not Found</h1>
+            <p className="text-slate-400 mb-4">The requested claim could not be located.</p>
+            <button 
+              onClick={() => router.push('/claims')}
+              className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg transition-colors border border-slate-700"
+            >
+              Return to Claims
+            </button>
+          </div>
         </div>
-      </div>
+      </AppLayout>
     );
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200">
-      <GlobalSearch />
-      
-      {/* Header */}
-      <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur-sm sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <button 
-                onClick={() => router.back()}
-                className="p-2 hover:bg-slate-800 rounded-lg transition-colors"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
+    <AppLayout>
+      <div className="text-slate-200">
+        {/* Header */}
+        <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur-sm sticky top-0 z-40">
+          <div className="max-w-7xl mx-auto px-6 py-4">
+            <div className="flex items-center justify-between">
               <div>
                 <h1 className="text-lg font-semibold text-slate-100">Claim Details</h1>
                 <p className="text-sm text-slate-500">{claim.id} • {veteran.name}</p>
               </div>
-            </div>
-            
-            <div className="flex items-center space-x-4">
-              <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getStatusBadge(claim.status).bg} ${getStatusBadge(claim.status).text} ${getStatusBadge(claim.status).border}`}>
-                {claim.status}
-              </span>
-              <span className={`text-sm font-medium ${getExamStatusBadge().color}`}>
-                {getExamStatusBadge().label}
-              </span>
+              
+              <div className="flex items-center space-x-4">
+                <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getStatusBadge(claim.status).bg} ${getStatusBadge(claim.status).text} ${getStatusBadge(claim.status).border}`}>
+                  {claim.status}
+                </span>
+                <span className={`text-sm font-medium ${getExamStatusBadge().color}`}>
+                  {getExamStatusBadge().label}
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-      </header>
+        </header>
 
-      <main className={`transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+        <main className={`transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
         {/* Claim Summary */}
         <section className="max-w-7xl mx-auto px-6 py-8">
           <div className="bg-slate-900 border border-slate-800 rounded-lg p-6 mb-8">
@@ -883,9 +874,9 @@ export default function ClaimDetail() {
             )}
           </div>
         </section>
-      </main>
+        </main>
 
-      {/* Exam Draft Modal */}
+        {/* Exam Draft Modal */
       {showExamDraftModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
           <div className="bg-slate-900 border border-slate-700 rounded-lg p-6 max-w-2xl w-full mx-4">
@@ -937,6 +928,7 @@ export default function ClaimDetail() {
           </div>
         </div>
       )}
-    </div>
+      </div>
+    </AppLayout>
   );
 }

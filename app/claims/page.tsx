@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import GlobalSearch from '../components/GlobalSearch';
+import AppLayout from '../components/AppLayout';
 import WelcomeModal from '../components/WelcomeModal';
 import { useAuth } from '../components/AuthProvider';
 import { massiveMockDatabase } from '../lib/massiveMockData';
@@ -125,22 +125,22 @@ export default function ClaimsManagement() {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-slate-950 text-slate-200 flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-2xl font-semibold mb-4">Access Restricted</h2>
-          <p className="text-slate-400 mb-6">Please sign in to access claims management</p>
-          <Link href="/" className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">
-            Return to Home
-          </Link>
+      <AppLayout>
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <h2 className="text-2xl font-semibold mb-4">Access Restricted</h2>
+            <p className="text-slate-400 mb-6">Please sign in to access claims management</p>
+            <Link href="/" className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">
+              Return to Home
+            </Link>
+          </div>
         </div>
-      </div>
+      </AppLayout>
     );
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200">
-      <GlobalSearch />
-      
+    <AppLayout>
       <WelcomeModal
         pageName="claims"
         title="Claims Management"
@@ -157,61 +157,47 @@ export default function ClaimsManagement() {
           { label: 'Switch to Kanban View', action: () => setSelectedView('kanban') }
         ]}
       />
-      
-      {/* Professional Header */}
-      <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur-sm sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <Link href="/" className="p-2 hover:bg-slate-800 rounded-lg transition-colors">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </Link>
-              <div>
-                <h1 className="text-lg font-semibold text-slate-100">Claims Management</h1>
-                <p className="text-sm text-slate-500">Veterans Disability Compensation Claims</p>
-              </div>
+
+      <div className={`transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'} p-6`}>
+        {/* Header Stats */}
+        <div className="flex items-center justify-between mb-8">
+          <div>
+            <h1 className="text-2xl font-bold text-slate-100 mb-2">Claims Management</h1>
+            <p className="text-slate-400">Veterans Disability Compensation Claims</p>
+          </div>
+          
+          <div className="flex items-center space-x-4">
+            <div className="text-sm text-slate-400">
+              {filteredClaims.length} of {massiveMockDatabase.claims.length} claims
+              {activeFilters > 0 && (
+                <span className="ml-2 px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded">
+                  {activeFilters} filter{activeFilters > 1 ? 's' : ''} active
+                </span>
+              )}
             </div>
-            
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-4">
-                <div className="text-sm text-slate-400">
-                  {filteredClaims.length} of {massiveMockDatabase.claims.length} claims
-                  {activeFilters > 0 && (
-                    <span className="ml-2 px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded">
-                      {activeFilters} filter{activeFilters > 1 ? 's' : ''} active
-                    </span>
-                  )}
-                </div>
-                <div className="flex items-center space-x-2">
-                  <button
-                    onClick={() => setRealTimeUpdates(!realTimeUpdates)}
-                    className={`p-2 rounded-lg transition-colors ${
-                      realTimeUpdates 
-                        ? 'bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30' 
-                        : 'bg-slate-700 text-slate-400 hover:bg-slate-600'
-                    }`}
-                    title={`Real-time updates ${realTimeUpdates ? 'enabled' : 'disabled'}`}
-                  >
-                    {realTimeUpdates ? '🔴' : '⏸️'}
-                  </button>
-                  <span className="text-xs text-slate-500">
-                    {currentTime.toLocaleTimeString()}
-                  </span>
-                </div>
-              </div>
-              <button className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">
-                New Claim
+            <div className="flex items-center space-x-2">
+              <button
+                onClick={() => setRealTimeUpdates(!realTimeUpdates)}
+                className={`p-2 rounded-lg transition-colors ${
+                  realTimeUpdates 
+                    ? 'bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30' 
+                    : 'bg-slate-700 text-slate-400 hover:bg-slate-600'
+                }`}
+                title={`Real-time updates ${realTimeUpdates ? 'enabled' : 'disabled'}`}
+              >
+                {realTimeUpdates ? '🔴' : '⏸️'}
               </button>
+              <span className="text-xs text-slate-500">
+                {currentTime.toLocaleTimeString()}
+              </span>
             </div>
+            <button className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">
+              New Claim
+            </button>
           </div>
         </div>
-      </header>
-
-      <main className={`transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
         {/* Search and Filters */}
-        <section className="max-w-7xl mx-auto px-6 py-8">
+        <div className="max-w-7xl mx-auto">
           <div className="bg-slate-900 border border-slate-800 rounded-lg p-6 mb-8">
             <h2 className="text-xl font-semibold text-slate-100 mb-6">Active Claims Processing</h2>
             
@@ -644,8 +630,8 @@ export default function ClaimsManagement() {
             )}
             </div>
           )}
-        </section>
-      </main>
-    </div>
+        </div>
+      </div>
+    </AppLayout>
   );
 }

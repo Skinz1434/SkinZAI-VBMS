@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import GlobalSearch from '../components/GlobalSearch';
+import AppLayout from '../components/AppLayout';
 import WelcomeModal from '../components/WelcomeModal';
 import { useAuth } from '../components/AuthProvider';
 import { massiveMockDatabase } from '../lib/massiveMockData';
@@ -138,36 +138,38 @@ export default function ReportsPage() {
   // Check permissions
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-slate-950 text-slate-200 flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-2xl font-semibold mb-4">Access Restricted</h2>
-          <p className="text-slate-400 mb-6">Please sign in to access reports</p>
-          <Link href="/" className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">
-            Return to Home
-          </Link>
+      <AppLayout>
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <h2 className="text-2xl font-semibold mb-4">Access Restricted</h2>
+            <p className="text-slate-400 mb-6">Please sign in to access reports</p>
+            <Link href="/" className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">
+              Return to Home
+            </Link>
+          </div>
         </div>
-      </div>
+      </AppLayout>
     );
   }
 
   if (!user?.role || !PermissionManager.hasPermission(user.role, 'reports.view')) {
     return (
-      <div className="min-h-screen bg-slate-950 text-slate-200 flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-2xl font-semibold mb-4">Insufficient Permissions</h2>
-          <p className="text-slate-400 mb-6">You don't have permission to view reports</p>
-          <Link href="/dashboard" className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">
-            Return to Dashboard
-          </Link>
+      <AppLayout>
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <h2 className="text-2xl font-semibold mb-4">Insufficient Permissions</h2>
+            <p className="text-slate-400 mb-6">You don't have permission to view reports</p>
+            <Link href="/dashboard" className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">
+              Return to Dashboard
+            </Link>
+          </div>
         </div>
-      </div>
+      </AppLayout>
     );
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200">
-      <GlobalSearch />
-      
+    <AppLayout>
       <WelcomeModal
         pageName="reports"
         title="Reports & Analytics"
@@ -184,80 +186,68 @@ export default function ReportsPage() {
           { label: 'Generate Live Report', action: () => exportReport('pdf') }
         ]}
       />
-      
-      {/* Header */}
-      <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur-sm sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <Link href="/" className="p-2 hover:bg-slate-800 rounded-lg transition-colors">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </Link>
-              <div>
-                <h1 className="text-lg font-semibold text-slate-100">Reports & Analytics</h1>
-                <p className="text-sm text-slate-500">Comprehensive data insights and reporting</p>
-              </div>
-            </div>
+
+      <div className={`transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'} p-6`}>
+        {/* Header */}
+        <div className="flex items-center justify-between mb-8">
+          <div>
+            <h1 className="text-2xl font-bold text-slate-100 mb-2">Reports & Analytics</h1>
+            <p className="text-slate-400">Comprehensive data insights and reporting</p>
+          </div>
+          
+          <div className="flex items-center space-x-3">
+            <select
+              value={dateRange}
+              onChange={(e) => setDateRange(e.target.value as any)}
+              className="bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-slate-200 focus:border-blue-500 focus:outline-none"
+            >
+              <option value="7d">Last 7 days</option>
+              <option value="30d">Last 30 days</option>
+              <option value="90d">Last 90 days</option>
+              <option value="1y">Last year</option>
+              <option value="custom">Custom range</option>
+            </select>
             
-            <div className="flex items-center space-x-3">
-              <select
-                value={dateRange}
-                onChange={(e) => setDateRange(e.target.value as any)}
-                className="bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-slate-200 focus:border-blue-500 focus:outline-none"
-              >
-                <option value="7d">Last 7 days</option>
-                <option value="30d">Last 30 days</option>
-                <option value="90d">Last 90 days</option>
-                <option value="1y">Last year</option>
-                <option value="custom">Custom range</option>
-              </select>
-              
-              <button
-                onClick={scheduleReport}
-                className="px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors text-sm"
-              >
-                Schedule Report
+            <button
+              onClick={scheduleReport}
+              className="px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors text-sm"
+            >
+              Schedule Report
+            </button>
+            
+            <div className="relative group">
+              <button className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors text-sm">
+                Export Report
               </button>
-              
-              <div className="relative group">
-                <button className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors text-sm">
-                  Export Report
-                </button>
-                <div className="absolute right-0 top-full mt-2 w-48 bg-slate-900 border border-slate-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                  <div className="p-2">
-                    <button
-                      onClick={() => exportReport('pdf')}
-                      disabled={isGenerating}
-                      className="w-full text-left px-3 py-2 text-sm text-slate-300 hover:bg-slate-800 rounded transition-colors disabled:opacity-50"
-                    >
-                      📄 Export as PDF
-                    </button>
-                    <button
-                      onClick={() => exportReport('excel')}
-                      disabled={isGenerating}
-                      className="w-full text-left px-3 py-2 text-sm text-slate-300 hover:bg-slate-800 rounded transition-colors disabled:opacity-50"
-                    >
-                      📊 Export as Excel
-                    </button>
-                    <button
-                      onClick={() => exportReport('csv')}
-                      disabled={isGenerating}
-                      className="w-full text-left px-3 py-2 text-sm text-slate-300 hover:bg-slate-800 rounded transition-colors disabled:opacity-50"
-                    >
-                      📋 Export as CSV
-                    </button>
-                  </div>
+              <div className="absolute right-0 top-full mt-2 w-48 bg-slate-900 border border-slate-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="p-2">
+                  <button
+                    onClick={() => exportReport('pdf')}
+                    disabled={isGenerating}
+                    className="w-full text-left px-3 py-2 text-sm text-slate-300 hover:bg-slate-800 rounded transition-colors disabled:opacity-50"
+                  >
+                    📄 Export as PDF
+                  </button>
+                  <button
+                    onClick={() => exportReport('excel')}
+                    disabled={isGenerating}
+                    className="w-full text-left px-3 py-2 text-sm text-slate-300 hover:bg-slate-800 rounded transition-colors disabled:opacity-50"
+                  >
+                    📊 Export as Excel
+                  </button>
+                  <button
+                    onClick={() => exportReport('csv')}
+                    disabled={isGenerating}
+                    className="w-full text-left px-3 py-2 text-sm text-slate-300 hover:bg-slate-800 rounded transition-colors disabled:opacity-50"
+                  >
+                    📋 Export as CSV
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </header>
-
-      <main className={`transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
-        <div className="max-w-7xl mx-auto px-6 py-8">
+        <div className="max-w-7xl mx-auto">
           {/* Report Navigation */}
           <div className="bg-slate-900 border border-slate-800 rounded-lg mb-8">
             <div className="flex border-b border-slate-800 overflow-x-auto">
@@ -557,7 +547,7 @@ export default function ReportsPage() {
             </div>
           </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </AppLayout>
   );
 }

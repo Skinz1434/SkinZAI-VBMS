@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import GlobalSearch from '../components/GlobalSearch';
+import AppLayout from '../components/AppLayout';
 import WelcomeModal from '../components/WelcomeModal';
 import { massiveMockDatabase } from '../lib/massiveMockData';
 
@@ -411,9 +411,7 @@ export default function AgentOrchestration() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200">
-      <GlobalSearch />
-      
+    <AppLayout>
       <WelcomeModal
         pageName="orchestration"
         title="Multi-Agent Orchestration"
@@ -429,36 +427,25 @@ export default function AgentOrchestration() {
           { label: 'Open Network Diagram', action: () => setActiveTab('network') }
         ]}
       />
-      
-      <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur-sm sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <Link href="/" className="p-2 hover:bg-slate-800 rounded-lg transition-colors">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </Link>
-              <div>
-                <h1 className="text-lg font-semibold text-slate-100">RUMEV1 Agent Orchestration</h1>
-                <p className="text-sm text-slate-500">Multi-Agent System Management & Monitoring</p>
-              </div>
+
+      <div className={`transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'} p-6`}>
+        {/* Header */}
+        <div className="flex items-center justify-between mb-8">
+          <div>
+            <h1 className="text-2xl font-bold text-slate-100 mb-2">RUMEV1 Agent Orchestration</h1>
+            <p className="text-slate-400">Multi-Agent System Management & Monitoring</p>
+          </div>
+          
+          <div className="flex items-center space-x-4">
+            <div className="text-right">
+              <p className="text-sm font-medium text-slate-200">System Status: Operational</p>
+              <p className="text-xs text-slate-500">{currentTime.toLocaleTimeString()}</p>
             </div>
-            
-            <div className="flex items-center space-x-4">
-              <div className="text-right">
-                <p className="text-sm font-medium text-slate-200">System Status: Operational</p>
-                <p className="text-xs text-slate-500">{currentTime.toLocaleTimeString()}</p>
-              </div>
-              <div className="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
-            </div>
+            <div className="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
           </div>
         </div>
-      </header>
-
-      <main className={`transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
         {/* System Overview */}
-        <section className="max-w-7xl mx-auto px-6 py-8">
+        <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-6 mb-8">
             <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
               <div className="flex items-center justify-between mb-4">
@@ -731,8 +718,8 @@ export default function AgentOrchestration() {
               )}
             </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </div>
 
       {/* Agent Detail Modal */}
       {selectedAgent && (
@@ -834,6 +821,6 @@ export default function AgentOrchestration() {
           </div>
         </div>
       )}
-    </div>
+    </AppLayout>
   );
 }
