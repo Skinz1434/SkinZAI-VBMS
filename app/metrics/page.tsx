@@ -293,9 +293,9 @@ export default function MetricsPage() {
     const range = maxValue - minValue;
     
     return (
-      <div className="flex items-end space-x-1 h-16 mt-4">
+      <div className="flex items-end space-x-1 h-16 mt-4 overflow-hidden">
         {data.slice(-14).map((point, index) => {
-          const height = range === 0 ? 50 : ((point.value - minValue) / range) * 60 + 4;
+          const height = range === 0 ? 30 : Math.min(60, Math.max(4, ((point.value - minValue) / range) * 56 + 4));
           return (
             <div
               key={index}
@@ -436,19 +436,19 @@ export default function MetricsPage() {
                   </div>
                   
                   {/* Chart Visualization */}
-                  <div className="h-64 flex items-end space-x-2">
+                  <div className="h-64 flex items-end space-x-2 overflow-hidden">
                     {currentChart.data.slice(-20).map((point, index) => {
                       const maxValue = Math.max(...currentChart.data.map(d => d.value));
                       const minValue = Math.min(...currentChart.data.map(d => d.value));
                       const range = maxValue - minValue;
-                      const height = range === 0 ? 50 : ((point.value - minValue) / range) * 240 + 20;
+                      const height = range === 0 ? 50 : Math.min(240, Math.max(20, ((point.value - minValue) / range) * 220 + 20));
                       
                       return (
                         <div
                           key={index}
-                          className="flex-1 flex flex-col items-center group"
+                          className="flex-1 flex flex-col items-center group relative"
                         >
-                          <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-slate-800 text-xs px-2 py-1 rounded mb-2">
+                          <div className="absolute -top-8 opacity-0 group-hover:opacity-100 transition-opacity bg-slate-800 text-xs px-2 py-1 rounded whitespace-nowrap z-10">
                             {point.value}{currentChart.yLabel.includes('%') ? '%' : ''}
                           </div>
                           <div

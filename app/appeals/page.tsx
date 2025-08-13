@@ -53,7 +53,7 @@ export default function AppealsPage() {
 
   // Generate appeal data from existing claims
   const appeals: Appeal[] = massiveMockDatabase.claims.slice(0, 45).map((claim, index) => {
-    const veteran = massiveMockDatabase.veterans.find(v => v.claimIds?.includes(claim.id));
+    const veteran = massiveMockDatabase.veterans.find(v => v.id === claim.veteranId);
     const appealTypes: Appeal['appealType'][] = ['legacy', 'ama', 'higher-level-review', 'supplemental-claim', 'board-appeal'];
     const statuses: Appeal['status'][] = ['pending', 'in-review', 'evidence-gathering', 'hearing-scheduled', 'decided', 'closed'];
     const priorities: Appeal['priority'][] = ['low', 'medium', 'high', 'expedited'];
@@ -117,7 +117,7 @@ export default function AppealsPage() {
     return {
       id: `APL-${String(index + 1).padStart(4, '0')}`,
       claimId: claim.id,
-      veteranName: veteran?.name || 'Unknown Veteran',
+      veteranName: veteran?.name || claim.veteranName || 'Unknown Veteran',
       veteranId: veteran?.id || 'V000',
       appealType,
       status,

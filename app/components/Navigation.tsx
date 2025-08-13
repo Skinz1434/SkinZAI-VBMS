@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 
@@ -11,19 +11,40 @@ export default function Navigation() {
   const [notificationCount, setNotificationCount] = useState(3);
   const pathname = usePathname();
   const router = useRouter();
+  const navScrollRef = useRef<HTMLDivElement>(null);
+  const scrollPositionRef = useRef(0);
 
-  // Load sidebar preference
+  // Load sidebar preference and scroll position
   useEffect(() => {
     const saved = localStorage.getItem('nova-sidebar-open');
     if (saved !== null) {
       setSidebarOpen(JSON.parse(saved));
     }
+    
+    // Restore scroll position
+    const savedScrollPosition = sessionStorage.getItem('nova-nav-scroll');
+    if (savedScrollPosition && navScrollRef.current) {
+      navScrollRef.current.scrollTop = parseInt(savedScrollPosition, 10);
+    }
   }, []);
+
+  // Preserve scroll position on route change
+  useEffect(() => {
+    if (navScrollRef.current && scrollPositionRef.current > 0) {
+      navScrollRef.current.scrollTop = scrollPositionRef.current;
+    }
+  }, [pathname]);
 
   // Save sidebar preference
   useEffect(() => {
     localStorage.setItem('nova-sidebar-open', JSON.stringify(sidebarOpen));
   }, [sidebarOpen]);
+
+  // Save scroll position on scroll
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    scrollPositionRef.current = e.currentTarget.scrollTop;
+    sessionStorage.setItem('nova-nav-scroll', String(e.currentTarget.scrollTop));
+  };
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -219,7 +240,7 @@ export default function Navigation() {
       <aside className={`fixed left-0 top-16 bottom-0 bg-slate-900 border-r border-slate-800 transition-all duration-300 z-40 ${
         sidebarOpen ? 'w-64' : 'w-16'
       }`}>
-        <div className="h-full overflow-y-auto">
+        <div ref={navScrollRef} onScroll={handleScroll} className="h-full overflow-y-auto scroll-smooth">
           <nav className="p-4 space-y-6">
             {navigationItems.map((section) => (
               <div key={section.category}>
