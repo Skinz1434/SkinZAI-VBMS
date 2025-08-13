@@ -48,7 +48,7 @@ const AuthModal = ({ isOpen, onClose, mode, onModeChange }: AuthModalProps) => {
       status: 'active' as const
     };
     
-    localStorage.setItem('vbms-user', JSON.stringify(userData));
+    localStorage.setItem('nova-user', JSON.stringify(userData));
     setIsLoading(false);
     onClose();
     
@@ -69,8 +69,8 @@ const AuthModal = ({ isOpen, onClose, mode, onModeChange }: AuthModalProps) => {
               </h2>
               <p className="text-sm text-slate-400">
                 {mode === 'login' 
-                  ? 'Access your VBMS workspace' 
-                  : 'Join the VBMS platform'
+                  ? 'Access your NOVA workspace' 
+                  : 'Join the NOVA platform'
                 }
               </p>
             </div>

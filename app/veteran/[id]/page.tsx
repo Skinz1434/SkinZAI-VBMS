@@ -46,7 +46,7 @@ export default function VeteranProfile() {
       setDocumentStats(stats);
       
       // Store current veteran context
-      localStorage.setItem('vbms-current-veteran', JSON.stringify(veteranData));
+      localStorage.setItem('nova-current-veteran', JSON.stringify(veteranData));
     }
     
     setIsLoaded(true);

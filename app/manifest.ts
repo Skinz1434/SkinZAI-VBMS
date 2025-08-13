@@ -2,8 +2,8 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'SkinZAI VBMS',
-    short_name: 'SkinZAI',
+    name: 'NOVA - Next-gen Operations for Veteran Affairs',
+    short_name: 'NOVA',
     start_url: '/',
     display: 'standalone',
     background_color: '#0f172a',

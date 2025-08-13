@@ -150,7 +150,7 @@ export default function DataExport({ isOpen, onClose, initialDataType = 'claims'
       };
 
       // Create and download file
-      const fileName = `VBMS_${exportConfig.dataType}_export_${new Date().toISOString().split('T')[0]}.${exportConfig.format === 'excel' ? 'xlsx' : exportConfig.format}`;
+      const fileName = `NOVA_${exportConfig.dataType}_export_${new Date().toISOString().split('T')[0]}.${exportConfig.format === 'excel' ? 'xlsx' : exportConfig.format}`;
       const content = exportConfig.format === 'json' ? JSON.stringify(exportData, null, 2) : 
                      exportConfig.format === 'csv' ? convertToCSV(exportData.data) :
                      `VBMS Export Report\n\nExported: ${exportData.metadata.exportedAt}\nRecords: ${exportData.metadata.recordCount}\nFormat: ${exportData.metadata.format}`;
@@ -219,7 +219,7 @@ export default function DataExport({ isOpen, onClose, initialDataType = 'claims'
               </div>
               <div>
                 <h2 className="text-xl font-semibold text-slate-100">Data Export</h2>
-                <p className="text-sm text-slate-400">Export VBMS data with custom formatting and privacy controls</p>
+                <p className="text-sm text-slate-400">Export NOVA platform data with custom formatting and privacy controls</p>
               </div>
             </div>
             

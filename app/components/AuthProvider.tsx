@@ -40,13 +40,13 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     // Check for stored user data on mount
-    const storedUser = localStorage.getItem('vbms-user');
+    const storedUser = localStorage.getItem('nova-user');
     if (storedUser) {
       try {
         setUser(JSON.parse(storedUser));
       } catch (error) {
         console.error('Error parsing stored user data:', error);
-        localStorage.removeItem('vbms-user');
+        localStorage.removeItem('nova-user');
       }
     }
   }, []);
@@ -69,7 +69,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     };
     
     setUser(enhancedUser);
-    localStorage.setItem('vbms-user', JSON.stringify(enhancedUser));
+    localStorage.setItem('nova-user', JSON.stringify(enhancedUser));
     
     // Log the login event
     console.log('User logged in:', enhancedUser.email, enhancedUser.role);
@@ -77,15 +77,15 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem('vbms-user');
-    localStorage.removeItem('vbms-current-veteran');
+    localStorage.removeItem('rumev-user');
+    localStorage.removeItem('nova-current-veteran');
   };
 
   const updateUser = (userData: Partial<User>) => {
     if (user) {
       const updatedUser = { ...user, ...userData };
       setUser(updatedUser);
-      localStorage.setItem('vbms-user', JSON.stringify(updatedUser));
+      localStorage.setItem('nova-user', JSON.stringify(updatedUser));
     }
   };
 

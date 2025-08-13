@@ -5,11 +5,11 @@ import { AuthProvider } from './components/AuthProvider';
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || 'https://skinzai-vbms.vercel.app'
+    process.env.NEXT_PUBLIC_SITE_URL || 'https://skinzai-nova.vercel.app'
   ),
-  title: 'SkinZAI VBMS - Revolutionary AI-Powered Veterans Benefits',
+  title: 'NOVA Platform - Next-Gen Operations for Veteran Affairs | Powered by RUMEV1 AI',
   description:
-    'Eliminating $4.2 billion in unnecessary medical exams through revolutionary AI, Leiden community detection, and XGBoost prediction engines. The future of Veterans Benefits Management.',
+    'NOVA is a comprehensive next-generation platform transforming veteran affairs operations. Powered by the revolutionary RUMEV1 AI model, NOVA eliminates $4.2 billion in unnecessary medical exams through advanced Leiden community detection and XGBoost prediction engines. Streamline claims processing, reduce backlogs by 78%, and deliver faster, more accurate benefits decisions for our nations heroes.',
   keywords: [
     'Veterans Benefits',
     'AI',
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     'Healthcare',
   ],
   openGraph: {
-    title: 'SkinZAI VBMS - The Future of Veterans Benefits',
-    description: 'Revolutionary AI-Powered Veterans Benefits Management System',
+    title: 'NOVA Platform - Revolutionizing Veteran Affairs Operations',
+    description: 'Next-Generation Operations Platform for Veteran Affairs - Featuring RUMEV1 AI for intelligent claims processing, automated medical evaluations, and comprehensive benefits management',
     type: 'website',
     url: '/',
   },

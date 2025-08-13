@@ -77,7 +77,7 @@ export default function GlobalSearch() {
 
   // Load recent searches
   useEffect(() => {
-    const saved = localStorage.getItem('vbms-recent-searches');
+    const saved = localStorage.getItem('nova-recent-searches');
     if (saved) {
       setRecentSearches(JSON.parse(saved));
     }
@@ -164,11 +164,11 @@ export default function GlobalSearch() {
     // Save to recent searches
     const newRecent = [result.title, ...recentSearches.filter(s => s !== result.title)].slice(0, 5);
     setRecentSearches(newRecent);
-    localStorage.setItem('vbms-recent-searches', JSON.stringify(newRecent));
+    localStorage.setItem('nova-recent-searches', JSON.stringify(newRecent));
     
     // Store current veteran context if selecting a veteran
     if (result.type === 'veteran') {
-      localStorage.setItem('vbms-current-veteran', JSON.stringify(result.details));
+      localStorage.setItem('nova-current-veteran', JSON.stringify(result.details));
     }
 
     // Navigate to result

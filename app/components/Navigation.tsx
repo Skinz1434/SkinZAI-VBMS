@@ -14,7 +14,7 @@ export default function Navigation() {
 
   // Load sidebar preference
   useEffect(() => {
-    const saved = localStorage.getItem('vbms-sidebar-open');
+    const saved = localStorage.getItem('nova-sidebar-open');
     if (saved !== null) {
       setSidebarOpen(JSON.parse(saved));
     }
@@ -22,7 +22,7 @@ export default function Navigation() {
 
   // Save sidebar preference
   useEffect(() => {
-    localStorage.setItem('vbms-sidebar-open', JSON.stringify(sidebarOpen));
+    localStorage.setItem('nova-sidebar-open', JSON.stringify(sidebarOpen));
   }, [sidebarOpen]);
 
   const handleSearch = (e: React.FormEvent) => {
@@ -106,9 +106,9 @@ export default function Navigation() {
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">VB</span>
+                <span className="text-white font-bold text-sm">NV</span>
               </div>
-              <span className="text-lg font-semibold text-slate-100 hidden md:block">VBMS AI</span>
+              <span className="text-lg font-semibold text-slate-100 hidden md:block">NOVA Platform</span>
             </Link>
 
             {/* Breadcrumb */}

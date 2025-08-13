@@ -117,7 +117,7 @@ export default function ReportsPage() {
     console.log(`Exporting ${selectedReport} report as ${format}:`, exportData);
     
     // Create a mock download
-    const fileName = `VBMS_${selectedReport}_report_${dateRange}_${new Date().toISOString().split('T')[0]}.${format}`;
+    const fileName = `NOVA_${selectedReport}_report_${dateRange}_${new Date().toISOString().split('T')[0]}.${format}`;
     const mockContent = JSON.stringify(exportData, null, 2);
     const blob = new Blob([mockContent], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
@@ -255,7 +255,7 @@ export default function ReportsPage() {
                 { id: 'overview', label: 'Executive Overview', icon: '📊' },
                 { id: 'claims', label: 'Claims Analytics', icon: '📋' },
                 { id: 'performance', label: 'Performance Metrics', icon: '⚡' },
-                { id: 'ai', label: 'AI & RUMEV1', icon: '🤖' },
+                { id: 'ai', label: 'NOVA AI & RUMEV1', icon: '🤖' },
                 { id: 'compliance', label: 'Compliance Report', icon: '✅' },
                 { id: 'custom', label: 'Custom Report', icon: '🔧' }
               ].map((tab) => (
@@ -326,7 +326,7 @@ export default function ReportsPage() {
                   {reportMetrics.aiAccuracy}%
                 </div>
                 <div className="text-xs text-emerald-400">
-                  RUMEV1 precision
+                  NOVA AI precision
                 </div>
               </div>
             </div>
@@ -342,7 +342,7 @@ export default function ReportsPage() {
                     {selectedReport === 'overview' && 'Executive Dashboard'}
                     {selectedReport === 'claims' && 'Claims Processing Trends'}
                     {selectedReport === 'performance' && 'System Performance Metrics'}
-                    {selectedReport === 'ai' && 'RUMEV1 AI Analytics'}
+                    {selectedReport === 'ai' && 'NOVA AI Analytics (RUMEV1 Technology)'}
                     {selectedReport === 'compliance' && 'Compliance Monitoring'}
                     {selectedReport === 'custom' && 'Custom Report Builder'}
                   </h2>
@@ -399,7 +399,7 @@ export default function ReportsPage() {
                     <h3 className="font-semibold text-slate-100 mb-4">Quality Metrics</h3>
                     <div className="space-y-3">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">RUMEV1 Accuracy</span>
+                        <span className="text-sm text-slate-400">NOVA AI Accuracy</span>
                         <span className="text-sm font-semibold text-emerald-400">
                           {reportMetrics?.aiAccuracy}%
                         </span>
@@ -529,7 +529,7 @@ export default function ReportsPage() {
                   {[
                     { name: 'Monthly Performance Report', date: '2 hours ago', type: 'PDF' },
                     { name: 'Claims Analytics Export', date: '1 day ago', type: 'Excel' },
-                    { name: 'RUMEV1 Accuracy Report', date: '3 days ago', type: 'PDF' },
+                    { name: 'NOVA AI Accuracy Report', date: '3 days ago', type: 'PDF' },
                     { name: 'Compliance Summary', date: '1 week ago', type: 'CSV' }
                   ].map((report, index) => (
                     <div key={index} className="flex items-center justify-between p-2 hover:bg-slate-800 rounded transition-colors">

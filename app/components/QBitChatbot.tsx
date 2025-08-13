@@ -43,7 +43,7 @@ const QBitChatbot = () => {
       const welcomeMessage: Message = {
         id: '1',
         type: 'bot',
-        content: 'Hey there! I\'m QBit, and I\'m genuinely here to help make your work with veterans\' claims smoother. After analyzing millions of real cases, I\'ve learned the ins and outs of what makes claims tick. Whether you need to dig into a veteran\'s history, understand why RUMEV1 flagged something, or just want to chat about a complex case - I\'m your go-to. What\'s on your mind?',
+        content: 'Hey there! I\'m QBit, and I\'m genuinely here to help make your work with veterans\' claims smoother using the NOVA platform. After analyzing millions of real cases, I\'ve learned the ins and outs of what makes claims tick. Whether you need to dig into a veteran\'s history, understand why NOVA\'s RUMEV1 technology flagged something, or just want to chat about a complex case - I\'m your go-to. What\'s on your mind?',
         timestamp: new Date()
       };
       setMessages([welcomeMessage]);
@@ -67,7 +67,7 @@ const QBitChatbot = () => {
             message: `I found ${veterans.length} veteran(s) matching your search:\n\n${veterans.slice(0, 3).map(v => 
               `• ${v.name} (${v.fileNumber}) - ${v.currentRating}% rating, $${v.monthlyCompensation} monthly`
             ).join('\n')}${veterans.length > 3 ? `\n\n...and ${veterans.length - 3} more` : ''}`,
-            suggestions: ['Show me their claims', 'View documents', 'Check RUMEV1 analysis']
+            suggestions: ['Show me their claims', 'View documents', 'Check NOVA analysis']
           };
         }
       }
@@ -78,7 +78,7 @@ const QBitChatbot = () => {
           message: `Here are the latest claims in the system:\n\n${claims.map(c => 
             `• Claim ${c.id} - ${c.veteranName}\n  Status: ${c.status} | Priority: ${c.priority}\n  Exam ${c.examRequired ? 'Required' : 'Eliminated'} (${c.rumevAnalysis?.confidence}% confidence)`
           ).join('\n\n')}`,
-          suggestions: ['Show RUMEV1 analysis', 'Filter by status', 'View documents']
+          suggestions: ['Show NOVA analysis', 'Filter by status', 'View documents']
         };
       }
 
@@ -156,7 +156,7 @@ const QBitChatbot = () => {
           );
           
           return {
-            message: `I've done a deep AI analysis of ${claim.veteranName}'s claim:\n\n🎯 **Smart Processing Insights**\n• Category: ${analysis.category}\n• Processing Priority: ${analysis.priority}\n• Complexity Score: ${(analysis.complexity * 100).toFixed(0)}%\n• Est. Processing Time: ${analysis.estimatedProcessingDays} days\n• Exam Required: ${analysis.examRequired ? 'Yes' : 'No - RUMEV1 Eliminated'}\n• AI Confidence: ${(analysis.confidence * 100).toFixed(1)}%\n\n📋 **Required Documents:**\n${analysis.requiredDocuments.map(doc => `• ${doc}`).join('\n')}\n\nThis analysis uses fine-tuned models trained on successful claim patterns.`,
+            message: `I've done a deep AI analysis of ${claim.veteranName}'s claim using NOVA platform:\n\n🎯 **Smart Processing Insights**\n• Category: ${analysis.category}\n• Processing Priority: ${analysis.priority}\n• Complexity Score: ${(analysis.complexity * 100).toFixed(0)}%\n• Est. Processing Time: ${analysis.estimatedProcessingDays} days\n• Exam Required: ${analysis.examRequired ? 'Yes' : 'No - NOVA Eliminated via RUMEV1'}\n• AI Confidence: ${(analysis.confidence * 100).toFixed(1)}%\n\n📋 **Required Documents:**\n${analysis.requiredDocuments.map(doc => `• ${doc}`).join('\n')}\n\nThis analysis uses NOVA's fine-tuned models trained on successful claim patterns.`,
             suggestions: ['Why this priority?', 'Similar successful claims', 'Document checklist', 'Processing tips']
           };
         } catch (error) {
@@ -172,15 +172,15 @@ const QBitChatbot = () => {
     if (input.includes('why') || input.includes('how') || input.includes('what') || input.includes('explain')) {
       try {
         // Use the question-answering AI
-        const context = `VBMS (Veterans Benefits Management System) is an AI-powered platform for processing disability compensation claims. 
-        RUMEV1 (Reducing Unnecessary Medical Exams Version 1) uses machine learning to determine when sufficient medical evidence exists to rate conditions without additional examinations. 
+        const context = `NOVA (Next-gen Operations for Veteran Affairs) is a comprehensive AI-powered platform for processing disability compensation claims. 
+        NOVA uses RUMEV1 (Reducing Unnecessary Medical Exams Version 1) technology with machine learning to determine when sufficient medical evidence exists to rate conditions without additional examinations. 
         The system processes ${massiveMockDatabase.claims.length} claims with ${massiveMockDatabase.veterans.length} veterans and ${massiveMockDatabase.documents.length} documents.
         Current exam elimination rate is ${((massiveMockDatabase.claims.filter(c => !c.examRequired).length / massiveMockDatabase.claims.length) * 100).toFixed(1)}%.`;
         
         const answer = await answerVBMSQuestion(userInput, context);
         
         return {
-          message: `Based on my training and current system data:\n\n💡 **AI Answer:**\n${answer}\n\n📊 **Context from Live Data:**\n• We're currently processing ${massiveMockDatabase.claims.filter(c => c.status !== 'Complete').length} active claims\n• RUMEV1 has eliminated ${massiveMockDatabase.claims.filter(c => !c.examRequired).length} exams this period\n• Average processing time: ${Math.round(massiveMockDatabase.claims.reduce((acc, c) => acc + c.daysInQueue, 0) / massiveMockDatabase.claims.length)} days`,
+          message: `Based on my training and current system data:\n\n💡 **AI Answer:**\n${answer}\n\n📊 **Context from Live Data:**\n• We're currently processing ${massiveMockDatabase.claims.filter(c => c.status !== 'Complete').length} active claims\n• NOVA has eliminated ${massiveMockDatabase.claims.filter(c => !c.examRequired).length} exams this period via RUMEV1\n• Average processing time: ${Math.round(massiveMockDatabase.claims.reduce((acc, c) => acc + c.daysInQueue, 0) / massiveMockDatabase.claims.length)} days`,
           suggestions: ['More details', 'Show examples', 'Related processes', 'Best practices']
         };
       } catch (error) {
@@ -188,7 +188,7 @@ const QBitChatbot = () => {
       }
     }
 
-    // RUMEV1 system questions
+    // NOVA system questions
     if (input.includes('rumev') || input.includes('ai') || input.includes('system')) {
       if (input.includes('accuracy') || input.includes('performance')) {
         const totalClaims = massiveMockDatabase.claims.length;
@@ -196,14 +196,14 @@ const QBitChatbot = () => {
         const avgConfidence = massiveMockDatabase.claims.reduce((acc, c) => acc + (c.rumevAnalysis?.confidence || 0), 0) / totalClaims;
         
         return {
-          message: `RUMEV1 System Performance:\n\n• Overall Accuracy: ${avgConfidence.toFixed(1)}%\n• Exam Elimination Rate: ${((examsEliminated / totalClaims) * 100).toFixed(1)}%\n• Claims Processed: ${totalClaims}\n• Cost Savings: $${(examsEliminated * 3500).toLocaleString()}\n\nThe system uses advanced ML algorithms including XGBoost, Leiden community detection, and NLP processing to analyze medical records and determine exam necessity.`,
+          message: `NOVA System Performance (powered by RUMEV1):\n\n• Overall Accuracy: ${avgConfidence.toFixed(1)}%\n• Exam Elimination Rate: ${((examsEliminated / totalClaims) * 100).toFixed(1)}%\n• Claims Processed: ${totalClaims}\n• Cost Savings: $${(examsEliminated * 3500).toLocaleString()}\n\nNOVA uses advanced ML algorithms including XGBoost, Leiden community detection, and NLP processing through RUMEV1 technology to analyze medical records and determine exam necessity.`,
           suggestions: ['Show me agent details', 'View analytics dashboard', 'Explain elimination process']
         };
       }
 
       if (input.includes('how') || input.includes('work') || input.includes('process')) {
         return {
-          message: `RUMEV1 (Reducing Unnecessary Medical Exams V1) works through these steps:\n\n1. **Document Ingestion**: Medical records are processed with OCR and NLP\n2. **Pattern Recognition**: ML models identify key medical indicators\n3. **Nexus Analysis**: AI determines service connection likelihood\n4. **Exam Necessity**: Algorithm decides if C&P exam is required\n5. **Confidence Scoring**: Each decision includes a confidence percentage\n\nThe system has 4 specialized agents working together to ensure accurate, fast decisions while maintaining veteran care standards.`,
+          message: `NOVA platform with RUMEV1 (Reducing Unnecessary Medical Exams V1) works through these steps:\n\n1. **Document Ingestion**: Medical records are processed with OCR and NLP\n2. **Pattern Recognition**: ML models identify key medical indicators\n3. **Nexus Analysis**: AI determines service connection likelihood\n4. **Exam Necessity**: Algorithm decides if C&P exam is required\n5. **Confidence Scoring**: Each decision includes a confidence percentage\n\nNOVA's system has 4 specialized agents working together to ensure accurate, fast decisions while maintaining veteran care standards.`,
           suggestions: ['Show system metrics', 'View recent decisions', 'Explain confidence scores']
         };
       }
@@ -220,7 +220,7 @@ const QBitChatbot = () => {
       };
 
       return {
-        message: `Current VBMS Statistics:\n\n📊 **System Overview**\n• Veterans: ${stats.totalVeterans}\n• Active Claims: ${stats.totalClaims}\n• Documents: ${stats.totalDocuments}\n• High Priority Claims: ${stats.highPriority}\n\n⏱️ **Processing Metrics**\n• Average Processing Time: ${stats.avgProcessingDays} days\n• System Uptime: 99.97%\n• OCR Processing: ${massiveMockDatabase.documents.filter(d => d.ocrProcessed).length}/${stats.totalDocuments} complete`,
+        message: `Current NOVA Statistics:\n\n📊 **System Overview**\n• Veterans: ${stats.totalVeterans}\n• Active Claims: ${stats.totalClaims}\n• Documents: ${stats.totalDocuments}\n• High Priority Claims: ${stats.highPriority}\n\n⏱️ **Processing Metrics**\n• Average Processing Time: ${stats.avgProcessingDays} days\n• System Uptime: 99.97%\n• OCR Processing: ${massiveMockDatabase.documents.filter(d => d.ocrProcessed).length}/${stats.totalDocuments} complete`,
         suggestions: ['View detailed analytics', 'Show recent activity', 'Generate report']
       };
     }
@@ -228,7 +228,7 @@ const QBitChatbot = () => {
     // Help and commands
     if (input.includes('help') || input.includes('what can') || input === '') {
       return {
-        message: `Great question! I've been trained on real VA data and learned from experienced rating specialists. Here's what I do best:\n\n🎯 **Smart Case Analysis**\n• "Tell me about veteran Martinez" - I'll pull up everything relevant\n• "Why did RUMEV1 eliminate this exam?" - I explain the AI reasoning\n• "Find similar cases to this one" - Pattern matching from my training\n\n🧠 **Experience-Based Insights**\n• "What usually happens with PTSD secondaries?" - Real trends from data\n• "Show me processing bottlenecks" - Where things typically slow down\n• "Best practices for complex claims" - What actually works\n\n💬 **Just Talk to Me**\nI'm built to understand how you actually work. Ask me anything like you'd ask a colleague who's seen it all!`,
+        message: `Great question! I've been trained on real VA data and learned from experienced rating specialists using the NOVA platform. Here's what I do best:\n\n🎯 **Smart Case Analysis**\n• "Tell me about veteran Martinez" - I'll pull up everything relevant\n• "Why did NOVA eliminate this exam?" - I explain the RUMEV1 AI reasoning\n• "Find similar cases to this one" - Pattern matching from my training\n\n🧠 **Experience-Based Insights**\n• "What usually happens with PTSD secondaries?" - Real trends from data\n• "Show me processing bottlenecks" - Where things typically slow down\n• "Best practices for complex claims" - What actually works\n\n💬 **Just Talk to Me**\nI'm built to understand how you actually work with NOVA. Ask me anything like you'd ask a colleague who's seen it all!`,
         suggestions: ['Tell me about a veteran', 'Why did AI decide this?', 'Show me patterns', 'What works best?']
       };
     }
@@ -236,8 +236,8 @@ const QBitChatbot = () => {
     // Personalized responses for unrecognized queries
     const personalizedResponses = [
       {
-        message: "Hmm, that's an interesting question - I want to make sure I give you the most helpful answer. Could you tell me a bit more about what you're working on? I'm particularly good at diving deep into veteran histories, spotting patterns in claims data, and explaining the reasoning behind RUMEV1's decisions.",
-        suggestions: ['Tell me about a specific case', 'Show processing insights', 'Explain RUMEV1 logic', 'Find similar patterns']
+        message: "Hmm, that's an interesting question - I want to make sure I give you the most helpful answer. Could you tell me a bit more about what you're working on? I'm particularly good at diving deep into veteran histories, spotting patterns in claims data, and explaining the reasoning behind NOVA's RUMEV1 decisions.",
+        suggestions: ['Tell me about a specific case', 'Show processing insights', 'Explain NOVA logic', 'Find similar patterns']
       },
       {
         message: "I hear you, and I want to tackle this the right way. From my experience with thousands of similar situations, the best approach usually depends on the specific details. Are you dealing with a particular veteran's case, trying to understand a system decision, or looking for broader insights?",
@@ -350,7 +350,7 @@ const QBitChatbot = () => {
                 </div>
                 <div>
                   <h3 className="text-white font-semibold">QBit Assistant</h3>
-                  <p className="text-blue-100 text-xs">VBMS AI Helper • Always Online</p>
+                  <p className="text-blue-100 text-xs">NOVA AI Helper • Always Online</p>
                 </div>
               </div>
               <div className="flex items-center">
@@ -415,7 +415,7 @@ const QBitChatbot = () => {
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder="Ask me about veterans, claims, or RUMEV1..."
+                placeholder="Ask me about veterans, claims, or NOVA..."
                 className="flex-1 bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-slate-200 text-sm placeholder-slate-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none"
               />
               <button

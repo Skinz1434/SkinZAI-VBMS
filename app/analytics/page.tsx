@@ -5,7 +5,7 @@ import Link from 'next/link';
 import AppLayout from '../components/AppLayout';
 import { massiveMockDatabase } from '../lib/massiveMockData';
 
-export default function VBMSAnalytics() {
+export default function NOVAAnalytics() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [activeTimeframe, setActiveTimeframe] = useState('30d');
   const [selectedMetric, setSelectedMetric] = useState<string | null>(null);
@@ -220,17 +220,17 @@ export default function VBMSAnalytics() {
     const explanations: any = {
       claimsProcessed: {
         title: 'Claims Processed',
-        description: 'Total number of disability compensation claims analyzed by RUMEV1 AI system',
+        description: 'Total number of disability compensation claims analyzed by NOVA platform using RUMEV1 AI system',
         calculation: 'Sum of all claims entering the system within the timeframe',
-        source: 'VBMS database, claims management system',
+        source: 'NOVA database, claims management system',
         impact: `Each processed claim saves approximately ${currentData.avgProcessingTime} hours of manual review`,
         trend: '+23% vs previous period'
       },
       examsEliminated: {
         title: 'C&P Exams Eliminated',
-        description: 'Compensation & Pension examinations avoided through AI-powered evidence sufficiency analysis',
+        description: 'Compensation & Pension examinations avoided through NOVA AI-powered evidence sufficiency analysis using RUMEV1 technology',
         calculation: 'Claims with sufficient existing medical evidence × AI confidence threshold (>85%)',
-        source: 'RUMEV1 exam necessity algorithm, DBQ analysis',
+        source: 'NOVA platform RUMEV1 exam necessity algorithm, DBQ analysis',
         impact: `$${roiMetrics.examCost} saved per exam, ${roiMetrics.examDuration} hours of veteran/examiner time saved`,
         trend: '+31% elimination rate improvement'
       },
@@ -270,7 +270,7 @@ export default function VBMSAnalytics() {
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-2xl font-bold text-slate-100 mb-2">Performance Analytics</h1>
-            <p className="text-slate-400">RUMEV1 System Intelligence & Cost Impact Analysis</p>
+            <p className="text-slate-400">NOVA Platform Intelligence powered by RUMEV1 AI & Cost Impact Analysis</p>
           </div>
           
           <div className="flex items-center space-x-4">
@@ -430,7 +430,7 @@ export default function VBMSAnalytics() {
           {/* Agent Performance Matrix with Visual Enhancements */}
           <div className="grid lg:grid-cols-2 gap-8 mb-12">
             <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-slate-100 mb-6">RUMEV1 Multi-Agent Performance</h3>
+              <h3 className="text-lg font-semibold text-slate-100 mb-6">NOVA Multi-Agent Performance (RUMEV1 Technology)</h3>
               <div className="space-y-4">
                 {agentMetrics.map((agent, index) => (
                   <div key={index} className="relative overflow-hidden bg-slate-800 rounded-lg p-4 border border-slate-700">

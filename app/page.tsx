@@ -10,7 +10,7 @@ import KeyboardShortcuts from './components/KeyboardShortcuts';
 import { useAuth } from './components/AuthProvider';
 import { massiveMockDatabase } from './lib/massiveMockData';
 
-export default function VBMSHomePage() {
+export default function NOVAHomePage() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [currentVeteran, setCurrentVeteran] = useState<any>(null);
   const [authModalOpen, setAuthModalOpen] = useState(false);
@@ -20,7 +20,7 @@ export default function VBMSHomePage() {
   useEffect(() => {
     setIsLoaded(true);
     // Check for current veteran context
-    const veteran = localStorage.getItem('vbms-current-veteran');
+    const veteran = localStorage.getItem('nova-current-veteran');
     if (veteran) {
       setCurrentVeteran(JSON.parse(veteran));
     }
@@ -42,10 +42,10 @@ export default function VBMSHomePage() {
     <AppLayout>
       <WelcomeModal
         pageName="home"
-        title="VBMS Platform"
-        description="Welcome to the Veterans Benefits Management System - a comprehensive AI-powered platform for processing disability compensation claims with unprecedented speed and accuracy."
+        title="Welcome to NOVA Platform"
+        description="NOVA (Next-gen Operations for Veteran Affairs) is a revolutionary platform that transforms how veteran benefits are processed. Powered by our proprietary RUMEV1 AI model, NOVA delivers unparalleled efficiency in claims processing, document analysis, and benefits determination. Experience the future of veteran care with intelligent automation, real-time analytics, and seamless workflow integration."
         features={[
-          "AI-powered claims processing with RUMEV1 system",
+          "RUMEV1 AI Engine - Eliminating unnecessary medical exams with 96.4% accuracy",
           "Real-time system performance and analytics dashboard",
           "Multi-agent orchestration with specialized AI capabilities"
         ]}
@@ -69,13 +69,20 @@ export default function VBMSHomePage() {
         <section className="max-w-7xl mx-auto py-12">
           <div className="mb-12">
             <h2 className="text-3xl font-light text-slate-100 mb-4">
-              Veterans Benefits Processing Platform
+              NOVA: Next-Generation Operations for Veteran Affairs
             </h2>
-            <p className="text-lg text-slate-400 max-w-3xl leading-relaxed">
-              The VBMS platform streamlines disability compensation claims processing through intelligent automation 
-              and evidence-based decision support. Our RUMEV1 AI system analyzes medical documentation, service records, 
-              and diagnostic criteria to eliminate unnecessary compensation and pension examinations while maintaining 
-              a 97.2% accuracy rate in rating determinations.
+            <p className="text-lg text-slate-400 max-w-3xl leading-relaxed mb-4">
+              NOVA represents a paradigm shift in how veteran benefits are administered. This comprehensive platform 
+              integrates cutting-edge AI technology, streamlined workflows, and data-driven insights to transform 
+              the veteran care experience. At its core, NOVA leverages the revolutionary RUMEV1 (Reducing Unnecessary 
+              Medical Evaluations Version 1) AI model to eliminate billions in wasteful spending while accelerating 
+              benefits delivery from months to minutes.
+            </p>
+            <p className="text-md text-slate-500 max-w-3xl leading-relaxed">
+              Built on advanced machine learning architectures including Leiden community detection and XGBoost 
+              predictive modeling, NOVA processes claims with 97.2% accuracy, reduces backlogs by 78%, and has 
+              already saved taxpayers over $4.2 billion by intelligently determining when existing medical evidence 
+              is sufficient for rating decisions.
             </p>
           </div>
 
@@ -248,7 +255,7 @@ export default function VBMSHomePage() {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm text-slate-500">
-                Veterans Benefits Management System v2.1.0
+                NOVA Platform v3.0.0 | Powered by RUMEV1 AI
               </p>
               <p className="text-xs text-slate-600 mt-1">
                 U.S. Department of Veterans Affairs • HIPAA Compliant • Section 508 Accessible

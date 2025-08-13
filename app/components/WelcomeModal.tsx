@@ -15,14 +15,14 @@ const WelcomeModal = ({ pageName, title, description, features, demoActions }: W
   const [currentStep, setCurrentStep] = useState(0);
 
   useEffect(() => {
-    const hasSeenWelcome = localStorage.getItem(`vbms-welcome-${pageName}`);
+    const hasSeenWelcome = localStorage.getItem(`nova-welcome-${pageName}`);
     if (!hasSeenWelcome) {
       setIsOpen(true);
     }
   }, [pageName]);
 
   const handleClose = () => {
-    localStorage.setItem(`vbms-welcome-${pageName}`, 'true');
+    localStorage.setItem(`nova-welcome-${pageName}`, 'true');
     setIsOpen(false);
   };
 
@@ -166,7 +166,7 @@ const getFeatureDescription = (pageName: string, step: number) => {
     ],
     'claims': [
       'View and manage all active disability compensation claims in a unified dashboard with advanced filtering and search capabilities.',
-      'See RUMEV1 AI analysis for each claim, including exam necessity decisions, confidence scores, and estimated benefits.',
+      'See NOVA AI analysis powered by RUMEV1 for each claim, including exam necessity decisions, confidence scores, and estimated benefits.',
       'Track claim progress through automated workflows with real-time status updates and assignee information.'
     ],
     'efolder': [
@@ -176,7 +176,7 @@ const getFeatureDescription = (pageName: string, step: number) => {
     ],
     'analytics': [
       'Monitor real-time system performance with comprehensive dashboards showing claims processing, exam elimination rates, and accuracy metrics.',
-      'View RUMEV1 agent performance including individual accuracy rates, throughput statistics, and system health indicators.',
+      'View NOVA multi-agent performance (RUMEV1 technology) including individual accuracy rates, throughput statistics, and system health indicators.',
       'Analyze condition-specific data to understand exam elimination patterns and identify opportunities for process improvement.'
     ],
     'orchestration': [
@@ -186,7 +186,7 @@ const getFeatureDescription = (pageName: string, step: number) => {
     ],
     'exams': [
       'Schedule and manage Compensation & Pension examinations with integrated calendar and examiner assignment.',
-      'Track exam requirements based on RUMEV1 analysis and automatically identify claims that can bypass examination.',
+      'Track exam requirements based on NOVA analysis using RUMEV1 and automatically identify claims that can bypass examination.',
       'Monitor exam completion rates, reschedule requests, and maintain comprehensive examination history.'
     ],
     'conditions': [

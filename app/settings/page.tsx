@@ -94,7 +94,7 @@ export default function SettingsPage() {
   }, []);
 
   const loadUserPreferences = () => {
-    const saved = localStorage.getItem('vbms-user-preferences');
+    const saved = localStorage.getItem('nova-user-preferences');
     if (saved) {
       try {
         const savedPrefs = JSON.parse(saved);
@@ -111,7 +111,7 @@ export default function SettingsPage() {
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
     
-    localStorage.setItem('vbms-user-preferences', JSON.stringify(preferences));
+    localStorage.setItem('nova-user-preferences', JSON.stringify(preferences));
     
     // Update user preferences in auth context
     if (updateUser) {
@@ -195,7 +195,7 @@ export default function SettingsPage() {
       <WelcomeModal
         pageName="settings"
         title="User Settings & Preferences"
-        description="Personalize your VBMS experience with comprehensive settings for notifications, privacy, accessibility, and workflow preferences."
+        description="Personalize your NOVA experience with comprehensive settings for notifications, privacy, accessibility, and workflow preferences. NOVA is powered by RUMEV1 AI technology for intelligent claims processing."
         features={[
           "Comprehensive notification and privacy controls",
           "Accessibility settings for enhanced usability",
