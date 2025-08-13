@@ -37,7 +37,7 @@ export default function QualityPage() {
 
   // Generate quality review data from existing claims
   const qualityReviews: QualityReview[] = massiveMockDatabase.claims.slice(0, 75).map((claim, index) => {
-    const veteran = massiveMockDatabase.veterans.find(v => v.claimIds?.includes(claim.id));
+    const veteran = massiveMockDatabase.veterans.find(v => v.id === claim.veteranId);
     const categories = ['accuracy', 'timeliness', 'completeness', 'documentation'] as const;
     const statuses = ['pending', 'in-review', 'completed', 'failed'] as const;
     const priorities = ['low', 'medium', 'high', 'critical'] as const;
@@ -84,7 +84,7 @@ export default function QualityPage() {
       priority: priorities[Math.floor(Math.random() * priorities.length)],
       findings: findings.slice(0, Math.floor(Math.random() * 4) + 2).sort(() => 0.5 - Math.random()),
       recommendations: recommendations.slice(0, Math.floor(Math.random() * 3) + 1).sort(() => 0.5 - Math.random()),
-      veteranName: veteran?.name || 'Unknown Veteran',
+      veteranName: veteran?.name || claim.veteranName || 'Unknown Veteran',
       conditions: claim.conditions.map(c => c.name)
     };
   });
