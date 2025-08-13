@@ -280,7 +280,7 @@ const QBitChatbot = () => {
           setHasNewMessage(true);
         }
       } catch (error) {
-        console.error('AI response error:', error);
+        // Error handling for AI response failure
         const errorMessage: Message = {
           id: (Date.now() + 1).toString(),
           type: 'bot',

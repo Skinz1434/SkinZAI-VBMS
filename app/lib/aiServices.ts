@@ -90,7 +90,7 @@ Use the o1-reasoning approach with detailed step-by-step analysis.
 
     return response.generated_text.replace(medicalPrompt, '').trim();
   } catch (error) {
-    console.error('Medical reasoning error:', error);
+    // Medical reasoning error handling
     return `**Medical Reasoning Analysis (Fallback Mode)**
 
 Based on the evidence provided, I can offer this structured analysis:
@@ -132,7 +132,7 @@ Provide detailed step-by-step reasoning for:
       detailedReasoning
     };
   } catch (error) {
-    console.error('O1 reasoning analysis error:', error);
+    // O1 reasoning analysis error handling
     const fallbackAnalysis = await analyzeMedicalDocument(documentText);
     return {
       ...fallbackAnalysis,
@@ -213,7 +213,7 @@ export async function analyzeMedicalDocument(documentText: string): Promise<Medi
     } as MedicalAnalysisResult;
 
   } catch (error) {
-    console.error('Medical analysis error:', error);
+    // Medical analysis error handling
     // Fallback to rule-based analysis
     return {
       conditions: ['Unable to analyze'],
@@ -282,7 +282,7 @@ export async function analyzeClaimForProcessing(claimText: string, veteranHistor
     };
 
   } catch (error) {
-    console.error('Claim analysis error:', error);
+    // Claim analysis error handling
     return {
       category: 'General',
       priority: 'standard',
@@ -322,7 +322,7 @@ async function determineExamNecessity(claimText: string, veteranHistory: any): P
     return eliminationScore < 0.6;
 
   } catch (error) {
-    console.error('Exam necessity determination error:', error);
+    // Exam necessity determination error handling
     return true; // Default to requiring exam if AI fails
   }
 }
@@ -371,7 +371,7 @@ export async function answerVBMSQuestion(question: string, context: string): Pro
 
     return response.answer;
   } catch (error) {
-    console.error('Q&A error:', error);
+    // Q&A error handling
     return "I'm having trouble accessing that information right now. Could you try rephrasing your question?";
   }
 }
@@ -394,7 +394,7 @@ export async function summarizeDocument(documentText: string): Promise<string> {
 
     return summary.summary_text;
   } catch (error) {
-    console.error('Summarization error:', error);
+    // Summarization error handling
     return documentText.slice(0, 500) + '...';
   }
 }

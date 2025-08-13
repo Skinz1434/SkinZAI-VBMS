@@ -113,7 +113,7 @@ export default function QBitChat() {
         handleBotResponse(response);
       }
     } catch (error) {
-      console.error('Failed to send message:', error);
+      // Error handling
       const errorMessage: Message = {
         id: Date.now().toString(),
         type: 'bot',

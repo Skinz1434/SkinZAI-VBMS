@@ -159,7 +159,7 @@ class ApiService {
     this.ws = new WebSocket(wsUrl);
 
     this.ws.onopen = () => {
-      console.log('WebSocket connected');
+      // WebSocket connected
       this.wsReconnectAttempts = 0;
     };
 
@@ -175,22 +175,22 @@ class ApiService {
           this.wsCallbacks.forEach(callback => callback(data));
         }
       } catch (error) {
-        console.error('WebSocket message parse error:', error);
+        // WebSocket message parse error
       }
     };
 
     this.ws.onerror = (error) => {
-      console.error('WebSocket error:', error);
+      // WebSocket error
     };
 
     this.ws.onclose = () => {
-      console.log('WebSocket disconnected');
+      // WebSocket disconnected
       
       // Attempt reconnection
       if (this.wsReconnectAttempts < this.maxReconnectAttempts) {
         this.wsReconnectAttempts++;
         setTimeout(() => {
-          console.log(`Attempting WebSocket reconnection ${this.wsReconnectAttempts}/${this.maxReconnectAttempts}`);
+          // Attempting WebSocket reconnection
           this.connectWebSocket(wsSessionId);
         }, 1000 * Math.pow(2, this.wsReconnectAttempts));
       }

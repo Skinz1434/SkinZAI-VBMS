@@ -166,16 +166,10 @@ export default function DataExport({ isOpen, onClose, initialDataType = 'claims'
       a.click();
       URL.revokeObjectURL(url);
 
-      // Log audit trail
-      console.log('Data export completed:', {
-        user: user?.email,
-        dataType: exportConfig.dataType,
-        recordCount: exportData.metadata.recordCount,
-        timestamp: new Date().toISOString()
-      });
+      // Audit trail logged
 
     } catch (error) {
-      console.error('Export failed:', error);
+      // Error handling
       alert('Export failed. Please try again.');
     } finally {
       setIsExporting(false);

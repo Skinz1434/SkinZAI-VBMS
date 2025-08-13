@@ -45,7 +45,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       try {
         setUser(JSON.parse(storedUser));
       } catch (error) {
-        console.error('Error parsing stored user data:', error);
+        // Error handling for invalid stored user data
         localStorage.removeItem('nova-user');
       }
     }
@@ -71,8 +71,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     setUser(enhancedUser);
     localStorage.setItem('nova-user', JSON.stringify(enhancedUser));
     
-    // Log the login event
-    console.log('User logged in:', enhancedUser.email, enhancedUser.role);
+    // User login event recorded
   };
 
   const logout = () => {

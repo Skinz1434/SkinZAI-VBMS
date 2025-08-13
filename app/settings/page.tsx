@@ -100,7 +100,7 @@ export default function SettingsPage() {
         const savedPrefs = JSON.parse(saved);
         setPreferences({ ...preferences, ...savedPrefs });
       } catch (error) {
-        console.error('Failed to load preferences:', error);
+        // Failed to load preferences
       }
     }
   };

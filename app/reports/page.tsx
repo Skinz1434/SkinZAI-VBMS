@@ -114,7 +114,7 @@ export default function ReportsPage() {
     };
     
     // In a real app, this would trigger actual file download
-    console.log(`Exporting ${selectedReport} report as ${format}:`, exportData);
+    // Exporting report data
     
     // Create a mock download
     const fileName = `NOVA_${selectedReport}_report_${dateRange}_${new Date().toISOString().split('T')[0]}.${format}`;

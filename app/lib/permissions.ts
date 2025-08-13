@@ -492,7 +492,7 @@ export class AuditLogger {
     this.logs.push(auditEntry);
     
     // In production, this would be sent to a secure audit service
-    console.log('AUDIT LOG:', auditEntry);
+    // Audit entry recorded
   }
   
   static getLogs(userId?: string, action?: string): AuditLog[] {

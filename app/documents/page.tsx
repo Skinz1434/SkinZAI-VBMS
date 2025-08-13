@@ -70,13 +70,13 @@ export default function DocumentsPage() {
   const handleBulkAction = (action: string) => {
     switch(action) {
       case 'review':
-        console.log('Marking selected documents as reviewed');
+        // Mark selected documents as reviewed
         break;
       case 'export':
-        console.log('Exporting selected documents');
+        // Export selected documents
         break;
       case 'archive':
-        console.log('Archiving selected documents');
+        // Archive selected documents
         break;
     }
     setBulkActions([]);
