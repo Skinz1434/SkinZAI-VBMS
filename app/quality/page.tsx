@@ -85,7 +85,7 @@ export default function QualityPage() {
       findings: findings.slice(0, Math.floor(Math.random() * 4) + 2).sort(() => 0.5 - Math.random()),
       recommendations: recommendations.slice(0, Math.floor(Math.random() * 3) + 1).sort(() => 0.5 - Math.random()),
       veteranName: veteran?.name || 'Unknown Veteran',
-      conditions: claim.conditions.map(c => c.condition)
+      conditions: claim.conditions.map(c => c.name)
     };
   });
 

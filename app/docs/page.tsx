@@ -5,7 +5,7 @@ import Link from 'next/link';
 import AppLayout from '../components/AppLayout';
 import WelcomeModal from '../components/WelcomeModal';
 
-interface Documentation {
+interface DocItem {
   id: string;
   title: string;
   category: string;
@@ -15,7 +15,6 @@ interface Documentation {
   version: string;
   author: string;
   tags: string[];
-  downloadUrl?: string;
   type: 'guide' | 'api' | 'reference' | 'tutorial' | 'policy';
 }
 
@@ -24,34 +23,196 @@ export default function DocsPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedType, setSelectedType] = useState<string>('all');
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedDoc, setSelectedDoc] = useState<Documentation | null>(null);
-  const [sidebarExpanded, setSidebarExpanded] = useState(true);
+  const [selectedDoc, setSelectedDoc] = useState<DocItem | null>(null);
+  const [showTableOfContents, setShowTableOfContents] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
   }, []);
 
-  const documentation: Documentation[] = [
+  const documentation: DocItem[] = [
     {
       id: 'DOC-001',
-      title: 'VBMS System Architecture',
-      category: 'System Documentation',
-      description: 'Comprehensive overview of VBMS system architecture, components, and data flow',
-      content: `# VBMS System Architecture\n\n## Overview\n\nThe Veterans Benefits Management System (VBMS) is a comprehensive enterprise application designed to manage the entire lifecycle of veteran disability compensation claims.\n\n## System Components\n\n### Frontend Applications\n- **VBMS Web Application**: Primary user interface for claims processing\n- **eFolder Viewer**: Document management and viewing system\n- **Analytics Dashboard**: Real-time metrics and reporting interface\n- **Mobile Companion**: Limited mobile access for field operations\n\n### Backend Services\n- **Claims Processing Engine**: Core business logic for claim adjudication\n- **Document Management Service**: Handles document storage, retrieval, and processing\n- **Integration Gateway**: Manages external system connections\n- **Notification Service**: Handles email, SMS, and system notifications\n- **Audit and Logging Service**: Comprehensive activity tracking\n\n### AI/ML Components\n- **RUMEV1 Engine**: AI-powered medical exam necessity determination\n- **Natural Language Processing**: Document analysis and condition extraction\n- **Machine Learning Pipeline**: Continuous model training and improvement\n- **Predictive Analytics**: Workload forecasting and resource planning\n\n### Data Layer\n- **Primary Database**: PostgreSQL cluster for transactional data\n- **Document Store**: Enterprise content management system\n- **Data Warehouse**: Analytics and reporting data store\n- **Cache Layer**: Redis for session and performance optimization\n\n### Security & Infrastructure\n- **Identity Management**: PIV card authentication and SAML integration\n- **API Gateway**: Rate limiting, authentication, and routing\n- **Load Balancers**: High availability and traffic distribution\n- **Monitoring Stack**: Application performance and health monitoring\n\n## Data Flow\n\n1. **Claim Intake**: Claims enter through VA.gov or paper forms\n2. **Initial Processing**: Automatic veteran lookup and validation\n3. **Evidence Gathering**: Service records, medical documents collection\n4. **AI Analysis**: RUMEV1 processes medical evidence\n5. **Human Review**: Claims processor validates AI recommendations\n6. **Decision**: Rating determination and notification generation\n7. **Quality Assurance**: Random quality reviews and feedback\n\n## Integration Points\n\n### Internal VA Systems\n- **BGS (Benefits Gateway Service)**: Core veteran and benefits data\n- **MPI (Master Person Index)**: Veteran identity resolution\n- **VistA**: Electronic health records from VA medical centers\n- **CAPRI**: Clinical data repository\n- **Caseflow**: Appeals processing system\n\n### External Integrations\n- **DoD**: Military service records and personnel data\n- **Social Security Administration**: Disability determinations\n- **Private Medical Providers**: Third-party medical records\n- **Financial Systems**: Payment processing and banking\n\n## Security Architecture\n\n### Authentication & Authorization\n- Multi-factor authentication required\n- Role-based access control (RBAC)\n- PIV card integration for government users\n- SAML federation for partner organizations\n\n### Data Protection\n- Encryption at rest and in transit\n- Database-level encryption for sensitive fields\n- Network segmentation and VPN access\n- Regular security audits and penetration testing\n\n### Compliance\n- FISMA compliance requirements\n- HIPAA for protected health information\n- Privacy Act safeguards\n- FedRAMP authorization process\n\n## Performance & Scalability\n\n### Design Principles\n- Microservices architecture for independent scaling\n- Stateless application design\n- Horizontal scaling capabilities\n- Event-driven processing for async operations\n\n### Performance Metrics\n- Target response time: <500ms for web pages\n- Document loading: <2 seconds for typical files\n- Batch processing: 10,000 claims per hour capacity\n- System availability: 99.9% uptime requirement\n\n## Disaster Recovery\n\n### Backup Strategy\n- Real-time database replication\n- Daily full backups with point-in-time recovery\n- Geo-distributed backup storage\n- Automated backup verification\n\n### Recovery Procedures\n- Recovery Time Objective (RTO): 4 hours\n- Recovery Point Objective (RPO): 15 minutes\n- Automated failover for critical components\n- Regular disaster recovery testing`,
-      lastUpdated: '2024-01-15',
-      version: '2.1',
-      author: 'System Architecture Team',
-      tags: ['architecture', 'system design', 'infrastructure', 'security'],
-      type: 'reference'
+      title: 'NOVA Platform Overview',
+      category: 'Getting Started',
+      description: 'Comprehensive introduction to the NOVA platform and its capabilities',
+      content: `# NOVA Platform Overview
+
+## Introduction
+
+NOVA (Next-gen Operations for Veteran Affairs) is a cutting-edge platform that revolutionizes veteran benefits processing through artificial intelligence and streamlined workflows. Powered by RUMEV1 AI technology, NOVA transforms how disability compensation claims are evaluated and processed.
+
+## Core Features
+
+### AI-Powered Analysis
+- **RUMEV1 Technology**: Our proprietary AI model that reduces unnecessary medical examinations by 62%
+- **Multi-Agent Architecture**: Specialized AI agents working in concert for comprehensive analysis
+- **96.4% Accuracy**: Industry-leading accuracy in claim processing decisions
+- **Real-time Processing**: Average claim analysis time of 4.2 minutes
+
+### Claims Management
+- Unified dashboard for all active claims
+- Automated workflow assignment
+- Evidence development tracking
+- Quality review integration
+
+### Document Processing
+- Intelligent OCR and data extraction
+- Automated categorization
+- Evidence synthesis
+- Version control and audit trails
+
+## System Architecture
+
+### Technology Stack
+- **Frontend**: Next.js 14 with React 18
+- **UI Framework**: Tailwind CSS
+- **State Management**: React Context API
+- **Authentication**: OAuth 2.0 with PIV card support
+- **API**: RESTful services with GraphQL support
+
+### Security Features
+- End-to-end encryption
+- FISMA compliance
+- FedRAMP authorization
+- Continuous monitoring
+- Role-based access control
+
+## Getting Started
+
+### Access Requirements
+1. Valid government-issued PIV card
+2. Authorized NOVA account
+3. Completed security training
+4. System access approval
+
+### First Login
+1. Navigate to the NOVA portal
+2. Insert PIV card into reader
+3. Select appropriate certificate
+4. Enter PIN when prompted
+5. Complete two-factor authentication
+
+### Navigation
+- **Dashboard**: Real-time metrics and quick stats
+- **Claims**: Active claim management
+- **Analytics**: Performance tracking
+- **AI Orchestration**: Monitor AI system performance
+- **Settings**: User preferences and configuration
+
+## Support
+
+For technical assistance, contact the NOVA support team:
+- Phone: 1-800-NOVA-HELP
+- Email: support@nova.va.gov
+- Portal: Access through Help Center`,
+      lastUpdated: '2024-01-12',
+      version: '1.0',
+      author: 'NOVA Documentation Team',
+      tags: ['overview', 'getting started', 'introduction', 'platform'],
+      type: 'guide'
     },
     {
       id: 'DOC-002',
       title: 'RUMEV1 AI Implementation Guide',
-      category: 'AI/ML Documentation',
-      description: 'Technical documentation for RUMEV1 AI system implementation and usage',
-      content: `# RUMEV1 AI Implementation Guide\n\n## Introduction\n\nRUMEV1 (Reducing Unnecessary Medical Exams Version 1) is an AI-powered system that analyzes medical evidence to determine whether a Compensation & Pension (C&P) examination is necessary for disability rating purposes.\n\n## System Components\n\n### Core AI Engine\n- **Medical NLP Processor**: Extracts medical concepts from documents\n- **Condition Classifier**: Identifies and categorizes medical conditions\n- **Severity Assessor**: Estimates condition severity from available evidence\n- **Exam Necessity Predictor**: Determines if additional medical evidence is needed\n\n### Training Pipeline\n- **Data Ingestion**: Historical claims and exam data processing\n- **Feature Engineering**: Medical concept extraction and encoding\n- **Model Training**: Machine learning algorithm optimization\n- **Validation Testing**: Performance evaluation and accuracy measurement\n\n### Inference Pipeline\n- **Document Processing**: Real-time medical record analysis\n- **Feature Extraction**: Relevant medical information identification\n- **Prediction Generation**: Exam necessity determination\n- **Confidence Scoring**: Reliability assessment of predictions\n\n## Implementation Architecture\n\n### Machine Learning Models\n\n#### Primary Models\n1. **XGBoost Classifier**: Main prediction engine for exam necessity\n2. **BERT-based NLP**: Medical text understanding and concept extraction\n3. **CNN Document Processor**: Scanned document analysis and OCR enhancement\n4. **Ensemble Combiner**: Aggregates predictions from multiple models\n\n#### Supporting Models\n1. **Condition Specific Models**: Specialized models for common conditions\n2. **Severity Regression**: Continuous severity scoring\n3. **Quality Assessor**: Evidence quality evaluation\n4. **Fraud Detection**: Identifies potential inconsistencies\n\n### Data Processing\n\n#### Input Data Types\n- Service Treatment Records (STR)\n- VA Medical Records (VHA)\n- Private Medical Records\n- C&P Examination Reports\n- Disability Benefit Questionnaires (DBQ)\n\n#### Processing Steps\n1. **Document Ingestion**: PDF, image, and text processing\n2. **OCR Enhancement**: Improve text extraction quality\n3. **Medical Concept Extraction**: Identify conditions, treatments, symptoms\n4. **Temporal Analysis**: Understand condition progression over time\n5. **Evidence Aggregation**: Combine information from multiple sources\n\n### API Integration\n\n#### Endpoints\n```\nPOST /api/v1/rumev1/analyze\n  - Analyzes claim documents for exam necessity\n  - Returns prediction with confidence score\n\nGET /api/v1/rumev1/status/{request_id}\n  - Checks analysis status for long-running requests\n\nPOST /api/v1/rumev1/feedback\n  - Submits user feedback on predictions\n  - Used for continuous model improvement\n```\n\n#### Request Format\n```json\n{\n  "claim_id": "CL-2024-123456",\n  "veteran_id": "V123456789",\n  "documents": [\n    {\n      "document_id": "DOC-001",\n      "type": "service_treatment_record",\n      "content_url": "/documents/DOC-001"\n    }\n  ],\n  "claimed_conditions": [\n    {\n      "condition": "Lower back strain",\n      "diagnostic_code": "5243"\n    }\n  ]\n}\n```\n\n#### Response Format\n```json\n{\n  "request_id": "REQ-789",\n  "claim_id": "CL-2024-123456",\n  "analysis_date": "2024-01-15T10:30:00Z",\n  "overall_recommendation": "no_exam_required",\n  "confidence_score": 0.94,\n  "condition_analyses": [\n    {\n      "condition": "Lower back strain",\n      "recommendation": "no_exam_required",\n      "confidence": 0.94,\n      "supporting_evidence": [\n        "Recent MRI shows clear herniated disc",\n        "Consistent symptom reporting over 2 years",\n        "Physical therapy records document limitations"\n      ],\n      "evidence_quality": "high"\n    }\n  ],\n  "processing_time_ms": 2340\n}\n```\n\n## Deployment Configuration\n\n### Infrastructure Requirements\n- **CPU**: 16 cores minimum for inference servers\n- **Memory**: 32GB RAM for model loading and processing\n- **Storage**: 1TB SSD for model files and temporary data\n- **GPU**: Optional NVIDIA Tesla for training acceleration\n\n### Environment Variables\n```bash\n# Model Configuration\nRUMEV1_MODEL_PATH=/opt/models/rumev1/\nRUMEV1_CONFIDENCE_THRESHOLD=0.85\nRUMEV1_BATCH_SIZE=32\n\n# Database Configuration\nRUMEV1_DB_HOST=rumev1-db.internal\nRUMEV1_DB_NAME=rumev1_production\nRUMEV1_DB_USER=rumev1_user\n\n# API Configuration\nRUMEV1_API_TIMEOUT=30000\nRUMEV1_MAX_CONCURRENT_REQUESTS=100\nRUMEV1_RATE_LIMIT=1000\n```\n\n### Docker Configuration\n```dockerfile\nFROM python:3.9-slim\n\nRUN apt-get update && apt-get install -y \\\n    libpq-dev gcc g++ \\\n    tesseract-ocr libtesseract-dev\n\nCOPY requirements.txt .\nRUN pip install -r requirements.txt\n\nCOPY models/ /opt/models/\nCOPY src/ /app/\n\nWORKDIR /app\nCMD ["gunicorn", "--bind", "0.0.0.0:8000", "rumev1.wsgi:application"]\n```\n\n## Performance Optimization\n\n### Model Optimization\n- **Quantization**: Reduce model size by 75% with minimal accuracy loss\n- **Pruning**: Remove redundant neural network parameters\n- **Caching**: Store frequently accessed predictions\n- **Batch Processing**: Process multiple claims simultaneously\n\n### Monitoring & Alerting\n- **Prediction Accuracy**: Track model performance over time\n- **Response Latency**: Monitor API response times\n- **Error Rates**: Alert on processing failures\n- **Resource Utilization**: CPU, memory, and disk usage tracking\n\n## Continuous Improvement\n\n### Feedback Loop\n1. **User Feedback Collection**: Capture examiner agree/disagree decisions\n2. **Performance Analysis**: Regular accuracy and efficiency reviews\n3. **Model Retraining**: Monthly model updates with new data\n4. **A/B Testing**: Gradual rollout of model improvements\n\n### Quality Assurance\n- **Validation Dataset**: Hold-out test set for unbiased evaluation\n- **Cross-validation**: Ensure model generalization\n- **Bias Detection**: Monitor for demographic or geographic bias\n- **Explainability**: Provide clear reasoning for predictions`,
-      lastUpdated: '2024-01-12',
-      version: '1.3',
+      category: 'AI Documentation',
+      description: 'Technical guide for understanding and implementing RUMEV1 AI capabilities',
+      content: `# RUMEV1 AI Implementation Guide
+
+## Overview
+
+RUMEV1 (Reducing Unnecessary Medical Evaluations Version 1) is the AI engine powering NOVA's intelligent claim analysis. This guide covers technical implementation details and best practices.
+
+## Architecture
+
+### Multi-Agent System
+1. **Leiden Detection Agent**: Pattern recognition and anomaly detection
+2. **XGBoost Agent**: Predictive modeling and risk assessment
+3. **NLP Agent**: Natural language processing for document analysis
+4. **Synthesis Agent**: Combines outputs for final recommendations
+
+### Data Pipeline
+- Real-time data ingestion
+- Preprocessing and normalization
+- Feature extraction
+- Model inference
+- Result aggregation
+
+## Implementation
+
+### API Integration
+Use the RUMEV1 API to analyze claims:
+
+POST /api/v1/rumev1/analyze
+{
+  "claim_id": "CL-2024-123456",
+  "conditions": ["lower back strain"],
+  "include_confidence": true
+}
+
+### Response Handling
+{
+  "analysis_id": "RUMEV1-789",
+  "recommendation": "no_exam_required",
+  "confidence": 0.94,
+  "reasoning": [...]
+}
+
+## Performance Metrics
+
+### Accuracy
+- Overall: 96.4%
+- False Positive Rate: 2.1%
+- False Negative Rate: 1.5%
+
+### Processing Speed
+- Average: 4.2 minutes per claim
+- Peak capacity: 10,000 claims/hour
+- Latency: <100ms for API calls
+
+## Best Practices
+
+### When to Use RUMEV1
+1. Standard disability claims
+2. Claims with sufficient medical evidence
+3. Routine condition evaluations
+4. High-volume processing scenarios
+
+### When to Override
+1. Complex multi-system conditions
+2. Rare or unusual presentations
+3. Conflicting medical opinions
+4. Special circumstances
+
+## Monitoring
+
+### Key Metrics
+- Confidence scores distribution
+- Processing time trends
+- Override frequency
+- Accuracy by condition type
+
+### Alerts
+- Low confidence scores (<70%)
+- Processing delays
+- System errors
+- Unusual patterns
+
+## Training and Updates
+
+### Model Training
+- Continuous learning from outcomes
+- Monthly model updates
+- A/B testing for improvements
+- Feedback loop integration
+
+### Staff Training
+- Understanding AI recommendations
+- Proper override procedures
+- Confidence score interpretation
+- Error identification`,
+      lastUpdated: '2024-01-11',
+      version: '2.0',
       author: 'AI Development Team',
       tags: ['AI', 'machine learning', 'RUMEV1', 'implementation'],
       type: 'guide'
@@ -60,8 +221,200 @@ export default function DocsPage() {
       id: 'DOC-003',
       title: 'API Reference Documentation',
       category: 'API Documentation',
-      description: 'Complete API reference for all VBMS system endpoints',
-      content: `# VBMS API Reference\n\n## Authentication\n\nAll API endpoints require authentication using Bearer tokens obtained through the OAuth 2.0 flow.\n\n### OAuth 2.0 Flow\n1. Client registration with VA Identity Provider\n2. Authorization code request\n3. Access token exchange\n4. API access with Bearer token\n\n### Headers\n```\nAuthorization: Bearer {access_token}\nContent-Type: application/json\nX-VA-User: {user_id}\nX-VA-Session: {session_id}\n```\n\n## Claims API\n\n### Get Claims List\n```\nGET /api/v1/claims\n```\n\n**Query Parameters:**\n- `status` (string): Filter by claim status\n- `assigned_to` (string): Filter by assignee\n- `date_from` (string): Start date filter (ISO 8601)\n- `date_to` (string): End date filter (ISO 8601)\n- `limit` (integer): Number of results (default: 50, max: 1000)\n- `offset` (integer): Pagination offset\n\n**Response:**\n```json\n{\n  "claims": [\n    {\n      "id": "CL-2024-123456",\n      "veteran_id": "V123456789",\n      "status": "pending_review",\n      "date_received": "2024-01-15T10:30:00Z",\n      "assigned_to": "user123",\n      "priority": "normal",\n      "conditions": [\n        {\n          "condition": "Lower back strain",\n          "diagnostic_code": "5243",\n          "claimed_rating": null\n        }\n      ]\n    }\n  ],\n  "total_count": 1250,\n  "has_more": true\n}\n```\n\n### Get Claim Details\n```\nGET /api/v1/claims/{claim_id}\n```\n\n**Response:**\n```json\n{\n  "id": "CL-2024-123456",\n  "veteran": {\n    "id": "V123456789",\n    "name": "John Doe",\n    "ssn": "***-**-1234",\n    "dob": "1980-01-15"\n  },\n  "status": "pending_review",\n  "workflow_step": "evidence_gathering",\n  "dates": {\n    "received": "2024-01-15T10:30:00Z",\n    "last_updated": "2024-01-16T14:22:00Z",\n    "target_completion": "2024-02-15T10:30:00Z"\n  },\n  "conditions": [...],\n  "documents": [...],\n  "rumev1_analysis": {\n    "status": "completed",\n    "recommendation": "no_exam_required",\n    "confidence": 0.94\n  }\n}\n```\n\n### Update Claim Status\n```\nPUT /api/v1/claims/{claim_id}/status\n```\n\n**Request Body:**\n```json\n{\n  "status": "in_review",\n  "assigned_to": "user456",\n  "notes": "Beginning detailed medical review"\n}\n```\n\n## Documents API\n\n### Upload Document\n```\nPOST /api/v1/documents\n```\n\n**Request (multipart/form-data):**\n- `file`: Document file (PDF, TIFF, JPG)\n- `claim_id`: Associated claim ID\n- `document_type`: Type of document\n- `source`: Document source\n\n### Get Document\n```\nGET /api/v1/documents/{document_id}\n```\n\n**Response:**\nBinary document content with appropriate Content-Type header\n\n### Get Document Metadata\n```\nGET /api/v1/documents/{document_id}/metadata\n```\n\n## Veterans API\n\n### Search Veterans\n```\nGET /api/v1/veterans/search\n```\n\n**Query Parameters:**\n- `ssn`: Social Security Number (last 4 digits minimum)\n- `file_number`: VA file number\n- `first_name`: First name\n- `last_name`: Last name\n- `dob`: Date of birth\n\n### Get Veteran Profile\n```\nGET /api/v1/veterans/{veteran_id}\n```\n\n## RUMEV1 API\n\n### Analyze Claim\n```\nPOST /api/v1/rumev1/analyze\n```\n\n**Request Body:**\n```json\n{\n  "claim_id": "CL-2024-123456",\n  "conditions": ["lower back strain"],\n  "include_confidence": true\n}\n```\n\n**Response:**\n```json\n{\n  "analysis_id": "RUMEV1-789",\n  "recommendation": "no_exam_required",\n  "confidence": 0.94,\n  "reasoning": [\n    "Sufficient medical evidence available",\n    "Clear diagnostic imaging present",\n    "Consistent symptom documentation"\n  ]\n}\n```\n\n## Error Responses\n\nAll endpoints return standardized error responses:\n\n```json\n{\n  "error": {\n    "code": "VALIDATION_ERROR",\n    "message": "Invalid claim status provided",\n    "details": {\n      "field": "status",\n      "allowed_values": ["pending", "in_review", "completed"]\n    }\n  },\n  "timestamp": "2024-01-15T10:30:00Z",\n  "request_id": "req-123456"\n}\n```\n\n### HTTP Status Codes\n- `200`: Success\n- `201`: Created\n- `400`: Bad Request\n- `401`: Unauthorized\n- `403`: Forbidden\n- `404`: Not Found\n- `429`: Rate Limited\n- `500`: Internal Server Error\n\n## Rate Limiting\n\n- Default: 1000 requests per hour per user\n- Burst: 100 requests per minute\n- Headers returned with each response:\n  - `X-RateLimit-Limit`\n  - `X-RateLimit-Remaining`\n  - `X-RateLimit-Reset`\n\n## Webhooks\n\n### Claim Status Updates\n```\nPOST {webhook_url}\n```\n\n**Payload:**\n```json\n{\n  "event": "claim.status_changed",\n  "claim_id": "CL-2024-123456",\n  "old_status": "pending_review",\n  "new_status": "in_review",\n  "timestamp": "2024-01-15T10:30:00Z"\n}\n```\n\n## SDKs and Client Libraries\n\n### JavaScript/Node.js\n```javascript\nconst VBMS = require('@va/vbms-client');\n\nconst client = new VBMS.Client({\n  baseUrl: 'https://api.vbms.va.gov',\n  accessToken: 'your-token-here'\n});\n\nconst claims = await client.claims.list({\n  status: 'pending_review',\n  limit: 100\n});\n```\n\n### Python\n```python\nfrom vbms_client import VBMSClient\n\nclient = VBMSClient(\n    base_url='https://api.vbms.va.gov',\n    access_token='your-token-here'\n)\n\nclaims = client.claims.list(\n    status='pending_review',\n    limit=100\n)\n```\n\n### Java\n```java\nVBMSClient client = new VBMSClient.Builder()\n    .baseUrl("https://api.vbms.va.gov")\n    .accessToken("your-token-here")\n    .build();\n\nClaimsList claims = client.claims().list(\n    ClaimsListRequest.builder()\n        .status("pending_review")\n        .limit(100)\n        .build()\n);\n````,
+      description: 'Complete API reference for all NOVA system endpoints',
+      content: `# NOVA API Reference
+
+## Authentication
+
+All API endpoints require authentication using Bearer tokens obtained through the OAuth 2.0 flow.
+
+### OAuth 2.0 Flow
+1. Client registration with VA Identity Provider
+2. Authorization code request
+3. Access token exchange
+4. API access with Bearer token
+
+### Headers
+Authorization: Bearer {access_token}
+Content-Type: application/json
+X-VA-User: {user_id}
+X-VA-Session: {session_id}
+
+## Claims API
+
+### Get Claims List
+GET /api/v1/claims
+
+Query Parameters:
+- status (string): Filter by claim status
+- assigned_to (string): Filter by assignee
+- date_from (string): Start date filter (ISO 8601)
+- date_to (string): End date filter (ISO 8601)
+- limit (integer): Number of results (default: 50, max: 1000)
+- offset (integer): Pagination offset
+
+### Get Claim Details
+GET /api/v1/claims/{claim_id}
+
+### Update Claim Status
+PUT /api/v1/claims/{claim_id}/status
+
+Request Body:
+{
+  "status": "in_review",
+  "assigned_to": "user456",
+  "notes": "Beginning detailed medical review"
+}
+
+## Documents API
+
+### Upload Document
+POST /api/v1/documents
+
+Request (multipart/form-data):
+- file: Document file (PDF, TIFF, JPG)
+- claim_id: Associated claim ID
+- document_type: Type of document
+- source: Document source
+
+### Get Document
+GET /api/v1/documents/{document_id}
+
+Response:
+Binary document content with appropriate Content-Type header
+
+### Get Document Metadata
+GET /api/v1/documents/{document_id}/metadata
+
+## Veterans API
+
+### Search Veterans
+GET /api/v1/veterans/search
+
+Query Parameters:
+- ssn: Social Security Number (last 4 digits minimum)
+- file_number: VA file number
+- first_name: First name
+- last_name: Last name
+- dob: Date of birth
+
+### Get Veteran Profile
+GET /api/v1/veterans/{veteran_id}
+
+## RUMEV1 API
+
+### Analyze Claim
+POST /api/v1/rumev1/analyze
+
+Request Body:
+{
+  "claim_id": "CL-2024-123456",
+  "conditions": ["lower back strain"],
+  "include_confidence": true
+}
+
+Response:
+{
+  "analysis_id": "RUMEV1-789",
+  "recommendation": "no_exam_required",
+  "confidence": 0.94,
+  "reasoning": [
+    "Sufficient medical evidence available",
+    "Clear diagnostic imaging present",
+    "Consistent symptom documentation"
+  ]
+}
+
+## Error Responses
+
+All endpoints return standardized error responses:
+
+{
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "message": "Invalid claim status provided",
+    "details": {
+      "field": "status",
+      "allowed_values": ["pending", "in_review", "completed"]
+    }
+  },
+  "timestamp": "2024-01-15T10:30:00Z",
+  "request_id": "req-123456"
+}
+
+### HTTP Status Codes
+- 200: Success
+- 201: Created
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 429: Rate Limited
+- 500: Internal Server Error
+
+## Rate Limiting
+
+- Default: 1000 requests per hour per user
+- Burst: 100 requests per minute
+- Headers returned with each response:
+  - X-RateLimit-Limit
+  - X-RateLimit-Remaining
+  - X-RateLimit-Reset
+
+## Webhooks
+
+### Claim Status Updates
+POST {webhook_url}
+
+Payload:
+{
+  "event": "claim.status_changed",
+  "claim_id": "CL-2024-123456",
+  "old_status": "pending_review",
+  "new_status": "in_review",
+  "timestamp": "2024-01-15T10:30:00Z"
+}
+
+## SDKs and Client Libraries
+
+### JavaScript/Node.js
+const NOVA = require('@va/nova-client');
+
+const client = new NOVA.Client({
+  baseUrl: 'https://api.nova.va.gov',
+  accessToken: 'your-token-here'
+});
+
+const claims = await client.claims.list({
+  status: 'pending_review',
+  limit: 100
+});
+
+### Python
+from nova_client import NOVAClient
+
+client = NOVAClient(
+    base_url='https://api.nova.va.gov',
+    access_token='your-token-here'
+)
+
+claims = client.claims.list(
+    status='pending_review',
+    limit=100
+)
+
+### Java
+NOVAClient client = new NOVAClient.Builder()
+    .baseUrl("https://api.nova.va.gov")
+    .accessToken("your-token-here")
+    .build();
+
+ClaimsList claims = client.claims().list(
+    ClaimsListRequest.builder()
+        .status("pending_review")
+        .limit(100)
+        .build()
+);`,
       lastUpdated: '2024-01-10',
       version: '1.2',
       author: 'API Documentation Team',
@@ -73,7 +426,208 @@ export default function DocsPage() {
       title: 'Claims Processing Procedures',
       category: 'Process Documentation',
       description: 'Detailed procedures and workflows for claims processing staff',
-      content: `# Claims Processing Procedures\n\n## Overview\n\nThis document outlines the standard operating procedures for processing disability compensation claims in VBMS.\n\n## Initial Claim Review\n\n### Step 1: Claim Assignment\n1. Claims are automatically assigned based on:\n   - Workload capacity\n   - Examiner expertise\n   - Geographic considerations\n   - Priority indicators\n\n2. Manual reassignment procedures:\n   - Supervisor approval required\n   - Document reason for reassignment\n   - Update system assignment logs\n\n### Step 2: Veteran Verification\n1. **Identity Confirmation**\n   - Verify SSN matches MPI records\n   - Confirm file number accuracy\n   - Check for duplicate claims\n\n2. **Service Verification**\n   - Review DD-214 or equivalent\n   - Confirm service dates\n   - Verify honorable discharge status\n\n### Step 3: Claimed Conditions Review\n1. **Condition Validation**\n   - Ensure conditions are claimed properly\n   - Check for related secondary conditions\n   - Verify diagnostic codes\n\n2. **Previous Ratings Review**\n   - Check for existing ratings\n   - Review previous decisions\n   - Identify potential increases\n\n## Evidence Development\n\n### Service Treatment Records (STR)\n1. **Automatic Requests**\n   - System generates NPRC requests\n   - 30-day standard processing time\n   - Follow-up on outstanding requests\n\n2. **Manual Review Process**\n   - Review all available STRs\n   - Identify relevant medical entries\n   - Document evidence timeline\n\n### C&P Examinations\n1. **RUMEV1 Analysis**\n   - Review AI recommendation\n   - Consider confidence score\n   - Document override rationale\n\n2. **Examination Scheduling**\n   - Select appropriate examiner\n   - Provide complete medical history\n   - Schedule within 30 days\n\n3. **Examination Review**\n   - Verify completion within 30 days\n   - Review for adequacy\n   - Request clarification if needed\n\n### Private Medical Records\n1. **Authorization Requirements**\n   - Signed VA Form 21-4142\n   - Specific provider information\n   - Date range limitations\n\n2. **Request Process**\n   - Send formal request to provider\n   - Follow up after 30 days\n   - Consider alternative sources\n\n## Rating Decisions\n\n### Medical Analysis\n1. **Condition Evaluation**\n   - Apply appropriate diagnostic code\n   - Use 38 CFR Part 4 criteria\n   - Consider functional limitations\n\n2. **Secondary Conditions**\n   - Evaluate service-connected disabilities\n   - Apply nexus requirements\n   - Rate secondary conditions\n\n### Effective Date Determination\n1. **Standard Rules**\n   - Date of claim receipt\n   - Date of reopened claim\n   - Special effective date rules\n\n2. **Earlier Effective Date**\n   - Clear and unmistakable error\n   - Liberalizing law or regulation\n   - New evidence with early effective date\n\n### Combined Rating Calculation\n1. **VA Math Application**\n   - Start with highest rating\n   - Apply efficiency formula\n   - Round to nearest 10%\n\n2. **Special Considerations**\n   - Bilateral conditions\n   - Unemployability ratings\n   - Temporary total ratings\n\n## Quality Assurance\n\n### Pre-Decision Review\n1. **Accuracy Check**\n   - Verify calculations\n   - Review evidence development\n   - Confirm regulatory compliance\n\n2. **Completeness Review**\n   - All conditions addressed\n   - Proper notifications included\n   - Supporting documentation attached\n\n### Decision Letter Generation\n1. **Template Selection**\n   - Choose appropriate template\n   - Customize for specific case\n   - Include all required elements\n\n2. **Review Process**\n   - Supervisor review if required\n   - Spell check and grammar\n   - Final accuracy verification\n\n## Special Situations\n\n### Presumptive Conditions\n1. **Agent Orange**\n   - Verify Vietnam service\n   - Check presumptive condition list\n   - Apply presumptive effective date\n\n2. **Gulf War Illness**\n   - Confirm Gulf War service\n   - Review chronic symptoms\n   - Apply presumptive criteria\n\n### Fully Developed Claims\n1. **Evidence Requirements**\n   - All evidence submitted\n   - No additional development needed\n   - Expedited processing timeline\n\n2. **Processing Benefits**\n   - Priority processing queue\n   - Reduced development time\n   - Faster decision turnaround\n\n## Appeals Prevention\n\n### Clear Communication\n1. **Decision Rationale**\n   - Explain rating decisions\n   - Reference specific evidence\n   - Use clear language\n\n2. **Next Steps Information**\n   - Appeal rights explanation\n   - Additional evidence options\n   - Contact information\n\n### Common Errors to Avoid\n1. **Medical Errors**\n   - Misinterpretation of evidence\n   - Incorrect diagnostic codes\n   - Inadequate examinations\n\n2. **Legal Errors**\n   - Wrong effective dates\n   - Incorrect burden of proof\n   - Missing due process\n\n## Training Requirements\n\n### Initial Certification\n- 40 hours basic claims training\n- 20 hours VBMS system training\n- Competency examination\n- Supervisor mentoring period\n\n### Continuing Education\n- Monthly regulation updates\n- Quarterly accuracy reviews\n- Annual recertification\n- Specialized condition training`,
+      content: `# Claims Processing Procedures
+
+## Overview
+
+This document outlines the standard operating procedures for processing disability compensation claims in NOVA.
+
+## Initial Claim Review
+
+### Step 1: Claim Assignment
+1. Claims are automatically assigned based on:
+   - Workload capacity
+   - Examiner expertise
+   - Geographic considerations
+   - Priority indicators
+
+2. Manual reassignment procedures:
+   - Supervisor approval required
+   - Document reason for reassignment
+   - Update system assignment logs
+
+### Step 2: Veteran Verification
+1. **Identity Confirmation**
+   - Verify SSN matches MPI records
+   - Confirm file number accuracy
+   - Check for duplicate claims
+
+2. **Service Verification**
+   - Review DD-214 or equivalent
+   - Confirm service dates
+   - Verify honorable discharge status
+
+### Step 3: Claimed Conditions Review
+1. **Condition Validation**
+   - Ensure conditions are claimed properly
+   - Check for related secondary conditions
+   - Verify diagnostic codes
+
+2. **Previous Ratings Review**
+   - Check for existing ratings
+   - Review previous decisions
+   - Identify potential increases
+
+## Evidence Development
+
+### Service Treatment Records (STR)
+1. **Automatic Requests**
+   - System generates NPRC requests
+   - 30-day standard processing time
+   - Follow-up on outstanding requests
+
+2. **Manual Review Process**
+   - Review all available STRs
+   - Identify relevant medical entries
+   - Document evidence timeline
+
+### C&P Examinations
+1. **RUMEV1 Analysis**
+   - Review AI recommendation
+   - Consider confidence score
+   - Document override rationale
+
+2. **Examination Scheduling**
+   - Select appropriate examiner
+   - Provide complete medical history
+   - Schedule within 30 days
+
+3. **Examination Review**
+   - Verify completion within 30 days
+   - Review for adequacy
+   - Request clarification if needed
+
+### Private Medical Records
+1. **Authorization Requirements**
+   - Signed VA Form 21-4142
+   - Specific provider information
+   - Date range limitations
+
+2. **Request Process**
+   - Send formal request to provider
+   - Follow up after 30 days
+   - Consider alternative sources
+
+## Rating Decisions
+
+### Medical Analysis
+1. **Condition Evaluation**
+   - Apply appropriate diagnostic code
+   - Use 38 CFR Part 4 criteria
+   - Consider functional limitations
+
+2. **Secondary Conditions**
+   - Evaluate service-connected disabilities
+   - Apply nexus requirements
+   - Rate secondary conditions
+
+### Effective Date Determination
+1. **Standard Rules**
+   - Date of claim receipt
+   - Date of reopened claim
+   - Special effective date rules
+
+2. **Earlier Effective Date**
+   - Clear and unmistakable error
+   - Liberalizing law or regulation
+   - New evidence with early effective date
+
+### Combined Rating Calculation
+1. **VA Math Application**
+   - Start with highest rating
+   - Apply efficiency formula
+   - Round to nearest 10%
+
+2. **Special Considerations**
+   - Bilateral conditions
+   - Unemployability ratings
+   - Temporary total ratings
+
+## Quality Assurance
+
+### Pre-Decision Review
+1. **Accuracy Check**
+   - Verify calculations
+   - Review evidence development
+   - Confirm regulatory compliance
+
+2. **Completeness Review**
+   - All conditions addressed
+   - Proper notifications included
+   - Supporting documentation attached
+
+### Decision Letter Generation
+1. **Template Selection**
+   - Choose appropriate template
+   - Customize for specific case
+   - Include all required elements
+
+2. **Review Process**
+   - Supervisor review if required
+   - Spell check and grammar
+   - Final accuracy verification
+
+## Special Situations
+
+### Presumptive Conditions
+1. **Agent Orange**
+   - Verify Vietnam service
+   - Check presumptive condition list
+   - Apply presumptive effective date
+
+2. **Gulf War Illness**
+   - Confirm Gulf War service
+   - Review chronic symptoms
+   - Apply presumptive criteria
+
+### Fully Developed Claims
+1. **Evidence Requirements**
+   - All evidence submitted
+   - No additional development needed
+   - Expedited processing timeline
+
+2. **Processing Benefits**
+   - Priority processing queue
+   - Reduced development time
+   - Faster decision turnaround
+
+## Appeals Prevention
+
+### Clear Communication
+1. **Decision Rationale**
+   - Explain rating decisions
+   - Reference specific evidence
+   - Use clear language
+
+2. **Next Steps Information**
+   - Appeal rights explanation
+   - Additional evidence options
+   - Contact information
+
+### Common Errors to Avoid
+1. **Medical Errors**
+   - Misinterpretation of evidence
+   - Incorrect diagnostic codes
+   - Inadequate examinations
+
+2. **Legal Errors**
+   - Wrong effective dates
+   - Incorrect burden of proof
+   - Missing due process
+
+## Training Requirements
+
+### Initial Certification
+- 40 hours basic claims training
+- 20 hours NOVA system training
+- Competency examination
+- Supervisor mentoring period
+
+### Continuing Education
+- Monthly regulation updates
+- Quarterly accuracy reviews
+- Annual recertification
+- Specialized condition training`,
       lastUpdated: '2024-01-08',
       version: '3.1',
       author: 'VBA Training Division',
@@ -84,8 +638,233 @@ export default function DocsPage() {
       id: 'DOC-005',
       title: 'Security and Compliance Guide',
       category: 'Security Documentation',
-      description: 'Security procedures and compliance requirements for VBMS users',
-      content: `# VBMS Security and Compliance Guide\n\n## Security Overview\n\nThe Veterans Benefits Management System (VBMS) handles sensitive personal information and must comply with strict federal security requirements.\n\n## Access Control\n\n### User Authentication\n1. **PIV Card Requirements**\n   - Valid government-issued PIV card\n   - Current certificate not expired\n   - Proper card reader configuration\n\n2. **Multi-Factor Authentication**\n   - PIV card + PIN (something you have + something you know)\n   - Additional verification for high-privilege accounts\n   - Time-based session tokens\n\n### Role-Based Access Control (RBAC)\n1. **Principle of Least Privilege**\n   - Users granted minimum necessary access\n   - Regular access reviews and recertification\n   - Automatic deactivation of unused accounts\n\n2. **Role Definitions**\n   - Claims Processor: Basic claim processing functions\n   - Senior Processor: Advanced processing and approval\n   - Supervisor: Team management and quality review\n   - Administrator: System configuration and user management\n\n## Data Protection\n\n### Personally Identifiable Information (PII)\n1. **Identification and Handling**\n   - Social Security Numbers\n   - Medical record numbers\n   - Financial account information\n   - Contact information\n\n2. **Protection Requirements**\n   - Encryption at rest and in transit\n   - Access logging and monitoring\n   - Secure disposal procedures\n   - Privacy impact assessments\n\n### Protected Health Information (PHI)\n1. **HIPAA Compliance**\n   - Medical records and documents\n   - Health condition information\n   - Treatment and examination data\n   - Provider communications\n\n2. **Minimum Necessary Rule**\n   - Access only information needed for job function\n   - Time-limited access to sensitive records\n   - Audit trails for all PHI access\n\n## System Security\n\n### Network Security\n1. **VPN Requirements**\n   - All remote access through authorized VPN\n   - Multi-factor authentication for VPN access\n   - Encrypted tunnel protocols (IPSec/SSL)\n\n2. **Network Segmentation**\n   - Production systems isolated from development\n   - DMZ for external-facing services\n   - Internal network access controls\n\n### Endpoint Security\n1. **Approved Devices Only**\n   - Government-furnished equipment (GFE)\n   - Current security patches and updates\n   - Antivirus and endpoint detection\n\n2. **Configuration Management**\n   - Standardized security configurations\n   - Regular vulnerability scanning\n   - Automated patch management\n\n## Compliance Requirements\n\n### FISMA Compliance\n1. **Risk Management Framework**\n   - Continuous monitoring program\n   - Regular security assessments\n   - Risk-based security controls\n\n2. **Documentation Requirements**\n   - System security plans\n   - Risk assessment reports\n   - Security control assessments\n   - Plan of actions and milestones\n\n### FedRAMP Authorization\n1. **Cloud Security Requirements**\n   - Authorized cloud service providers\n   - Continuous monitoring requirements\n   - Incident response procedures\n\n2. **Security Control Baselines**\n   - Moderate impact level controls\n   - Additional VA-specific requirements\n   - Third-party assessment validation\n\n## Incident Response\n\n### Security Incident Types\n1. **Unauthorized Access**\n   - Failed authentication attempts\n   - Privilege escalation attempts\n   - Account compromise indicators\n\n2. **Data Breaches**\n   - Unauthorized data disclosure\n   - Loss of portable media\n   - Email misdirection\n\n### Response Procedures\n1. **Immediate Actions**\n   - Contain the incident\n   - Assess the scope and impact\n   - Notify security team\n   - Document all actions\n\n2. **Investigation Process**\n   - Forensic analysis if needed\n   - Root cause determination\n   - Impact assessment\n   - Corrective action planning\n\n## User Responsibilities\n\n### Account Security\n1. **Password/PIN Management**\n   - Never share PIV card PIN\n   - Report lost or stolen cards immediately\n   - Use secure PIN creation practices\n\n2. **Session Management**\n   - Lock screen when away from desk\n   - Log out at end of workday\n   - Never leave system unattended while logged in\n\n### Information Handling\n1. **Physical Security**\n   - Clean desk policy\n   - Secure storage of printed materials\n   - Proper disposal of sensitive documents\n\n2. **Electronic Security**\n   - No personal email for work purposes\n   - Approved file sharing methods only\n   - USB drive restrictions and encryption\n\n### Reporting Requirements\n1. **Security Incidents**\n   - Report immediately to supervisor\n   - Complete incident report within 2 hours\n   - Cooperate with investigation\n\n2. **Suspicious Activity**\n   - Unusual system behavior\n   - Social engineering attempts\n   - Potential fraud indicators\n\n## Training and Awareness\n\n### Initial Security Training\n- VA Security Awareness training\n- VBMS-specific security procedures\n- Role-based security requirements\n- Privacy and HIPAA training\n\n### Ongoing Requirements\n- Annual security awareness training\n- Monthly security updates and bulletins\n- Incident-based training as needed\n- Specialized training for system changes\n\n## Monitoring and Auditing\n\n### System Monitoring\n1. **Automated Monitoring**\n   - Real-time security event monitoring\n   - Anomaly detection systems\n   - Automated alerting for suspicious activity\n\n2. **Manual Reviews**\n   - Regular access reviews\n   - Periodic security assessments\n   - Compliance audits\n\n### Audit Requirements\n1. **Access Logging**\n   - All system access logged\n   - Detailed activity tracking\n   - Long-term log retention\n\n2. **Review Procedures**\n   - Regular log analysis\n   - Quarterly access reviews\n   - Annual compliance assessments\n\n## Sanctions and Enforcement\n\n### Policy Violations\n1. **Administrative Actions**\n   - Verbal counseling\n   - Written reprimand\n   - Suspension of system access\n   - Additional training requirements\n\n2. **Serious Violations**\n   - Immediate access suspension\n   - Investigation and adjudication\n   - Potential disciplinary action\n   - Possible criminal referral\n\n### Appeal Process\n- Right to appeal sanctions\n- Administrative review procedures\n- Due process protections\n- Union representation rights`,
+      description: 'Security procedures and compliance requirements for NOVA users',
+      content: `# NOVA Security and Compliance Guide
+
+## Security Overview
+
+The NOVA platform handles sensitive personal information and must comply with strict federal security requirements.
+
+## Access Control
+
+### User Authentication
+1. **PIV Card Requirements**
+   - Valid government-issued PIV card
+   - Current certificate not expired
+   - Proper card reader configuration
+
+2. **Multi-Factor Authentication**
+   - PIV card + PIN (something you have + something you know)
+   - Additional verification for high-privilege accounts
+   - Time-based session tokens
+
+### Role-Based Access Control (RBAC)
+1. **Principle of Least Privilege**
+   - Users granted minimum necessary access
+   - Regular access reviews and recertification
+   - Automatic deactivation of unused accounts
+
+2. **Role Definitions**
+   - Claims Processor: Basic claim processing functions
+   - Senior Processor: Advanced processing and approval
+   - Supervisor: Team management and quality review
+   - Administrator: System configuration and user management
+
+## Data Protection
+
+### Personally Identifiable Information (PII)
+1. **Identification and Handling**
+   - Social Security Numbers
+   - Medical record numbers
+   - Financial account information
+   - Contact information
+
+2. **Protection Requirements**
+   - Encryption at rest and in transit
+   - Access logging and monitoring
+   - Secure disposal procedures
+   - Privacy impact assessments
+
+### Protected Health Information (PHI)
+1. **HIPAA Compliance**
+   - Medical records and documents
+   - Health condition information
+   - Treatment and examination data
+   - Provider communications
+
+2. **Minimum Necessary Rule**
+   - Access only information needed for job function
+   - Time-limited access to sensitive records
+   - Audit trails for all PHI access
+
+## System Security
+
+### Network Security
+1. **VPN Requirements**
+   - All remote access through authorized VPN
+   - Multi-factor authentication for VPN access
+   - Encrypted tunnel protocols (IPSec/SSL)
+
+2. **Network Segmentation**
+   - Production systems isolated from development
+   - DMZ for external-facing services
+   - Internal network access controls
+
+### Endpoint Security
+1. **Approved Devices Only**
+   - Government-furnished equipment (GFE)
+   - Current security patches and updates
+   - Antivirus and endpoint detection
+
+2. **Configuration Management**
+   - Standardized security configurations
+   - Regular vulnerability scanning
+   - Automated patch management
+
+## Compliance Requirements
+
+### FISMA Compliance
+1. **Risk Management Framework**
+   - Continuous monitoring program
+   - Regular security assessments
+   - Risk-based security controls
+
+2. **Documentation Requirements**
+   - System security plans
+   - Risk assessment reports
+   - Security control assessments
+   - Plan of actions and milestones
+
+### FedRAMP Authorization
+1. **Cloud Security Requirements**
+   - Authorized cloud service providers
+   - Continuous monitoring requirements
+   - Incident response procedures
+
+2. **Security Control Baselines**
+   - Moderate impact level controls
+   - Additional VA-specific requirements
+   - Third-party assessment validation
+
+## Incident Response
+
+### Security Incident Types
+1. **Unauthorized Access**
+   - Failed authentication attempts
+   - Privilege escalation attempts
+   - Account compromise indicators
+
+2. **Data Breaches**
+   - Unauthorized data disclosure
+   - Loss of portable media
+   - Email misdirection
+
+### Response Procedures
+1. **Immediate Actions**
+   - Contain the incident
+   - Assess the scope and impact
+   - Notify security team
+   - Document all actions
+
+2. **Investigation Process**
+   - Forensic analysis if needed
+   - Root cause determination
+   - Impact assessment
+   - Corrective action planning
+
+## User Responsibilities
+
+### Account Security
+1. **Password/PIN Management**
+   - Never share PIV card PIN
+   - Report lost or stolen cards immediately
+   - Use secure PIN creation practices
+
+2. **Session Management**
+   - Lock screen when away from desk
+   - Log out at end of workday
+   - Never leave system unattended while logged in
+
+### Information Handling
+1. **Physical Security**
+   - Clean desk policy
+   - Secure storage of printed materials
+   - Proper disposal of sensitive documents
+
+2. **Electronic Security**
+   - No personal email for work purposes
+   - Approved file sharing methods only
+   - USB drive restrictions and encryption
+
+### Reporting Requirements
+1. **Security Incidents**
+   - Report immediately to supervisor
+   - Complete incident report within 2 hours
+   - Cooperate with investigation
+
+2. **Suspicious Activity**
+   - Unusual system behavior
+   - Social engineering attempts
+   - Potential fraud indicators
+
+## Training and Awareness
+
+### Initial Security Training
+- VA Security Awareness training
+- NOVA-specific security procedures
+- Role-based security requirements
+- Privacy and HIPAA training
+
+### Ongoing Requirements
+- Annual security awareness training
+- Monthly security updates and bulletins
+- Incident-based training as needed
+- Specialized training for system changes
+
+## Monitoring and Auditing
+
+### System Monitoring
+1. **Automated Monitoring**
+   - Real-time security event monitoring
+   - Anomaly detection systems
+   - Automated alerting for suspicious activity
+
+2. **Manual Reviews**
+   - Regular access reviews
+   - Periodic security assessments
+   - Compliance audits
+
+### Audit Requirements
+1. **Access Logging**
+   - All system access logged
+   - Detailed activity tracking
+   - Long-term log retention
+
+2. **Review Procedures**
+   - Regular log analysis
+   - Quarterly access reviews
+   - Annual compliance assessments
+
+## Sanctions and Enforcement
+
+### Policy Violations
+1. **Administrative Actions**
+   - Verbal counseling
+   - Written reprimand
+   - Suspension of system access
+   - Additional training requirements
+
+2. **Serious Violations**
+   - Immediate access suspension
+   - Investigation and adjudication
+   - Potential disciplinary action
+   - Possible criminal referral
+
+### Appeal Process
+- Right to appeal sanctions
+- Administrative review procedures
+- Due process protections
+- Union representation rights`,
       lastUpdated: '2024-01-05',
       version: '2.3',
       author: 'VA Information Security Office',
@@ -136,7 +915,7 @@ export default function DocsPage() {
         <WelcomeModal
           pageName="docs"
           title="Documentation Portal"
-          description="Comprehensive technical documentation, API references, user guides, and policy documents for the VBMS system and related processes."
+          description="Comprehensive technical documentation, API references, user guides, and policy documents for the NOVA system and related processes."
           features={[
             "Complete system documentation with technical specifications",
             "Interactive API reference with code examples",
@@ -161,19 +940,11 @@ export default function DocsPage() {
                 </Link>
                 <div>
                   <h1 className="text-xl font-semibold text-slate-100">Documentation Portal</h1>
-                  <p className="text-sm text-slate-500">Technical Documentation & Guides</p>
+                  <p className="text-sm text-slate-500">Technical Docs & API Reference</p>
                 </div>
               </div>
               
               <div className="flex items-center space-x-4">
-                <button
-                  onClick={() => setSidebarExpanded(!sidebarExpanded)}
-                  className="px-3 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors md:hidden"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                </button>
                 <div className="relative">
                   <input
                     type="text"
@@ -186,6 +957,9 @@ export default function DocsPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                   </svg>
                 </div>
+                <button className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">
+                  Download All Docs
+                </button>
               </div>
             </div>
           </div>
@@ -193,211 +967,166 @@ export default function DocsPage() {
 
         <main className={`transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
           <div className="max-w-7xl mx-auto px-6 py-8">
-            <div className="flex gap-8">
-              {/* Sidebar */}
-              <div className={`${sidebarExpanded ? 'block' : 'hidden'} md:block w-64 flex-shrink-0`}>
-                <div className="bg-slate-900 border border-slate-800 rounded-lg p-6 sticky top-32">
-                  <h3 className="text-lg font-semibold text-slate-100 mb-4">Filters</h3>
-                  
-                  <div className="space-y-4">
-                    <div>
-                      <label className="block text-sm font-medium text-slate-300 mb-2">Category</label>
-                      <select
-                        value={selectedCategory}
-                        onChange={(e) => setSelectedCategory(e.target.value)}
-                        className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-lg text-slate-200 focus:outline-none focus:border-blue-500 text-sm"
-                      >
-                        {categories.map(category => (
-                          <option key={category} value={category}>
-                            {category === 'all' ? 'All Categories' : category}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-slate-300 mb-2">Type</label>
-                      <select
-                        value={selectedType}
-                        onChange={(e) => setSelectedType(e.target.value)}
-                        className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-lg text-slate-200 focus:outline-none focus:border-blue-500 text-sm"
-                      >
-                        {types.map(type => (
-                          <option key={type} value={type}>
-                            {type === 'all' ? 'All Types' : type.charAt(0).toUpperCase() + type.slice(1)}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-6 pt-6 border-t border-slate-800">
-                    <h4 className="text-md font-medium text-slate-300 mb-3">Quick Links</h4>
-                    <div className="space-y-2">
-                      <button
-                        onClick={() => { setSelectedType('api'); setSearchTerm(''); }}
-                        className="block w-full text-left px-3 py-2 text-sm text-slate-300 hover:bg-slate-800 rounded transition-colors"
-                      >
-                        🔗 API Reference
-                      </button>
-                      <button
-                        onClick={() => { setSelectedType('guide'); setSearchTerm(''); }}
-                        className="block w-full text-left px-3 py-2 text-sm text-slate-300 hover:bg-slate-800 rounded transition-colors"
-                      >
-                        📚 User Guides
-                      </button>
-                      <button
-                        onClick={() => { setSearchTerm('RUMEV1'); setSelectedType('all'); }}
-                        className="block w-full text-left px-3 py-2 text-sm text-slate-300 hover:bg-slate-800 rounded transition-colors"
-                      >
-                        🤖 AI Documentation
-                      </button>
-                      <button
-                        onClick={() => { setSelectedType('policy'); setSearchTerm(''); }}
-                        className="block w-full text-left px-3 py-2 text-sm text-slate-300 hover:bg-slate-800 rounded transition-colors"
-                      >
-                        📜 Policies & Procedures
-                      </button>
-                    </div>
-                  </div>
+            {/* Quick Stats */}
+            <div className="grid md:grid-cols-4 gap-6 mb-8">
+              <div className="bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-lg p-6 border border-blue-500/30">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-sm font-medium text-blue-300">Total Documents</h3>
+                  <span className="text-2xl">📄</span>
+                </div>
+                <div className="text-3xl font-bold text-blue-400 mb-1">
+                  {documentation.length}
+                </div>
+                <div className="text-xs text-blue-300/70">Available articles</div>
+              </div>
+
+              <div className="bg-gradient-to-r from-emerald-500/20 to-emerald-600/20 rounded-lg p-6 border border-emerald-500/30">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-sm font-medium text-emerald-300">Categories</h3>
+                  <span className="text-2xl">📚</span>
+                </div>
+                <div className="text-3xl font-bold text-emerald-400 mb-1">
+                  {categories.length - 1}
+                </div>
+                <div className="text-xs text-emerald-300/70">Documentation types</div>
+              </div>
+
+              <div className="bg-gradient-to-r from-purple-500/20 to-purple-600/20 rounded-lg p-6 border border-purple-500/30">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-sm font-medium text-purple-300">Last Updated</h3>
+                  <span className="text-2xl">🔄</span>
+                </div>
+                <div className="text-xl font-bold text-purple-400 mb-1">
+                  Jan 12, 2024
+                </div>
+                <div className="text-xs text-purple-300/70">Latest revision</div>
+              </div>
+
+              <div className="bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 rounded-lg p-6 border border-yellow-500/30">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-sm font-medium text-yellow-300">API Version</h3>
+                  <span className="text-2xl">🚀</span>
+                </div>
+                <div className="text-3xl font-bold text-yellow-400 mb-1">
+                  v1.2
+                </div>
+                <div className="text-xs text-yellow-300/70">Current release</div>
+              </div>
+            </div>
+
+            {/* Filters */}
+            <div className="mb-8 space-y-4">
+              <div>
+                <h3 className="text-sm font-medium text-slate-400 mb-3">Filter by Category</h3>
+                <div className="flex flex-wrap gap-2">
+                  {categories.map((category) => (
+                    <button
+                      key={category}
+                      onClick={() => setSelectedCategory(category)}
+                      className={`px-4 py-2 rounded-lg transition-colors ${
+                        selectedCategory === category
+                          ? 'bg-blue-600 text-white'
+                          : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                      }`}
+                    >
+                      {category === 'all' ? 'All Categories' : category}
+                    </button>
+                  ))}
                 </div>
               </div>
 
-              {/* Main Content */}
-              <div className="flex-1">
-                {/* Documentation Stats */}
-                <div className="grid md:grid-cols-4 gap-6 mb-8">
-                  <div className="bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-lg p-6 border border-blue-500/30">
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-sm font-medium text-blue-300">Total Documents</h3>
-                      <span className="text-2xl">📚</span>
-                    </div>
-                    <div className="text-3xl font-bold text-blue-400 mb-1">
-                      {documentation.length}
-                    </div>
-                    <div className="text-xs text-blue-300/70">Comprehensive guides</div>
-                  </div>
-
-                  <div className="bg-gradient-to-r from-emerald-500/20 to-emerald-600/20 rounded-lg p-6 border border-emerald-500/30">
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-sm font-medium text-emerald-300">API Endpoints</h3>
-                      <span className="text-2xl">🔗</span>
-                    </div>
-                    <div className="text-3xl font-bold text-emerald-400 mb-1">
-                      47
-                    </div>
-                    <div className="text-xs text-emerald-300/70">REST API endpoints</div>
-                  </div>
-
-                  <div className="bg-gradient-to-r from-purple-500/20 to-purple-600/20 rounded-lg p-6 border border-purple-500/30">
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-sm font-medium text-purple-300">Categories</h3>
-                      <span className="text-2xl">🏷️</span>
-                    </div>
-                    <div className="text-3xl font-bold text-purple-400 mb-1">
-                      {categories.length - 1}
-                    </div>
-                    <div className="text-xs text-purple-300/70">Documentation categories</div>
-                  </div>
-
-                  <div className="bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 rounded-lg p-6 border border-yellow-500/30">
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-sm font-medium text-yellow-300">Last Updated</h3>
-                      <span className="text-2xl">📅</span>
-                    </div>
-                    <div className="text-lg font-bold text-yellow-400 mb-1">
-                      Today
-                    </div>
-                    <div className="text-xs text-yellow-300/70">Most recent update</div>
-                  </div>
-                </div>
-
-                {/* Documentation Grid */}
-                <div className="space-y-6">
-                  {filteredDocs.map((doc) => (
-                    <div
-                      key={doc.id}
-                      className="bg-slate-900 border border-slate-800 rounded-lg p-6 hover:bg-slate-800/50 transition-colors cursor-pointer"
-                      onClick={() => setSelectedDoc(doc)}
+              <div>
+                <h3 className="text-sm font-medium text-slate-400 mb-3">Filter by Type</h3>
+                <div className="flex flex-wrap gap-2">
+                  {types.map((type) => (
+                    <button
+                      key={type}
+                      onClick={() => setSelectedType(type)}
+                      className={`px-4 py-2 rounded-lg transition-colors ${
+                        selectedType === type
+                          ? 'bg-emerald-600 text-white'
+                          : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                      }`}
                     >
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="flex-1">
-                          <div className="flex items-center space-x-3 mb-2">
-                            <span className="text-2xl">{getTypeIcon(doc.type)}</span>
-                            <h3 className="text-xl font-semibold text-slate-100">{doc.title}</h3>
-                            <span className={`px-3 py-1 rounded-full text-xs font-medium ${getTypeColor(doc.type)}`}>
-                              {doc.type.toUpperCase()}
-                            </span>
-                          </div>
-                          <p className="text-slate-400 mb-3">{doc.description}</p>
-                          <div className="flex flex-wrap gap-2 mb-3">
-                            {doc.tags.map((tag, idx) => (
-                              <span key={idx} className="px-2 py-1 bg-slate-800 text-slate-400 rounded text-xs">
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                        
-                        <div className="text-right ml-6">
-                          <div className="text-sm text-slate-400 mb-1">Version {doc.version}</div>
-                          <div className="text-sm text-slate-500">{new Date(doc.lastUpdated).toLocaleDateString()}</div>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-4">
-                          <span className="px-2 py-1 bg-blue-500/20 text-blue-300 rounded text-xs">
-                            {doc.category}
-                          </span>
-                          <span className="text-slate-500 text-sm">by {doc.author}</span>
-                        </div>
-                        
-                        <div className="flex items-center space-x-2">
-                          {doc.downloadUrl && (
-                            <button className="px-3 py-1 bg-slate-700 hover:bg-slate-600 text-white rounded text-xs transition-colors">
-                              Download PDF
-                            </button>
-                          )}
-                          <button className="px-3 py-1 bg-blue-600 hover:bg-blue-500 text-white rounded text-xs transition-colors">
-                            View Details
-                          </button>
-                        </div>
-                      </div>
-                    </div>
+                      {type === 'all' ? 'All Types' : type.charAt(0).toUpperCase() + type.slice(1)}
+                    </button>
                   ))}
-                  
-                  {filteredDocs.length === 0 && (
-                    <div className="text-center py-12">
-                      <svg className="w-12 h-12 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                      </svg>
-                      <p className="text-slate-400 mb-4">No documentation matches your search criteria.</p>
-                      <button
-                        onClick={() => { setSearchTerm(''); setSelectedCategory('all'); setSelectedType('all'); }}
-                        className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors"
-                      >
-                        Clear Filters
-                      </button>
-                    </div>
-                  )}
                 </div>
               </div>
             </div>
+
+            {/* Documentation Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredDocs.map((doc) => (
+                <div
+                  key={doc.id}
+                  className="bg-slate-900 border border-slate-800 rounded-lg p-6 hover:bg-slate-800/50 transition-all duration-300 cursor-pointer hover:shadow-xl hover:shadow-slate-800/20 hover:scale-[1.02]"
+                  onClick={() => setSelectedDoc(doc)}
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="text-3xl">{getTypeIcon(doc.type)}</div>
+                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${getTypeColor(doc.type)}`}>
+                      {doc.type.toUpperCase()}
+                    </span>
+                  </div>
+                  
+                  <h3 className="text-lg font-semibold text-slate-100 mb-2">{doc.title}</h3>
+                  <p className="text-slate-400 text-sm mb-4">{doc.description}</p>
+                  
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xs text-slate-500">v{doc.version}</span>
+                    <span className="text-xs text-slate-500">
+                      Updated {new Date(doc.lastUpdated).toLocaleDateString()}
+                    </span>
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-1">
+                    {doc.tags.slice(0, 3).map((tag, idx) => (
+                      <span key={idx} className="px-2 py-1 bg-slate-800 text-slate-400 rounded text-xs">
+                        {tag}
+                      </span>
+                    ))}
+                    {doc.tags.length > 3 && (
+                      <span className="text-xs text-slate-500">+{doc.tags.length - 3} more</span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* No Results */}
+            {filteredDocs.length === 0 && (
+              <div className="text-center py-12">
+                <svg className="w-12 h-12 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <p className="text-slate-400 mb-4">No documentation matches your search criteria.</p>
+                <button
+                  onClick={() => { setSearchTerm(''); setSelectedCategory('all'); setSelectedType('all'); }}
+                  className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors"
+                >
+                  Clear Filters
+                </button>
+              </div>
+            )}
           </div>
         </main>
 
-        {/* Documentation Detail Modal */}
+        {/* Document Detail Modal */}
         {selectedDoc && (
           <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="bg-slate-900 rounded-lg w-full max-w-6xl max-h-[90vh] overflow-y-auto border border-slate-700">
+            <div className="bg-slate-900 rounded-lg w-full max-w-4xl max-h-[90vh] overflow-hidden border border-slate-700">
               <div className="p-6 border-b border-slate-800">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
-                    <span className="text-3xl">{getTypeIcon(selectedDoc.type)}</span>
-                    <div>
+                  <div>
+                    <div className="flex items-center space-x-3 mb-2">
+                      <span className="text-3xl">{getTypeIcon(selectedDoc.type)}</span>
                       <h2 className="text-2xl font-semibold text-slate-100">{selectedDoc.title}</h2>
-                      <p className="text-slate-400">Version {selectedDoc.version} • {selectedDoc.category}</p>
+                    </div>
+                    <div className="flex items-center space-x-4 text-sm text-slate-400">
+                      <span>Version {selectedDoc.version}</span>
+                      <span>By {selectedDoc.author}</span>
+                      <span>Updated {new Date(selectedDoc.lastUpdated).toLocaleDateString()}</span>
                     </div>
                   </div>
                   <button
@@ -411,29 +1140,48 @@ export default function DocsPage() {
                 </div>
               </div>
               
-              <div className="p-6">
+              <div className="p-6 overflow-y-auto max-h-[calc(90vh-200px)]">
                 <div className="prose prose-invert max-w-none">
-                  <div className="whitespace-pre-line text-slate-300 font-mono text-sm leading-relaxed">
-                    {selectedDoc.content.replace(/\\n/g, '\n')}
+                  <div className="whitespace-pre-line text-slate-300">
+                    {selectedDoc.content}
                   </div>
                 </div>
                 
                 <div className="mt-8 pt-6 border-t border-slate-800">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-4">
-                      <span className="text-slate-400 text-sm">Last updated: {new Date(selectedDoc.lastUpdated).toLocaleDateString()}</span>
-                      <span className="text-slate-400 text-sm">by {selectedDoc.author}</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      {selectedDoc.downloadUrl && (
-                        <button className="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors">
-                          Download PDF
-                        </button>
-                      )}
-                      <button className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">
-                        Print Documentation
+                  <div className="flex flex-wrap gap-2">
+                    {selectedDoc.tags.map((tag, idx) => (
+                      <span key={idx} className="px-3 py-1 bg-slate-800 text-slate-400 rounded-full text-sm">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              
+              <div className="p-6 border-t border-slate-800 bg-slate-900/50">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-4">
+                    <button className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">
+                      Download PDF
+                    </button>
+                    <button className="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors">
+                      Print
+                    </button>
+                    <button className="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors">
+                      Share
+                    </button>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    {showTableOfContents && (
+                      <button
+                        onClick={() => setShowTableOfContents(!showTableOfContents)}
+                        className="px-4 py-2 text-slate-400 hover:text-slate-200 transition-colors"
+                      >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h7" />
+                        </svg>
                       </button>
-                    </div>
+                    )}
                   </div>
                 </div>
               </div>

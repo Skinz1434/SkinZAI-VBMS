@@ -38,7 +38,7 @@ export default function MetricsPage() {
   
   const examEliminationRate = ((massiveMockDatabase.claims.filter(c => !c.examRequired).length / totalClaims) * 100).toFixed(1);
   const averageProcessingTime = Math.round(massiveMockDatabase.claims.reduce((acc, claim) => {
-    const daysSinceReceived = Math.floor((Date.now() - new Date(claim.dateReceived).getTime()) / (1000 * 60 * 60 * 24));
+    const daysSinceReceived = Math.floor((Date.now() - new Date(claim.submittedDate).getTime()) / (1000 * 60 * 60 * 24));
     return acc + daysSinceReceived;
   }, 0) / totalClaims);
   

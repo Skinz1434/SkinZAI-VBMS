@@ -85,10 +85,10 @@ export default function AppealsPage() {
     const estimatedCompletion = new Date(receivedDate.getTime() + estimatedDays * 24 * 60 * 60 * 1000);
 
     const issues = claim.conditions.slice(0, Math.floor(Math.random() * 3) + 1).map(condition => ({
-      condition: condition.condition,
+      condition: condition.name,
       currentRating: Math.floor(Math.random() * 10) * 10,
       requestedRating: Math.floor(Math.random() * 5 + 5) * 10,
-      issue: `Rating determination for ${condition.condition} condition`
+      issue: `Rating determination for ${condition.name} condition`
     }));
 
     const timelineActions = [
@@ -127,7 +127,7 @@ export default function AppealsPage() {
       docketNumber: appealType === 'board-appeal' ? `${Math.floor(Math.random() * 90000) + 10000}-${Math.floor(Math.random() * 900) + 100}` : undefined,
       judge: appealType === 'board-appeal' && Math.random() > 0.5 ? judges[Math.floor(Math.random() * judges.length)] : undefined,
       hearingDate: status === 'hearing-scheduled' ? new Date(Date.now() + Math.random() * 90 * 24 * 60 * 60 * 1000).toISOString().split('T')[0] : undefined,
-      conditions: claim.conditions.map(c => c.condition),
+      conditions: claim.conditions.map(c => c.name),
       currentStage: stages[Math.floor(Math.random() * stages.length)],
       estimatedCompletion: estimatedCompletion.toISOString().split('T')[0],
       assignedTo: assignees[Math.floor(Math.random() * assignees.length)],
