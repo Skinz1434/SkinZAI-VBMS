@@ -174,21 +174,8 @@ export default function SettingsPage() {
     }
   };
 
-  if (!isAuthenticated) {
-    return (
-      <AppLayout>
-        <div className="min-h-screen flex items-center justify-center">
-          <div className="text-center">
-            <h2 className="text-2xl font-semibold mb-4">Access Restricted</h2>
-            <p className="text-slate-400 mb-6">Please sign in to access settings</p>
-            <Link href="/" className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">
-              Return to Home
-            </Link>
-          </div>
-        </div>
-      </AppLayout>
-    );
-  }
+  // Allow access to all users - authentication is optional
+  // Settings will show demo/default values when not authenticated
 
   return (
     <AppLayout>

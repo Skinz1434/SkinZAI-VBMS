@@ -160,9 +160,9 @@ const WelcomeModal = ({ pageName, title, description, features, demoActions }: W
 const getFeatureDescription = (pageName: string, step: number) => {
   const descriptions = {
     'home': [
-      'Navigate through our comprehensive Veterans Benefits Management System with powerful AI-driven insights and streamlined workflows.',
-      'Access real-time system performance metrics, including claims processing rates, exam elimination statistics, and cost savings.',
-      'Utilize our four specialized AI agents working together to analyze claims, eliminate unnecessary exams, and improve decision accuracy.'
+      'NOVA leverages cutting-edge artificial intelligence to transform veteran affairs operations. Our RUMEV1 AI model analyzes thousands of claims daily, eliminating 62% of unnecessary medical exams while maintaining 96.4% accuracy. Experience the future of benefits processing with intelligent automation that saves time, reduces costs, and improves veteran satisfaction.',
+      'Monitor your entire operation from a single dashboard. Track real-time metrics including claims processing (4.2 minute average), exam elimination rates ($4.2B saved annually), and system performance indicators. Interactive visualizations provide instant insights into workflow bottlenecks, agent performance, and resource allocation.',
+      'Our multi-agent AI architecture employs specialized models working in concert: Leiden Detection for pattern recognition, XGBoost for predictive modeling, NLP for document analysis, and continuous learning systems. Each agent is optimized for specific tasks, creating a comprehensive solution that adapts and improves over time.'
     ],
     'claims': [
       'View and manage all active disability compensation claims in a unified dashboard with advanced filtering and search capabilities.',

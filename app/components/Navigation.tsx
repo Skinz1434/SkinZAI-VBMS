@@ -177,9 +177,9 @@ export default function Navigation() {
             <div className="relative">
               <button
                 onClick={() => setUserMenuOpen(!userMenuOpen)}
-                className="flex items-center space-x-2 p-2 hover:bg-slate-800 rounded-lg transition-colors"
+                className="flex items-center space-x-2 p-2 hover:bg-slate-800 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-slate-800/50 hover:scale-105"
               >
-                <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg shadow-purple-500/20">
                   <span className="text-white text-sm font-medium">JD</span>
                 </div>
                 <svg className="w-4 h-4 text-slate-400 hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
