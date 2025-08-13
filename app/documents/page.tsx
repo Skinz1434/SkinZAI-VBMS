@@ -27,7 +27,6 @@ export default function DocumentsPage() {
     .filter(doc => {
       const matchesSearch = searchTerm === '' || 
         doc.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        doc.veteranName.toLowerCase().includes(searchTerm.toLowerCase()) ||
         doc.type.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesType = filterType === 'all' || doc.type === filterType;
       const matchesStatus = filterStatus === 'all' || doc.reviewStatus === filterStatus;
@@ -268,7 +267,7 @@ export default function DocumentsPage() {
                             </p>
                             <div className="flex items-center space-x-3 mt-2 text-xs text-slate-500">
                               <Link href={`/veteran/${doc.veteranId}`} className="hover:text-blue-400">
-                                {doc.veteranName}
+                                Veteran {doc.veteranId}
                               </Link>
                               <span>•</span>
                               <span>{new Date(doc.documentDate).toLocaleDateString()}</span>
@@ -333,7 +332,7 @@ export default function DocumentsPage() {
                     <div className="flex justify-between">
                       <span className="text-slate-500">Veteran:</span>
                       <Link href={`/veteran/${selectedDoc.veteranId}`} className="text-blue-400 hover:text-blue-300">
-                        {selectedDoc.veteranName}
+                        Veteran {selectedDoc.veteranId}
                       </Link>
                     </div>
                     <div className="flex justify-between">

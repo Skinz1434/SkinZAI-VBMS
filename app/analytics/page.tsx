@@ -434,9 +434,8 @@ export default function VBMSAnalytics() {
               <div className="space-y-4">
                 {agentMetrics.map((agent, index) => (
                   <div key={index} className="relative overflow-hidden bg-slate-800 rounded-lg p-4 border border-slate-700">
-                    <div className="absolute inset-0 bg-gradient-to-r opacity-10"
+                    <div className={`absolute inset-0 bg-gradient-to-r opacity-10 ${agent.gradient}`}
                       style={{ backgroundImage: `linear-gradient(to right, var(--tw-gradient-stops))` }}
-                      className={agent.gradient}
                     ></div>
                     <div className="relative">
                       <div className="flex items-center justify-between mb-3">

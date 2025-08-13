@@ -876,8 +876,8 @@ export default function ClaimDetail() {
         </section>
         </main>
 
-        {/* Exam Draft Modal */
-      {showExamDraftModal && (
+        {/* Exam Draft Modal */}
+        {showExamDraftModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
           <div className="bg-slate-900 border border-slate-700 rounded-lg p-6 max-w-2xl w-full mx-4">
             <h2 className="text-xl font-semibold text-slate-100 mb-4">Generate Exam Draft</h2>
